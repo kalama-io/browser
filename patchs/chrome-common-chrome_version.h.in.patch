@@ -1,0 +1,14 @@
+diff --git a/chrome/common/chrome_version.h.in b/chrome/common/chrome_version.h.in
+index 0b2944f3a8ec0c2d569ab77d44ebde1d4f349d11..ee7f559464acadcf2bdccd724dcdef580617ada9 100644
+--- a/chrome/common/chrome_version.h.in
++++ b/chrome/common/chrome_version.h.in
+@@ -14,6 +14,9 @@
+ #define CHROME_VERSION_BUILD @BUILD@
+ #define CHROME_VERSION_PATCH @PATCH@
+ 
++#define KALAMA_VERSION @KALAMA_MAJOR@,@KALAMA_MINOR@,@KALAMA_NIGHTLY@,@KALAMA_BUILD@
++#define KALAMA_VERSION_STRING "@KALAMA_MAJOR@.@KALAMA_MINOR@.@KALAMA_NIGHTLY@.@KALAMA_BUILD@"
++
+ // Branding Information
+ 
+ #define COMPANY_FULLNAME_STRING "@COMPANY_FULLNAME@"

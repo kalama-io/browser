@@ -1,0 +1,21 @@
+diff --git a/chrome/app/version_assembly/BUILD.gn b/chrome/app/version_assembly/BUILD.gn
+index f4025492b035475b98068c457f49896f332185b7..a8456522dfcbe90c0374da6ef10e9a2b0fc395ab 100644
+--- a/chrome/app/version_assembly/BUILD.gn
++++ b/chrome/app/version_assembly/BUILD.gn
+@@ -14,6 +14,7 @@ process_version("chrome_exe_version_manifest") {
+   visibility = [ ":*" ]
+   template_file = "chrome_exe_manifest.template"
+   sources = [ "//chrome/VERSION" ]
++  sources += [ "//chrome/KALAMA_VERSION" ]
+   output = version_assembly_output_file
+ }
+ 
+@@ -40,6 +41,7 @@ windows_manifest("chrome_exe_manifest") {
+ process_version("version_assembly_manifest") {
+   template_file = "version_assembly_manifest.template"
+   sources = [ "//chrome/VERSION" ]
+-  output = "$root_build_dir/$chrome_version_full.manifest"
++  sources += [ "//chrome/KALAMA_VERSION" ]
++  output = "$root_build_dir/$kalama_version_full.manifest"
+   process_only = true
+ }

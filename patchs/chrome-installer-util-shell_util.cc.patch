@@ -1,0 +1,12 @@
+diff --git a/chrome/installer/util/shell_util.cc b/chrome/installer/util/shell_util.cc
+index d3bd7875eb554a2cd591c7b181d4e0c92f262017..fa2241c74b40b8665fad20e387d25be4f079b98d 100644
+--- a/chrome/installer/util/shell_util.cc
++++ b/chrome/installer/util/shell_util.cc
+@@ -1104,6 +1104,7 @@ ShellUtil::DefaultState ProbeAppIsDefaultHandlers(
+     return ShellUtil::UNKNOWN_DEFAULT;
+ 
+   std::wstring app_name(GetApplicationName(chrome_exe));
++  VLOG(1) << "ProbeAppIsDefaultHandlers, app name " << app_name;
+ 
+   // Generate the app names for this brand's other install modes at both user
+   // and system levels.

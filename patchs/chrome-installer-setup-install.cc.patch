@@ -1,0 +1,36 @@
+diff --git a/chrome/installer/setup/install.cc b/chrome/installer/setup/install.cc
+index 135626172e8efcafde20538729b52ee70fcb6f54..21ffe1da4b792be295003f5d7e2c1cbb8f2264ae 100644
+--- a/chrome/installer/setup/install.cc
++++ b/chrome/installer/setup/install.cc
+@@ -169,6 +169,7 @@ void CopyPreferenceFileForFirstRun(const InstallerState& installer_state,
+ // and removes the whole directory during rollback.
+ InstallStatus InstallNewVersion(const InstallParams& install_params,
+                                 bool is_downgrade_allowed) {
++  VLOG(1) << __FUNCTION__;
+   const InstallerState& installer_state = install_params.installer_state;
+   const base::Version& current_version = install_params.current_version;
+   const base::Version& new_version = install_params.new_version;
+@@ -453,6 +454,7 @@ void RunShortcutCreationInChildProc(
+     const absl::optional<const base::FilePath>& prefs_path,
+     InstallShortcutLevel install_level,
+     InstallShortcutOperation install_operation) {
++  VLOG(1) << __FUNCTION__ << "";
+   base::CommandLine command_line(setup_path);
+   InstallUtil::AppendModeAndChannelSwitches(&command_line);
+   if (installer_state.system_install())
+@@ -492,6 +494,7 @@ void RunShortcutCreationInChildProc(
+ InstallStatus InstallOrUpdateProduct(const InstallParams& install_params,
+                                      const base::FilePath& prefs_path,
+                                      const InitialPreferences& prefs) {
++  VLOG(1) << __FUNCTION__ << "";
+   const InstallationState& original_state = install_params.installation_state;
+   const InstallerState& installer_state = install_params.installer_state;
+   const base::FilePath& setup_path = install_params.setup_path;
+@@ -514,6 +517,7 @@ InstallStatus InstallOrUpdateProduct(const InstallParams& install_params,
+ 
+   InstallStatus result =
+       InstallNewVersion(install_params, IsDowngradeAllowed(prefs));
++  VLOG(1) << "End installing, result: " << result;
+ 
+   // TODO(robertshield): Everything below this line should instead be captured
+   // by WorkItems.

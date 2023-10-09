@@ -1,0 +1,46 @@
+diff --git a/chrome/tools/build/win/create_installer_archive.py b/chrome/tools/build/win/create_installer_archive.py
+index 732479bbf5975289bd251ab6d41c8dda7e808a50..8a2c2d54770a07de40a41077b7dd2b616b3a55dc 100755
+--- a/chrome/tools/build/win/create_installer_archive.py
++++ b/chrome/tools/build/win/create_installer_archive.py
+@@ -41,6 +41,7 @@ SETUP_EXEC = "setup.exe"
+ SETUP_PATCH_FILE_PREFIX = "setup_patch"
+ TEMP_ARCHIVE_DIR = "temp_installer_archive"
+ VERSION_FILE = "VERSION"
++KALAMA_VERSION_FILE = "KALAMA_VERSION"
+ 
+ 
+ g_archive_inputs = []
+@@ -54,16 +55,16 @@ def BuildVersion(build_dir):
+   minor = 0
+   build = 0
+   patch = 0
+-  for line in open(os.path.join(build_dir, '../../chrome', VERSION_FILE), 'r'):
++  for line in open(os.path.join(build_dir, '../../chrome', KALAMA_VERSION_FILE), 'r'):
+     line = line.rstrip()
+-    if line.startswith('MAJOR='):
+-      major = line[6:]
+-    elif line.startswith('MINOR='):
+-      minor = line[6:]
+-    elif line.startswith('BUILD='):
+-      build = line[6:]
+-    elif line.startswith('PATCH='):
+-      patch = line[6:]
++    if line.startswith('KALAMA_MAJOR='):
++      major = line[13:]
++    elif line.startswith('KALAMA_MINOR='):
++      minor = line[13:]
++    elif line.startswith('KALAMA_NIGHTLY='):
++      build = line[15:]
++    elif line.startswith('KALAMA_BUILD='):
++      patch = line[13:]
+   return '%s.%s.%s.%s' % (major, minor, build, patch)
+ 
+ 
+@@ -478,6 +479,7 @@ def ParseDLLsFromDeps(build_dir, runtime_deps_file):
+ def DoComponentBuildTasks(staging_dir, build_dir, target_arch,
+                           setup_runtime_deps, chrome_runtime_deps,
+                           current_version):
++  print("version %s" % current_version)
+   # Get the required directories for the upcoming operations.
+   chrome_dir = os.path.join(staging_dir, CHROME_DIR)
+   version_dir = os.path.join(chrome_dir, current_version)

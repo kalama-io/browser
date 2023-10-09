@@ -1,0 +1,14 @@
+diff --git a/chrome/browser/ui/startup/startup_browser_creator.cc b/chrome/browser/ui/startup/startup_browser_creator.cc
+index b82d72b42ca26373a6a0444cb4d44809ac4b2883..6bb5a290f4fee5a75e9c0baca49f49268761cfe0 100644
+--- a/chrome/browser/ui/startup/startup_browser_creator.cc
++++ b/chrome/browser/ui/startup/startup_browser_creator.cc
+@@ -515,7 +515,8 @@ bool MaybeLaunchAppShortcutWindow(const base::CommandLine& command_line,
+     content::ChildProcessSecurityPolicy* policy =
+         content::ChildProcessSecurityPolicy::GetInstance();
+     if (policy->IsWebSafeScheme(url.scheme()) ||
+-        url.SchemeIs(url::kFileScheme)) {
++        url.SchemeIs(url::kFileScheme) ||
++        url.SchemeIs(url::kCyfsScheme)) {
+       const content::WebContents* web_contents =
+           apps::OpenExtensionAppShortcutWindow(profile, url);
+       if (web_contents) {

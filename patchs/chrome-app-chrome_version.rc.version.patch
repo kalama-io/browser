@@ -1,0 +1,30 @@
+diff --git a/chrome/app/chrome_version.rc.version b/chrome/app/chrome_version.rc.version
+index 0ec74bdd42dd5b6c4439696218d0778d4fad91a8..e0de010e28117f913625609a16b667e7504113f6 100644
+--- a/chrome/app/chrome_version.rc.version
++++ b/chrome/app/chrome_version.rc.version
+@@ -10,8 +10,8 @@
+ //
+ 
+ VS_VERSION_INFO VERSIONINFO
+- FILEVERSION @MAJOR@,@MINOR@,@BUILD@,@PATCH@
+- PRODUCTVERSION @MAJOR@,@MINOR@,@BUILD@,@PATCH@
++ FILEVERSION @KALAMA_MAJOR@,@KALAMA_MINOR@,@KALAMA_NIGHTLY@,@KALAMA_BUILD@
++ PRODUCTVERSION @KALAMA_MAJOR@,@KALAMA_MINOR@,@KALAMA_NIGHTLY@,@KALAMA_BUILD@
+  FILEFLAGSMASK 0x17L
+ #ifdef _DEBUG
+  FILEFLAGS 0x1L
+@@ -28,12 +28,12 @@ BEGIN
+         BEGIN
+             VALUE "CompanyName", "@COMPANY_FULLNAME@"
+             VALUE "FileDescription", "@PRODUCT_FULLNAME@"
+-            VALUE "FileVersion", "@MAJOR@.@MINOR@.@BUILD@.@PATCH@"
++            VALUE "FileVersion", "@KALAMA_MAJOR@.@KALAMA_MINOR@.@KALAMA_NIGHTLY@.@KALAMA_BUILD@"
+             VALUE "InternalName", "@INTERNAL_NAME@"
+             VALUE "LegalCopyright", "@COPYRIGHT@"
+             VALUE "OriginalFilename", "@ORIGINAL_FILENAME@"
+             VALUE "ProductName", "@PRODUCT_FULLNAME@"
+-            VALUE "ProductVersion", "@MAJOR@.@MINOR@.@BUILD@.@PATCH@"
++            VALUE "ProductVersion", "@KALAMA_MAJOR@.@KALAMA_MINOR@.@KALAMA_NIGHTLY@.@KALAMA_BUILD@"
+             VALUE "CompanyShortName", "@COMPANY_SHORTNAME@"
+             VALUE "ProductShortName", "@PRODUCT_SHORTNAME@"
+             VALUE "LastChange", "@LASTCHANGE@"

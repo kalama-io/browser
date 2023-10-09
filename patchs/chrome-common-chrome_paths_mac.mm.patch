@@ -1,0 +1,13 @@
+diff --git a/chrome/common/chrome_paths_mac.mm b/chrome/common/chrome_paths_mac.mm
+index 41538c647a0d48b55c368bbc21ce4ff6c953058c..703a7721921290fdb829f8772acd7b5661d46515 100644
+--- a/chrome/common/chrome_paths_mac.mm
++++ b/chrome/common/chrome_paths_mac.mm
+@@ -59,7 +59,7 @@ char* ProductDirNameForBundle(NSBundle* chrome_bundle) {
+ #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
+       product_dir_name = "Google/Chrome";
+ #else
+-      product_dir_name = "Chromium";
++      product_dir_name = "Kalama";
+ #endif
+     }
+ 

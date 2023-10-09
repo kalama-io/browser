@@ -1,0 +1,53 @@
+diff --git a/chrome/common/chrome_constants.cc b/chrome/common/chrome_constants.cc
+index 6fec2c15bfc7cc73af63ae6d8844cbd414c79362..f67907021c433cf664ddbc652e13212862c4dd01 100644
+--- a/chrome/common/chrome_constants.cc
++++ b/chrome/common/chrome_constants.cc
+@@ -15,7 +15,7 @@
+ #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
+ #define PRODUCT_STRING "Google Chrome"
+ #elif BUILDFLAG(CHROMIUM_BRANDING)
+-#define PRODUCT_STRING "Chromium"
++#define PRODUCT_STRING "Kalama"
+ #else
+ #error Unknown branding
+ #endif
+@@ -24,6 +24,7 @@
+ namespace chrome {
+ 
+ const char kChromeVersion[] = CHROME_VERSION_STRING;
++const char kProductVersion[] = KALAMA_VERSION_STRING;
+ 
+ // The following should not be used for UI strings; they are meant
+ // for system strings only. UI changes should be made in the GRD.
+@@ -44,9 +45,9 @@ const char kChromeVersion[] = CHROME_VERSION_STRING;
+ 
+ #if BUILDFLAG(IS_WIN)
+ const base::FilePath::CharType kBrowserProcessExecutableName[] =
+-    FPL("chrome.exe");
++    FPL("Kalama.exe");
+ const base::FilePath::CharType kHelperProcessExecutableName[] =
+-    FPL("chrome.exe");
++    FPL("Kalama.exe");
+ #elif BUILDFLAG(IS_MAC)
+ const base::FilePath::CharType kBrowserProcessExecutableName[] =
+     FPL(PRODUCT_STRING);
+@@ -66,9 +67,9 @@ const base::FilePath::CharType kHelperProcessExecutableName[] = FPL("exe");
+ 
+ #if BUILDFLAG(IS_WIN)
+ const base::FilePath::CharType kBrowserProcessExecutablePath[] =
+-    FPL("chrome.exe");
++    FPL("Kalama.exe");
+ const base::FilePath::CharType kHelperProcessExecutablePath[] =
+-    FPL("chrome.exe");
++    FPL("Kalama.exe");
+ #elif BUILDFLAG(IS_MAC)
+ const base::FilePath::CharType kBrowserProcessExecutablePath[] =
+     FPL(PRODUCT_STRING ".app/Contents/MacOS/" PRODUCT_STRING);
+@@ -118,6 +119,7 @@ const base::FilePath::CharType kExtensionsCookieFilename[] =
+ const base::FilePath::CharType kFeatureEngagementTrackerStorageDirname[] =
+     FPL("Feature Engagement Tracker");
+ const base::FilePath::CharType kFirstRunSentinel[] = FPL("First Run");
++const base::FilePath::CharType kFirstRun[] = FPL("Cyfs First Run");
+ const base::FilePath::CharType kGCMStoreDirname[] = FPL("GCM Store");
+ const base::FilePath::CharType kLocalStateFilename[] = FPL("Local State");
+ const base::FilePath::CharType kMediaCacheDirname[] = FPL("Media Cache");

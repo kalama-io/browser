@@ -1,0 +1,35 @@
+diff --git a/build/util/version.gni b/build/util/version.gni
+index 998ce077d2b36009845eb53a2a06f06f8ee9f40b..7e8b8fc9ca503bc101b926556e4b11d1f0583d40 100644
+--- a/build/util/version.gni
++++ b/build/util/version.gni
+@@ -23,6 +23,7 @@ _version_dictionary_template = "full = \"@MAJOR@.@MINOR@.@BUILD@.@PATCH@\" " +
+ 
+ # The file containing the Chrome version number.
+ chrome_version_file = "//chrome/VERSION"
++kalama_version_file = "//chrome/KALAMA_VERSION"
+ 
+ _script_arguments = []
+ 
+@@ -81,6 +82,22 @@ _result = exec_script("version.py",
+ # Full version. For example "45.0.12321.0"
+ chrome_version_full = _result.full
+ 
++kalama_version_full =
++    exec_script(
++        "version.py",
++        [
++          "-f",
++          rebase_path(chrome_version_file, root_build_dir),
++          "-f",
++          rebase_path(kalama_version_file, root_build_dir),
++          "-t",
++          "@KALAMA_MAJOR@.@KALAMA_MINOR@.@KALAMA_NIGHTLY@.@KALAMA_BUILD@",
++        ],
++        "trim string",
++        [chrome_version_file, kalama_version_file]
++      )
++
++
+ # The consituent parts of the full version.
+ chrome_version_major = _result.major
+ chrome_version_minor = _result.minor

@@ -1,0 +1,23 @@
+diff --git a/chrome/common/pref_names.h b/chrome/common/pref_names.h
+index 1fc9d10985f2260535365dde087ea497e69c89c8..22eb63e8c8b1e10bb2d37c0a9a1d20c6cb8b7efc 100644
+--- a/chrome/common/pref_names.h
++++ b/chrome/common/pref_names.h
+@@ -1138,6 +1138,8 @@ extern const char kMediaFeedsBackgroundFetching[];
+ extern const char kMediaFeedsSafeSearchEnabled[];
+ extern const char kMediaFeedsAutoSelectEnabled[];
+ 
++extern const char kRuntimeBindingFlag[];
++
+ #if BUILDFLAG(IS_CHROMEOS_ASH)
+ extern const char kAdbSideloadingDisallowedNotificationShown[];
+ extern const char kAdbSideloadingPowerwashPlannedNotificationShownTime[];
+@@ -1211,6 +1213,9 @@ extern const char kLastWhatsNewVersion[];
+ extern const char kLensRegionSearchEnabled[];
+ #endif
+ 
++extern const char kCyfsRuntimeBindingStatus[];
++extern const char kCyfsRuntimeFirstRun[];
++
+ extern const char kPrivacyGuideViewed[];
+ 
+ extern const char kCorsNonWildcardRequestHeadersSupport[];

@@ -1,0 +1,12 @@
+diff --git a/chrome/installer/mini_installer/mini_installer.cc b/chrome/installer/mini_installer/mini_installer.cc
+index dd3d726c1ce77dfb9069773522abc3cb6b6f3a61..ad24653d4187dececffa83daae7e4d778c34c653 100644
+--- a/chrome/installer/mini_installer/mini_installer.cc
++++ b/chrome/installer/mini_installer/mini_installer.cc
+@@ -590,6 +590,7 @@ ProcessExitResult RunSetup(const Configuration& configuration,
+   // Get any command line option specified for mini_installer and pass them
+   // on to setup.exe
+   AppendCommandLineFlags(configuration.command_line(), &cmd_line);
++  // VLOG(1) << __FUNCTION__ << ": " << cmd_line.get();
+ 
+   return RunProcessAndWait(setup_exe.get(), cmd_line.get(),
+                            RUN_SETUP_FAILED_FILE_NOT_FOUND,
