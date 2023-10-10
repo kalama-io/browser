@@ -1,4 +1,4 @@
-# CYFS Browser
+# KALAMA Browser
 
 ## Introduction
 A browser developed based on chromium, supports the new cyfs protocol to make your data more secure in network transmission.
