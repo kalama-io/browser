@@ -381,7 +381,7 @@ If you update this file, be sure also to update google_chrome_strings.grd. -->
         The Kalama Authors
       </message>
       <message name="IDS_ABOUT_VERSION_COPYRIGHT" desc="Copyright information on the about pages">
-        Copyright <ph name="YEAR">{0,date,y}<ex>2016</ex></ph> The FogWorks,Inc. All rights reserved.
+        Copyright <ph name="YEAR">{0,date,y}<ex>2016</ex></ph> The Kalama,Inc. All rights reserved.
       </message>
       <if expr="chromeos_ash">
         <message name="IDS_ABOUT_CROS_VERSION_LICENSE" desc="Additional text displayed beneath the Chromium open source URLs for ChromeOS.">

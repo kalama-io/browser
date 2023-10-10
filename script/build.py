@@ -39,7 +39,7 @@ def _parse_args(args):
         default=DEFAULT_CPU,
         required=False)
     parser.add_argument("--channel",
-        help="The cyfs channel, like nightly and beta",
+        help="The kalama channel, like nightly and beta",
         type=str,
         default='nightly',
         required=False)
@@ -56,7 +56,7 @@ def _parse_args(args):
 def check_requirements(root, target_cpu):
     _static_page_path = static_page_path(root, target_cpu)
     if not is_dir_exists(_static_page_path):
-        sys.exit("cyfs static page %s is not available, please check!" % _static_page_path)
+        sys.exit("kalama static page %s is not available, please check!" % _static_page_path)
 
     _ts_sdk_path = ts_sdk_path(root, target_cpu)
     if not is_dir_exists(_ts_sdk_path):
@@ -73,12 +73,12 @@ def check_requirements(root, target_cpu):
     check_chromium_branch(src_path(root))
 
 def check_chromium_branch(src):
-    default_branch = "cyfs_branch"
+    default_branch = "kalama_branch"
     try:
         cmd = ['git', 'symbolic-ref', '--short', 'HEAD']
         git_br = subprocess.check_output(cmd, cwd=src).decode('ascii').rstrip()
         if git_br != default_branch:
-            raise Exception("Current branch is not cyfs branch ")
+            raise Exception("Current branch is not kalama branch ")
     except Exception as e:
         msg = "Check chromium code branch failed, error: %s" % e
         print(msg)

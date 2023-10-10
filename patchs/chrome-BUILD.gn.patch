@@ -37,10 +37,10 @@ index 5c564fe889ca6621ff33d31d8d2fff93563093eb..592759f1c1e63478f8f975c209fea83d
      outputs = [ "{{bundle_resources_dir}}/{{source_file_part}}" ]
    }
  
-+  # Add the metamask extension in the Extension of Cyfs Browser.app
++  # Add the metamask extension in the Extension of Kalama Browser.app
 +  bundle_data("default_extension") {
 +    sources = []
-+    foreach(extension, cyfs_default_extenions) {
++    foreach(extension, kalama_default_extensions) {
 +      sources += [ "app/Extensions/${extension}"]
 +    }
 +

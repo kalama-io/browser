@@ -1,0 +1,13 @@
+diff --git a/build/config/mac/BUILD.gn b/build/config/mac/BUILD.gn
+index 8ee1760a41e4c..302430bbd67b9 100644
+--- a/build/config/mac/BUILD.gn
++++ b/build/config/mac/BUILD.gn
+@@ -76,7 +76,7 @@ config("runtime_library") {
+   # macros that collide with common names, like 'check', 'require', and
+   # 'verify'.
+   # http://opensource.apple.com/source/CarbonHeaders/CarbonHeaders-18.1/AssertMacros.h
+-  defines = [ "__ASSERT_MACROS_DEFINE_VERSIONS_WITHOUT_UNDERSCORES=0" ]
++  defines = [ "__ASSERT_MACROS_DEFINE_VERSIONS_WITHOUT_UNDERSCORES=0","__MAC_OS_X_VERSION_MAX_ALLOWED=140000" ]
+ }
+ 
+ # On Mac, this is used for everything except static libraries.

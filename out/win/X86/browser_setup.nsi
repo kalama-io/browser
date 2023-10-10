@@ -17,7 +17,7 @@
 !define PRODUCT_VERSION "${BrowserVersion}"
 !define PRODUCT_CHANNEL "${channel}"
 !define RUNTIME_PRODUCT_VERSION "${RuntimeVersion}"
-!define PRODUCT_PUBLISHER "FogWorks,Inc"
+!define PRODUCT_PUBLISHER "Kalama Inc"
 !define PRODUCT_WEB_SITE "https://cyfs.com"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\${PRODUCT_NAME}.exe"
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
@@ -118,7 +118,7 @@ Caption "${BROWSER_NAME_ALIAS} Install (V ${BrowserVersion} ${channel})"
 ;ShowInstDetails nevershow
 ;ShowUnInstDetails nevershow
 
-BrandingText "FogWorks,Inc"
+BrandingText "Kalama,Inc"
 
 ; set browser install path
 InstallDir "$LOCALAPPDATA\${PRODUCT_NAME}"
