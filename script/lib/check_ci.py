@@ -298,7 +298,7 @@ class CheckForMacosCIBuild(CheckForCIBuild):
         copys.append("readme.md")
         gni_file = os.path.join(extenions_path, "cyfs_extension.gni")
         with open(gni_file, "w") as f:
-            f.write("cyfs_default_extenions = [\n")
+            f.write("kalama_default_extensions = [\n")
             # for line in [ "readme.md", "metamask-chrome-10.9.3.zip"]:
             for file_name in copys:
                 f.write("  \"")
