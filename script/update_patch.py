@@ -1,9 +1,9 @@
+import datetime
+import json
 import os
-import sys
 import shutil
 import subprocess
-import json
-import datetime
+import sys
 
 patch_suffix = '.patch'
 not_patched_suffix = ['.png', '.jpg', '.jpeg', '.ico', '.icon', '.svg', '.icns', '.grd', '.grdp', '.xtb']
@@ -41,7 +41,8 @@ def check_patch_filter(file):
 class UpdatePatcher:
     change_record = 'change_files.json'
     patch_record = 'patch_files.json'
-    def __init__(self, root, src_path, root_patch_path, root_resource_path, is_3rd_party = False, commid_ids=[]):
+
+    def __init__(self, root, src_path, root_patch_path, root_resource_path, is_3rd_party=False, commid_ids=[]):
         assert len(commid_ids) == 2 or len(commid_ids) == 0
         self._root = root
         self._root_src_path = os.path.join(root, "src")
@@ -184,7 +185,6 @@ class UpdatePatcher:
         with open(self.patch_record_file, 'w') as f:
             json.dump(json_data, f, indent=4, default=str)
 
-
     def delete_last_create_patch(self):
         print('Begin delete last create patchs')
         all_files = os.listdir(self.patch_path)
@@ -222,13 +222,12 @@ class UpdatePatcher:
             relpath = os.path.relpath(self._src_path, self._root_src_path)
 
             for action, file_records in change_infos.items():
-                    file_records = [ (relpath + os.sep + file_name) for file_name in file_records]
-                    file_records = [ os.path.normpath(x) for x in file_records]
-                    json_data[action]['files'] += file_records
-                    json_data[action]['update_time'] = datetime.datetime.now()
+                file_records = [(relpath + os.sep + file_name) for file_name in file_records]
+                file_records = [os.path.normpath(x) for x in file_records]
+                json_data[action]['files'] += file_records
+                json_data[action]['update_time'] = datetime.datetime.now()
             with open(self.change_record_file, 'w') as f:
                 json.dump(json_data, f, indent=4, default=str)
-
 
     def get_files_by_action(self, action_):
         unstaged_file_infos = UpdatePatcher.get_unstaged_files(self.src_path)
@@ -278,7 +277,6 @@ def main(args):
     root_patch_path = os.path.join(root, 'patchs')
     root_resource_path = os.path.join(root, 'resource')
     # change_record_file = os.path.join(root_resource_path, 'change_files.json')
-
 
     ### Create patch for chromium src
     print('Begin create patch for chromium src')

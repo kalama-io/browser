@@ -1,17 +1,17 @@
 # -*- coding: UTF-8 -*-
 
-import os
-import sys
 import argparse
+import os
 import platform
 import subprocess
+import sys
 
+from lib.build_cyfs_component import prepare_cyfs_components
+from lib.common import MAC_CPUS, static_page_path, src_path, ts_sdk_path, cyfs_tools_path
+from lib.git_patch import GitPatcher
 from lib.ninja import build_browser
 from lib.pack import make_installer
-from lib.common import MAC_CPUS, static_page_path, src_path, ts_sdk_path, cyfs_tools_path
 from lib.util import is_dir_exists
-from lib.git_patch import GitPatcher
-from lib.build_cyfs_component import prepare_cyfs_components
 
 template = '''KALAMA_MAJOR=%s
 KALAMA_MINOR=%s
@@ -19,30 +19,30 @@ KALAMA_NIGHTLY=%s
 KALAMA_BUILD=%s
 '''
 
-
 IS_MAC = platform.system() == "Darwin"
 DEFAULT_CPU = "X86"
+
 
 def _parse_args(args):
     parser = argparse.ArgumentParser()
     parser.add_argument("--project-name",
-        help="The project name.",
-        type=str,
-        required=True)
+                        help="The project name.",
+                        type=str,
+                        required=True)
     parser.add_argument("--version",
-        help="The build version.",
-        type=str,
-        required=True)
+                        help="The build version.",
+                        type=str,
+                        required=True)
     parser.add_argument("--target-cpu",
-        help="The target cpu, like X86 and ARM",
-        type=str,
-        default=DEFAULT_CPU,
-        required=False)
+                        help="The target cpu, like X86 and ARM",
+                        type=str,
+                        default=DEFAULT_CPU,
+                        required=False)
     parser.add_argument("--channel",
-        help="The kalama channel, like nightly and beta",
-        type=str,
-        default='nightly',
-        required=False)
+                        help="The kalama channel, like nightly and beta",
+                        type=str,
+                        default='nightly',
+                        required=False)
     opt = parser.parse_args(args)
 
     assert opt.project_name.strip()
@@ -52,6 +52,7 @@ def _parse_args(args):
         assert opt.target_cpu in MAC_CPUS
 
     return opt
+
 
 def check_requirements(root, target_cpu):
     _static_page_path = static_page_path(root, target_cpu)
@@ -72,6 +73,7 @@ def check_requirements(root, target_cpu):
 
     check_chromium_branch(src_path(root))
 
+
 def check_chromium_branch(src):
     default_branch = "kalama_branch"
     try:
@@ -84,11 +86,13 @@ def check_chromium_branch(src):
         print(msg)
         sys.exit(msg)
 
+
 def update_product_version(root, channel, version):
     channel_number = 1 if channel == 'beta' else 0
     product_version_file = os.path.join(root, "src", "chrome", "KALAMA_VERSION")
     with open(product_version_file, 'w') as f:
-        f.write(template %('1', '0', channel_number, version))
+        f.write(template % ('1', '0', channel_number, version))
+
 
 def main(args):
     root = os.path.normpath(os.path.join(os.path.dirname(

@@ -1,16 +1,15 @@
 # -*- coding: UTF-8 -*-
 
-import os
-import sys
 import argparse
+import os
 import platform
-
+import sys
 
 from lib.check_ci import CheckFactory
-from lib.ninja import build_browser
-from lib.pack_ci import make_installer
 from lib.common import src_path, MAC_CPUS
 from lib.git_patch import GitPatcher
+from lib.ninja import build_browser
+from lib.pack_ci import make_installer
 
 version_template = '''KALAMA_MAJOR=%s
 KALAMA_MINOR=%s
@@ -21,6 +20,7 @@ KALAMA_BUILD=%s
 IS_MAC = platform.system() == "Darwin"
 IS_WIN = platform.system() == "Windows"
 DEFAULT_CPU = "X86"
+
 
 def _parse_args(args):
     parser = argparse.ArgumentParser()
@@ -38,10 +38,10 @@ def _parse_args(args):
                         default=DEFAULT_CPU,
                         required=False)
     parser.add_argument("--channel",
-                    help="The cyfs channel, like nightly and beta",
-                    type=str,
-                    default='nightly',
-                    required=False)
+                        help="The kalama channel, like nightly and beta",
+                        type=str,
+                        default='nightly',
+                        required=False)
     opt = parser.parse_args(args)
 
     assert opt.project_name.strip()
@@ -52,6 +52,7 @@ def _parse_args(args):
 
     return opt
 
+
 def set_env_variables():
     print('Begin setting environment variables')
     if IS_WIN:
@@ -59,7 +60,7 @@ def set_env_variables():
         print('depot_tool_path = %s' % depot_tool_path)
         assert os.path.exists(depot_tool_path), 'Please provide [DEPOT_TOOL_PATH] env variable'
         os.environ['PATH'] = depot_tool_path + os.path.pathsep + os.environ['PATH']
-        os.environ['DEPOT_TOOLS_WIN_TOOLCHAIN']="0"
+        os.environ['DEPOT_TOOLS_WIN_TOOLCHAIN'] = "0"
         print('current path = %s ' % os.environ['path'])
     else:
         pass
@@ -70,16 +71,17 @@ def update_product_version(root, channel, version):
     channel_number = 1 if channel == 'beta' else 0
     product_version_file = os.path.join(root, "src", "chrome", "KALAMA_VERSION")
     with open(product_version_file, 'w') as f:
-        f.write(version_template %('1', '0', channel_number, version))
+        f.write(version_template % ('1', '0', channel_number, version))
+
 
 def main(args):
     root = os.path.normpath(os.path.join(
-            os.path.dirname(os.path.abspath(__file__)), os.pardir))
+        os.path.dirname(os.path.abspath(__file__)), os.pardir))
     opt = _parse_args(args)
     current_os = platform.system()
     assert current_os in ['Windows', 'Darwin']
     set_env_variables()
-    
+
     check = CheckFactory(current_os, root, opt.target_cpu, opt.project_name, opt.channel)
     check.check_requirements()
 
@@ -100,7 +102,6 @@ def main(args):
     make_installer(root, opt.target_cpu, opt.project_name, opt.version, opt.channel, reuse_last_build)
     if not reuse_last_build and current_os == 'Windows':
         check.update_build_cache_and_version()
-
 
     print("Build finished!!")
 
