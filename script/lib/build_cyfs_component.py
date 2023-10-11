@@ -6,8 +6,8 @@ import shutil
 import subprocess
 import platform
 import argparse
-from util import is_dir_exists, make_dir_exist, make_file_not_exist
-from common import cyfs_runtime_path, cyfs_tools_path, ts_sdk_path, static_page_path
+from .util import is_dir_exists, make_dir_exist, make_file_not_exist
+from .common import cyfs_runtime_path, cyfs_tools_path, ts_sdk_path, static_page_path
 
 IS_WIN = platform.system() == 'Windows'
 _NPM = 'npm.cmd' if IS_WIN else 'npm'

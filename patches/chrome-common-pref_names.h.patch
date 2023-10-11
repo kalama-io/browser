@@ -1,5 +1,5 @@
 diff --git a/chrome/common/pref_names.h b/chrome/common/pref_names.h
-index da940b12a103c0fbe24edbcfe5863f3820d8ea9c..f5a5df6c43f33c1ec83360025a1506b8db1948fd 100644
+index da940b12a103c0fbe24edbcfe5863f3820d8ea9c..1c0f6c3ea26d7ba97257251c17b73f0879520b87 100644
 --- a/chrome/common/pref_names.h
 +++ b/chrome/common/pref_names.h
 @@ -3667,6 +3667,9 @@ inline constexpr char kMediaFeedsSafeSearchEnabled[] =
@@ -7,7 +7,7 @@ index da940b12a103c0fbe24edbcfe5863f3820d8ea9c..f5a5df6c43f33c1ec83360025a1506b8
      "media_feeds_auto_select_enabled";
  
 +inline constexpr char kRuntimeBindingFlag[] =
-+    "browser.runtimeBinding"";
++    "browser.runtimeBinding";
 +
  #if BUILDFLAG(IS_CHROMEOS_ASH)
  // Boolean pref indicating whether the notification informing the user that
