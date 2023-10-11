@@ -1,0 +1,12 @@
+diff --git a/extensions/browser/pref_names.cc b/extensions/browser/pref_names.cc
+index b1d2264c3f263efff416287bc9eb66ad98362289..ea9aacf9ff5dcb454fd361a1aa480c0098fd6d30 100644
+--- a/extensions/browser/pref_names.cc
++++ b/extensions/browser/pref_names.cc
+@@ -38,6 +38,7 @@ const char kPrefIncognitoPreferences[] = "incognito_preferences";
+ const char kPrefRegularOnlyPreferences[] = "regular_only_preferences";
+ const char kPrefContentSettings[] = "content_settings";
+ const char kPrefIncognitoContentSettings[] = "incognito_content_settings";
++const char KDefaultExtensionBlackList[] = "browser.default_extension.blacklist";
+ 
+ }  // namespace pref_names
+ }  // namespace extensions

@@ -1,0 +1,13 @@
+diff --git a/chrome/app/chrome_exe.vsprops b/chrome/app/chrome_exe.vsprops
+index 95b044a1328ff940585e1d1559d740b9a5ca4454..67aad80df082abf232c8f5b25b9afb38e4ed2ffd 100644
+--- a/chrome/app/chrome_exe.vsprops
++++ b/chrome/app/chrome_exe.vsprops
+@@ -12,7 +12,7 @@
+ 	<Tool
+ 		Name="VCLinkerTool"
+ 		DelayLoadDLLs="ole32.dll;oleaut32.dll"
+-		OutputFile="$(OutDir)\chrome.exe"
++		OutputFile="$(OutDir)\Kalama.exe"
+ 		ProgramDatabaseFile="$(OutDir)\$(ProjectName).pdb"
+ 	/>
+ 	<Tool

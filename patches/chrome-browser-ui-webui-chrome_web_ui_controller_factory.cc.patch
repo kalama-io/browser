@@ -1,0 +1,31 @@
+diff --git a/chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc b/chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
+index 75ab7f0bbbeedb05a8b82f9e80e5200a5f89575e..2d084a99cadb28c045f0f1a9d45aef43cc345e6f 100644
+--- a/chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
++++ b/chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
+@@ -38,6 +38,7 @@
+ #include "chrome/browser/ui/webui/components/components_ui.h"
+ #include "chrome/browser/ui/webui/constrained_web_dialog_ui.h"
+ #include "chrome/browser/ui/webui/crashes_ui.h"
++#include "chrome/browser/ui/webui/cyfs_init_ui.h"
+ #include "chrome/browser/ui/webui/device_log_ui.h"
+ #include "chrome/browser/ui/webui/download_internals/download_internals_ui.h"
+ #include "chrome/browser/ui/webui/engagement/site_engagement_ui.h"
+@@ -70,6 +71,8 @@
+ #include "chrome/browser/ui/webui/user_actions/user_actions_ui.h"
+ #include "chrome/browser/ui/webui/version/version_ui.h"
+ #include "chrome/browser/ui/webui/webui_util.h"
++#include "chrome/browser/web_applications/system_web_apps/system_web_app_manager.h"
++#include "chrome/browser/web_applications/web_app_provider.h"
+ #include "chrome/common/buildflags.h"
+ #include "chrome/common/chrome_features.h"
+ #include "chrome/common/pref_names.h"
+@@ -428,6 +431,9 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* web_ui,
+   if (url.SchemeIs(content::kChromeUIUntrustedScheme))
+     return nullptr;
+ 
++  if (url.host_piece() == chrome::kChromeUICyfsInitHost)
++    return &NewWebUI<CyfsInitUI>;
++
+   // Please keep this in alphabetical order. If #ifs or special logics are
+   // required, add it below in the appropriate section.
+   //

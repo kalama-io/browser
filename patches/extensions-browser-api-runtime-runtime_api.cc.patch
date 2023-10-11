@@ -1,0 +1,24 @@
+diff --git a/extensions/browser/api/runtime/runtime_api.cc b/extensions/browser/api/runtime/runtime_api.cc
+index 5e3651bc89976902c8def984f2223499035aa20b..7805cd8cedcf8a76a8060f7adf02ffc8a636411f 100644
+--- a/extensions/browser/api/runtime/runtime_api.cc
++++ b/extensions/browser/api/runtime/runtime_api.cc
+@@ -11,6 +11,7 @@
+ #include "base/functional/bind.h"
+ #include "base/lazy_instance.h"
+ #include "base/location.h"
++#include "base/logging.h"
+ #include "base/notreached.h"
+ #include "base/one_shot_event.h"
+ #include "base/strings/string_number_conversions.h"
+@@ -632,6 +633,11 @@ void RuntimeAPI::OnExtensionInstalledAndLoaded(
+     content::BrowserContext* browser_context,
+     const Extension* extension,
+     const base::Version& previous_version) {
++  auto extension_path = extension->path().BaseName().MaybeAsASCII();
++  if (extension_path == std::string("metamask-chrome")) {
++    VLOG(1) << "Block extension event,  " << extension_path;
++    return;
++  }
+   base::SingleThreadTaskRunner::GetCurrentDefault()->PostTask(
+       FROM_HERE, base::BindOnce(&RuntimeEventRouter::DispatchOnInstalledEvent,
+                                 browser_context_, extension->id(),

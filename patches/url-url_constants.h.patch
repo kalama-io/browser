@@ -1,0 +1,17 @@
+diff --git a/url/url_constants.h b/url/url_constants.h
+index 5eda4e89f258272ff0ba9dcc334d659936cab413..23326ac77b3fc885638499cc04d609090248056c 100644
+--- a/url/url_constants.h
++++ b/url/url_constants.h
+@@ -38,6 +38,12 @@ COMPONENT_EXPORT(URL) extern const char kFileSystemScheme[];
+ COMPONENT_EXPORT(URL) extern const char16_t kFileSystemScheme16[];
+ COMPONENT_EXPORT(URL) extern const char kFtpScheme[];
+ COMPONENT_EXPORT(URL) extern const char16_t kFtpScheme16[];
++COMPONENT_EXPORT(URL) extern const char kCyfsScheme[];
++COMPONENT_EXPORT(URL) extern const char16_t kCyfsScheme16[];
++COMPONENT_EXPORT(URL) extern const char kIpfsScheme[];
++COMPONENT_EXPORT(URL) extern const char16_t kIpfsScheme16[];
++COMPONENT_EXPORT(URL) extern const char kIpnsScheme[];
++COMPONENT_EXPORT(URL) extern const char16_t kIpnsScheme16[];
+ COMPONENT_EXPORT(URL) extern const char kHttpScheme[];
+ COMPONENT_EXPORT(URL) extern const char16_t kHttpScheme16[];
+ COMPONENT_EXPORT(URL) extern const char kHttpsScheme[];

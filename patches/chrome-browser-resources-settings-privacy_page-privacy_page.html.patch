@@ -1,0 +1,20 @@
+diff --git a/chrome/browser/resources/settings/privacy_page/privacy_page.html b/chrome/browser/resources/settings/privacy_page/privacy_page.html
+index d1c96ab670f42622b85b0f6aa36091a7cbf968bc..8ca47e662ee23280a7472b08de5fe78e956c4060 100644
+--- a/chrome/browser/resources/settings/privacy_page/privacy_page.html
++++ b/chrome/browser/resources/settings/privacy_page/privacy_page.html
+@@ -95,6 +95,7 @@
+             role-description="$i18n{subpageArrowRoleDescription}"></cr-link-row>
+         <template is="dom-if" if=
+             "[[isPrivacySandboxSettings3Enabled_(isPrivacySandboxRestricted_, isPrivacySandboxSettings4_)]]">
++          <!--
+           <cr-link-row id="privacySandboxLinkRow"
+               start-icon="settings20:experiment"
+               class="hr"
+@@ -105,6 +106,7 @@
+               external
+               role-description="$i18n{subpageArrowRoleDescription}">
+           </cr-link-row>
++          -->
+           <a id="privacySandboxLink" href="privacySandbox"
+               target="_blank" tabindex="-1" aria-disabled="true"
+               role="none"></a>

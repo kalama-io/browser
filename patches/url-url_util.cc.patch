@@ -1,0 +1,47 @@
+diff --git a/url/url_util.cc b/url/url_util.cc
+index 001c50e72fd244a40f5629a2a26324bad4bbd300..8583fa6b50e2d8fb94792944cc189588ceb18ba4 100644
+--- a/url/url_util.cc
++++ b/url/url_util.cc
+@@ -46,6 +46,9 @@ struct SchemeRegistry {
+   std::vector<SchemeWithType> standard_schemes = {
+       {kHttpsScheme, SCHEME_WITH_HOST_PORT_AND_USER_INFORMATION},
+       {kHttpScheme, SCHEME_WITH_HOST_PORT_AND_USER_INFORMATION},
++      {kCyfsScheme, SCHEME_WITH_HOST_PORT_AND_USER_INFORMATION},
++      {kIpfsScheme, SCHEME_WITH_HOST_PORT_AND_USER_INFORMATION},
++      {kIpnsScheme, SCHEME_WITH_HOST_PORT_AND_USER_INFORMATION},
+       // Yes, file URLs can have a hostname, so file URLs should be handled as
+       // "standard". File URLs never have a port as specified by the SchemeType
+       // field.  Unlike other SCHEME_WITH_HOST schemes, the 'host' in a file
+@@ -69,6 +72,9 @@ struct SchemeRegistry {
+   std::vector<SchemeWithType> referrer_schemes = {
+       {kHttpsScheme, SCHEME_WITH_HOST_PORT_AND_USER_INFORMATION},
+       {kHttpScheme, SCHEME_WITH_HOST_PORT_AND_USER_INFORMATION},
++      {kCyfsScheme, SCHEME_WITH_HOST_PORT_AND_USER_INFORMATION},
++      {kIpfsScheme, SCHEME_WITH_HOST_PORT_AND_USER_INFORMATION},
++      {kIpnsScheme, SCHEME_WITH_HOST_PORT_AND_USER_INFORMATION},
+   };
+ 
+   // Schemes that do not trigger mixed content warning.
+@@ -97,16 +103,20 @@ struct SchemeRegistry {
+   std::vector<std::string> cors_enabled_schemes = {
+       kHttpsScheme,
+       kHttpScheme,
++      kCyfsScheme,
++      kIpfsScheme,
++      kIpnsScheme,
+       kDataScheme,
++      kFileScheme,
+   };
+ 
+   // Schemes that can be used by web to store data (local storage, etc).
+   std::vector<std::string> web_storage_schemes = {
+-      kHttpsScheme, kHttpScheme, kFileScheme, kFtpScheme, kWssScheme, kWsScheme,
++      kHttpsScheme, kCyfsScheme, kIpfsScheme, kIpnsScheme, kHttpScheme, kFileScheme, kFtpScheme, kWssScheme, kWsScheme,
+   };
+ 
+   // Schemes that can bypass the Content-Security-Policy (CSP) checks.
+-  std::vector<std::string> csp_bypassing_schemes = {};
++  std::vector<std::string> csp_bypassing_schemes = { kCyfsScheme, kIpfsScheme, kIpnsScheme };
+ 
+   // Schemes that are strictly empty documents, allowing them to commit
+   // synchronously.

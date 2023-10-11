@@ -150,7 +150,7 @@ class UpdatePatcher:
         patch_name = origin_file.replace('/', '-') + patch_suffix
         full_path = os.path.join(self.patch_path, patch_name)
         try:
-            cmd = ['git', 'diff']
+            cmd = ['git', 'diff', 'HEAD^']
             cmd.extend(self.commid_ids)
             cmd.append('--output=%s' % full_path)
             cmd.extend(create_patch_args)

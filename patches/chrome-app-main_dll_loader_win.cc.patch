@@ -1,0 +1,13 @@
+diff --git a/chrome/app/main_dll_loader_win.cc b/chrome/app/main_dll_loader_win.cc
+index 18549fb92c7883dffc709c79c1b3627c5ee3d800..d39eac3860f6ebc1efbdd0aa6e1aa0c22679ae30 100644
+--- a/chrome/app/main_dll_loader_win.cc
++++ b/chrome/app/main_dll_loader_win.cc
+@@ -75,7 +75,7 @@ base::FilePath GetModulePath(base::WStringPiece module_name) {
+   // executable's directory and return the path if it can be read. This is the
+   // expected location of modules for proper installs.
+   const base::FilePath module_path =
+-      exe_dir.AppendASCII(chrome::kChromeVersion).Append(module_name);
++      exe_dir.AppendASCII(chrome::kProductVersion).Append(module_name);
+   if (ModuleCanBeRead(module_path))
+     return module_path;
+ 

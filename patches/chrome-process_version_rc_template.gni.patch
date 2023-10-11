@@ -1,0 +1,12 @@
+diff --git a/chrome/process_version_rc_template.gni b/chrome/process_version_rc_template.gni
+index 8d7edf50444d0b549f9a50c144a01db7231c1a50..eeaec82837b859e8644bc0c0710e37fd1fe1186d 100644
+--- a/chrome/process_version_rc_template.gni
++++ b/chrome/process_version_rc_template.gni
+@@ -43,6 +43,7 @@ template("process_version_rc_template") {
+   }
+   _sources = [
+     "//chrome/VERSION",
++    "//chrome/KALAMA_VERSION",
+     branding_file_path,
+     lastchange_file,
+   ]

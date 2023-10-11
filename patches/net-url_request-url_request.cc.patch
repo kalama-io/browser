@@ -1,0 +1,57 @@
+diff --git a/net/url_request/url_request.cc b/net/url_request/url_request.cc
+index 655d9ebcd3928eaf336ff2c30a0309c39b6a2abf..a18b32a903609e56f794f10079f9d67aca2725d2 100644
+--- a/net/url_request/url_request.cc
++++ b/net/url_request/url_request.cc
+@@ -557,19 +557,19 @@ void URLRequest::Start() {
+   load_timing_info_.request_start_time = response_info_.request_time;
+   load_timing_info_.request_start = base::TimeTicks::Now();
+ 
+-  if (network_delegate()) {
+-    OnCallToDelegate(NetLogEventType::NETWORK_DELEGATE_BEFORE_URL_REQUEST);
+-    int error = network_delegate()->NotifyBeforeURLRequest(
+-        this,
+-        base::BindOnce(&URLRequest::BeforeRequestComplete,
+-                       base::Unretained(this)),
+-        &delegate_redirect_url_);
+-    // If ERR_IO_PENDING is returned, the delegate will invoke
+-    // |BeforeRequestComplete| later.
+-    if (error != ERR_IO_PENDING)
+-      BeforeRequestComplete(error);
+-    return;
+-  }
++  // if (network_delegate()) {
++  //   OnCallToDelegate(NetLogEventType::NETWORK_DELEGATE_BEFORE_URL_REQUEST);
++  //   int error = network_delegate()->NotifyBeforeURLRequest(
++  //       this,
++  //       base::BindOnce(&URLRequest::BeforeRequestComplete,
++  //                      base::Unretained(this)),
++  //       &delegate_redirect_url_);
++  //   // If ERR_IO_PENDING is returned, the delegate will invoke
++  //   // |BeforeRequestComplete| later.
++  //   if (error != ERR_IO_PENDING)
++  //     BeforeRequestComplete(error);
++  //   return;
++  // }
+ 
+   StartJob(context_->job_factory()->CreateJob(this));
+ }
+@@ -677,7 +677,7 @@ void URLRequest::StartJob(std::unique_ptr<URLRequestJob> job) {
+     if (!network_delegate() ||
+         !network_delegate()->CancelURLRequestWithPolicyViolatingReferrerHeader(
+             *this, url(), referrer_url)) {
+-      referrer_.clear();
++      // referrer_.clear();
+     } else {
+       // We need to clear the referrer anyway to avoid an infinite recursion
+       // when starting the error job.
+@@ -1005,6 +1005,10 @@ bool URLRequest::DefaultCanUseCookies() {
+   return g_default_can_use_cookies;
+ }
+ 
++void URLRequest::PushURL(const GURL& url) {
++  url_chain_.push_back(url);
++}
++
+ const URLRequestContext* URLRequest::context() const {
+   return context_;
+ }

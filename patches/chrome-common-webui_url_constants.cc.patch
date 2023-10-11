@@ -1,0 +1,24 @@
+diff --git a/chrome/common/webui_url_constants.cc b/chrome/common/webui_url_constants.cc
+index f25f690144d2d38cbccf69200a101eed5b67af5b..852acfc13c84e6a4fd4a477f8b50789da5e31e9c 100644
+--- a/chrome/common/webui_url_constants.cc
++++ b/chrome/common/webui_url_constants.cc
+@@ -36,7 +36,9 @@ const char kChromeUIAllSitesPath[] = "/content/all";
+ const char kChromeUIAppIconHost[] = "app-icon";
+ const char kChromeUIAppIconURL[] = "chrome://app-icon/";
+ const char kChromeUIAppLauncherPageHost[] = "apps";
+-const char kChromeUIAppsURL[] = "chrome://apps/";
++const char kChromeUIAppsURL[] = "cyfs://static/appmanager.html";
++const char kCyfsBrowserURL[] = "cyfs://static/browser.html";
++const char kCyfsBrowserGuideURL[] = "cyfs://static/guide.html";
+ const char kChromeUIAppsWithDeprecationDialogURL[] =
+     "chrome://apps?showDeletionDialog=";
+ const char kChromeUIAppsWithForceInstalledDeprecationDialogURL[] =
+@@ -151,7 +153,7 @@ const char kChromeUINewTabPageURL[] = "chrome://new-tab-page/";
+ const char kChromeUINewTabPageThirdPartyHost[] = "new-tab-page-third-party";
+ const char kChromeUINewTabPageThirdPartyURL[] =
+     "chrome://new-tab-page-third-party/";
+-const char kChromeUINewTabURL[] = "chrome://newtab/";
++const char kChromeUINewTabURL[] = "https://d.tools/";
+ const char kChromeUIProfileInternalsHost[] = "profile-internals";
+ const char kChromeUIOmniboxHost[] = "omnibox";
+ const char kChromeUIOmniboxURL[] = "chrome://omnibox/";

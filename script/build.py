@@ -75,11 +75,10 @@ def check_requirements(root, target_cpu):
 
 
 def check_chromium_branch(src):
-    default_branch = "kalama_branch"
     try:
         cmd = ['git', 'symbolic-ref', '--short', 'HEAD']
         git_br = subprocess.check_output(cmd, cwd=src).decode('ascii').rstrip()
-        if git_br != default_branch:
+        if not git_br.startswith("kalama"):
             raise Exception("Current branch is not kalama branch ")
     except Exception as e:
         msg = "Check chromium code branch failed, error: %s" % e

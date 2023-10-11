@@ -1,0 +1,13 @@
+diff --git a/chrome/browser/chrome_browser_main_win.cc b/chrome/browser/chrome_browser_main_win.cc
+index d6bcd1a760798fef386f5dd8f28f53094b14c85d..240eebfb12af050a156435b7f2ed5d8d4aaff7b3 100644
+--- a/chrome/browser/chrome_browser_main_win.cc
++++ b/chrome/browser/chrome_browser_main_win.cc
+@@ -541,7 +541,7 @@ void ChromeBrowserMainPartsWin::PostProfileInit(Profile* profile,
+   // updated, update all launchers for this profile.
+   if (base::CommandLine::ForCurrentProcess()->HasSwitch(switches::kAppId) &&
+       base::CommandLine::ForCurrentProcess()->GetSwitchValueASCII(
+-          switches::kPwaLauncherVersion) != chrome::kChromeVersion) {
++          switches::kPwaLauncherVersion) != chrome::kProductVersion) {
+     content::BrowserThread::PostBestEffortTask(
+         FROM_HERE, base::SequencedTaskRunner::GetCurrentDefault(),
+         base::BindOnce(&UpdatePwaLaunchersForProfile, profile->GetPath()));

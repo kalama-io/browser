@@ -1,0 +1,61 @@
+diff --git a/chrome/BUILD.gn b/chrome/BUILD.gn
+index 61f07f736047732cc631c713fafa507df48ebb90..f0e4677548684d36a9c6c94711df9986aa74e728 100644
+--- a/chrome/BUILD.gn
++++ b/chrome/BUILD.gn
+@@ -51,6 +51,7 @@ if (is_android) {
+   import("//content/public/app/mac_helpers.gni")
+   import("//media/cdm/library_cdm/cdm_paths.gni")
+   import("//third_party/icu/config.gni")
++  import("//chrome/app/Extensions/cyfs_extension.gni")
+ }
+ 
+ declare_args() {
+@@ -78,10 +79,10 @@ if (is_win) {
+ 
+     # See comment in chrome_dll.gypi in the hardlink_to_output
+     # target for why this cannot be 'initial' like the DLL.
+-    inputs = [ "$root_out_dir/initialexe/chrome.exe" ]
++    inputs = [ "$root_out_dir/initialexe/Kalama.exe" ]
+     outputs = [
+-      "$root_out_dir/chrome.exe",
+-      "$root_out_dir/chrome.exe.pdb",
++      "$root_out_dir/Kalama.exe",
++      "$root_out_dir/Kalama.exe.pdb",
+     ]
+     args = [
+       "-i",
+@@ -157,7 +158,7 @@ if (!is_android && !is_mac) {
+       configs -= [ "//build/config/compiler:thinlto_optimize_default" ]
+       configs += [ "//build/config/compiler:thinlto_optimize_max" ]
+       if (is_win) {
+-        output_name = "initialexe/chrome"
++        output_name = "initialexe/kalama"
+       } else {
+         output_name = "chrome"
+       }
+@@ -659,6 +660,17 @@ if (is_win) {
+     outputs = [ "{{bundle_resources_dir}}/{{source_file_part}}" ]
+   }
+ 
++  # Add the metamask extension in the Extension of Kalama Browser.app
++  bundle_data("default_extension") {
++    sources = []
++    foreach(extension, kalama_default_extensions) {
++      sources += [ "app/Extensions/${extension}"]
++    }
++
++    # sources = [ "app/Extensions/metamask-chrome-10.9.3.zip" ]
++    outputs = [ "{{bundle_contents_dir}}/Extensions/{{source_file_part}}" ]
++  }
++
+   bundle_data("chrome_resources") {
+     sources = [
+       "$root_out_dir/$chrome_mac_bundle_id.manifest",
+@@ -667,6 +679,7 @@ if (is_win) {
+     ]
+     outputs = [ "{{bundle_resources_dir}}/{{source_file_part}}" ]
+     public_deps = [
++      ":default_extension",
+       ":chrome_app_icon",
+       ":chrome_app_strings",
+       "//components/policy:chrome_manifest_bundle",

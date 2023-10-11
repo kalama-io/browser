@@ -1,0 +1,13 @@
+diff --git a/net/url_request/url_request.h b/net/url_request/url_request.h
+index 88838c902460eec1aa45e558c8c04f5b9e6059cf..88e25ed26e78ec70983575b439efe4173bc33a89 100644
+--- a/net/url_request/url_request.h
++++ b/net/url_request/url_request.h
+@@ -236,6 +236,8 @@ class NET_EXPORT URLRequest : public base::SupportsUserData {
+   // started. Once it was set to block all cookies, it cannot be changed back.
+   static void SetDefaultCookiePolicyToBlock();
+ 
++  void PushURL(const GURL& url);
++
+   // The original url is the url used to initialize the request, and it may
+   // differ from the url if the request was redirected.
+   const GURL& original_url() const { return url_chain_.front(); }

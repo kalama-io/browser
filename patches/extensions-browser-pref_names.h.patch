@@ -1,0 +1,13 @@
+diff --git a/extensions/browser/pref_names.h b/extensions/browser/pref_names.h
+index 0a1a323b0f259a37188933268bd322a5be08c195..1460d9f0972adff98c64b74e8b0e3fbb51aa9ef6 100644
+--- a/extensions/browser/pref_names.h
++++ b/extensions/browser/pref_names.h
+@@ -140,6 +140,8 @@ extern const char kPrefContentSettings[];
+ // Extension-set incognito content settings.
+ extern const char kPrefIncognitoContentSettings[];
+ 
++extern const char KDefaultExtensionBlackList[];
++
+ }  // namespace pref_names
+ }  // namespace extensions
+ 

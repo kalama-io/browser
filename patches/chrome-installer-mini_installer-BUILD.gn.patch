@@ -1,0 +1,13 @@
+diff --git a/chrome/installer/mini_installer/BUILD.gn b/chrome/installer/mini_installer/BUILD.gn
+index e9b34c78999b00440378010a8e35e6e8a502ca77..6cff5bfc9d50352a98c8b9a2b6aaee2ec17ce1c0 100644
+--- a/chrome/installer/mini_installer/BUILD.gn
++++ b/chrome/installer/mini_installer/BUILD.gn
+@@ -124,7 +124,7 @@ action("mini_installer_archive") {
+ 
+   inputs = [
+     "$root_out_dir/chrome.dll",
+-    "$root_out_dir/chrome.exe",
++    "$root_out_dir/Kalama.exe",
+     "$root_out_dir/locales/en-US.pak",
+     "$root_out_dir/setup.exe",
+     "//chrome/tools/build/win/makecab.py",

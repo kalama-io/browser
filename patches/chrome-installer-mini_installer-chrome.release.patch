@@ -1,0 +1,22 @@
+diff --git a/chrome/installer/mini_installer/chrome.release b/chrome/installer/mini_installer/chrome.release
+index 088d1778f317c4df323f741622583b463baf5bdf..d82e3c8997876de0bb560162ef03a7e93a17d1b8 100644
+--- a/chrome/installer/mini_installer/chrome.release
++++ b/chrome/installer/mini_installer/chrome.release
+@@ -6,7 +6,7 @@
+ #
+ # Chrome Application dir entries, sorted alphabetically.
+ #
+-chrome.exe: %(ChromeDir)s\
++Kalama.exe: %(ChromeDir)s\
+ chrome_proxy.exe: %(ChromeDir)s\
+ #
+ # Chrome version dir assembly manifest.
+@@ -25,7 +25,7 @@ chrome_elf.dll: %(VersionDir)s\
+ chrome_pwa_launcher.exe: %(VersionDir)s\
+ chrome_wer.dll: %(VersionDir)s\
+ d3dcompiler_47.dll: %(VersionDir)s\
+-eventlog_provider.dll: %(VersionDir)s\
++#eventlog_provider.dll: %(VersionDir)s\
+ icudtl.dat: %(VersionDir)s\
+ libEGL.dll: %(VersionDir)s\
+ libGLESv2.dll: %(VersionDir)s\

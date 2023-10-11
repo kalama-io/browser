@@ -242,7 +242,7 @@ class GitPatcher:
         root_src_path = os.path.join(root, 'src')
         root_resource_path = os.path.join(root, 'resource')
         change_json_file = os.path.join(root_resource_path, 'change_files.json')
-        root_patch_base_path = os.path.join(root, 'patchs')
+        root_patch_base_path = os.path.join(root, 'patches')
         patch_json_file = os.path.join(root_patch_base_path, 'patch_files.json')
         patch_json_data = dict()
         try:

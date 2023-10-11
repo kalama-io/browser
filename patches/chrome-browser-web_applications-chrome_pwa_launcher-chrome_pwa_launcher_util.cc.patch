@@ -1,0 +1,13 @@
+diff --git a/chrome/browser/web_applications/chrome_pwa_launcher/chrome_pwa_launcher_util.cc b/chrome/browser/web_applications/chrome_pwa_launcher/chrome_pwa_launcher_util.cc
+index 9ef113e3dac0c02f7ec964b33abf6557cce638af..0f4acf7afae770985ecbe908bb5e76bb125725b2 100644
+--- a/chrome/browser/web_applications/chrome_pwa_launcher/chrome_pwa_launcher_util.cc
++++ b/chrome/browser/web_applications/chrome_pwa_launcher/chrome_pwa_launcher_util.cc
+@@ -21,7 +21,7 @@ base::FilePath GetChromePwaLauncherPath() {
+   base::FilePath chrome_dir;
+   if (!base::PathService::Get(base::DIR_EXE, &chrome_dir))
+     return base::FilePath();
+-  base::FilePath launcher_path = chrome_dir.AppendASCII(chrome::kChromeVersion)
++  base::FilePath launcher_path = chrome_dir.AppendASCII(chrome::kProductVersion)
+                                      .Append(kChromePwaLauncherExecutable);
+   if (base::PathExists(launcher_path))
+     return launcher_path;

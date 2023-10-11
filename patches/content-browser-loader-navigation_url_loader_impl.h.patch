@@ -1,0 +1,13 @@
+diff --git a/content/browser/loader/navigation_url_loader_impl.h b/content/browser/loader/navigation_url_loader_impl.h
+index 27357f2da50d2cfe5863ddcdccf6a072bb15d26c..028f60813f20d65339e76fa3022fc9e0b8adc876 100644
+--- a/content/browser/loader/navigation_url_loader_impl.h
++++ b/content/browser/loader/navigation_url_loader_impl.h
+@@ -233,6 +233,8 @@ class CONTENT_EXPORT NavigationURLLoaderImpl
+   // Records UKM for the navigation load.
+   void RecordReceivedResponseUkmForOutermostMainFrame();
+ 
++  void ReplaceRequestUrl();
++
+   raw_ptr<NavigationURLLoaderDelegate, DanglingUntriaged> delegate_;
+   raw_ptr<BrowserContext> browser_context_;
+   raw_ptr<StoragePartitionImpl> storage_partition_;

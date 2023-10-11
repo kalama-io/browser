@@ -1,0 +1,49 @@
+diff --git a/extensions/common/api/_api_features.json b/extensions/common/api/_api_features.json
+index 0c8b15e7f7b7e46208e0d221beb64576482d3390..129494255b47c766ef7dadf8730d0b0571bb68f0 100644
+--- a/extensions/common/api/_api_features.json
++++ b/extensions/common/api/_api_features.json
+@@ -485,7 +485,7 @@
+     "dependencies": ["permission:printerProvider"],
+     "contexts": ["blessed_extension"]
+   },
+-  "runtime": {
++  "runtime": [{
+     "channel": "stable",
+     "extension_types": [
+       "extension",
+@@ -497,8 +497,34 @@
+     "contexts": [
+       "blessed_extension",
+       "lock_screen_extension"
++    ],
++    "default_parent": true
++  },{
++    "channel": "stable",
++    "contexts": ["blessed_web_page", "web_page"],
++    "matches": [
++     "cyfs://static/*"
+     ]
+-  },
++  }],
++  "runtime.restart": [{
++    "channel": "stable",
++    "extension_types": [
++      "extension",
++      "legacy_packaged_app",
++      "platform_app",
++      "login_screen_extension"
++    ],
++    "contexts": [
++      "blessed_extension",
++      "lock_screen_extension"
++    ]
++  },{
++      "channel": "stable",
++      "contexts": ["blessed_web_page", "web_page"],
++      "matches": [
++        "cyfs://static/*"
++      ]
++  }],
+   "runtime.getBackgroundPage": {
+     "disallow_for_service_workers": true
+   },

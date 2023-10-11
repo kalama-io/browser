@@ -1,6 +1,6 @@
 {
     "Add": {
-        "update_time": "2023-10-11 13:33:01.845561",
+        "update_time": "2023-10-11 14:03:53.478262",
         "files": [
             "chrome/KALAMA_VERSION",
             "chrome/app/Extensions/cyfs_extension.gni",
@@ -23,11 +23,14 @@
             "components/cyfs_init/cyfs_runtime_init_service.h",
             "content/app/monitor_cyfs_runtime.cc",
             "content/app/monitor_cyfs_runtime.h",
+            "third_party/tfhub_models/models.tar.gz",
+            "third_party/tfhub_models/models/lite-model_universal-sentence-encoder-qa-ondevice_1.tflite",
+            "third_party/tfhub_models/models/rehead_embedding_from_mobilebert.tflite",
             "chrome/browser/resources/cyfs_init/starting.png"
         ]
     },
     "Update": {
-        "update_time": "2023-10-11 13:33:01.845575",
+        "update_time": "2023-10-11 14:03:53.478276",
         "files": []
     }
 }

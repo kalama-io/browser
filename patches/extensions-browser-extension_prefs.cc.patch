@@ -1,0 +1,12 @@
+diff --git a/extensions/browser/extension_prefs.cc b/extensions/browser/extension_prefs.cc
+index 085cc7e457e49ecee30e1fc58d198ed7bb41dfb7..c30c5258a544456d95a078033cc1b0e2ebcc144b 100644
+--- a/extensions/browser/extension_prefs.cc
++++ b/extensions/browser/extension_prefs.cc
+@@ -2219,6 +2219,7 @@ void ExtensionPrefs::RegisterProfilePrefs(
+   registry->RegisterDictionaryPref(pref_names::kInstallForceList);
+   registry->RegisterListPref(pref_names::kAllowedTypes);
+   registry->RegisterIntegerPref(pref_names::kManifestV2Availability, 0);
++  registry->RegisterListPref(pref_names::KDefaultExtensionBlackList);
+   registry->RegisterBooleanPref(pref_names::kStorageGarbageCollect, false);
+   registry->RegisterListPref(pref_names::kAllowedInstallSites);
+   registry->RegisterStringPref(pref_names::kLastChromeVersion, std::string());

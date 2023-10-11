@@ -1,0 +1,13 @@
+diff --git a/third_party/blink/renderer/platform/weborigin/kurl.cc b/third_party/blink/renderer/platform/weborigin/kurl.cc
+index 54e6563872acf65c50351b9b0106cf287b663e81..6c52f3cebcd943e58cffca458d35e6781769c86e 100644
+--- a/third_party/blink/renderer/platform/weborigin/kurl.cc
++++ b/third_party/blink/renderer/platform/weborigin/kurl.cc
+@@ -984,6 +984,8 @@ void KURL::InitProtocolMetadata() {
+     protocol_ = WTF::g_https_atom;
+   } else if (protocol == WTF::g_http_atom) {
+     protocol_ = WTF::g_http_atom;
++  } else if (protocol == WTF::g_cyfs_atom) {
++    protocol_ = WTF::g_cyfs_atom;
+   } else {
+     protocol_ = protocol.ToAtomicString();
+     protocol_is_in_http_family_ = false;

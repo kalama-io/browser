@@ -1,0 +1,28 @@
+diff --git a/chrome/browser/ui/startup/infobar_utils.cc b/chrome/browser/ui/startup/infobar_utils.cc
+index f9db2b29eb59468926bc6e582a88cb0ef0c89dd7..e54a98eef57f4ab53a4142f5e5364abaf9e73153 100644
+--- a/chrome/browser/ui/startup/infobar_utils.cc
++++ b/chrome/browser/ui/startup/infobar_utils.cc
+@@ -110,9 +110,9 @@ void AddInfoBarsIfNecessary(Browser* browser,
+     return;
+ 
+   // Web apps should not display the session restore bubble (crbug.com/1264121)
+-  if (!is_web_app && HasPendingUncleanExit(browser->profile()))
+-    SessionCrashedBubble::ShowIfNotOffTheRecordProfile(
+-        browser, /*skip_tab_checking=*/false);
++  // if (!is_web_app && HasPendingUncleanExit(browser->profile()))
++  //   SessionCrashedBubble::ShowIfNotOffTheRecordProfile(
++  //       browser, /*skip_tab_checking=*/false);
+ 
+   // These info bars are not shown when the browser is being controlled by
+   // automated tests, so that they don't interfere with tests that assume no
+@@ -139,8 +139,8 @@ void AddInfoBarsIfNecessary(Browser* browser,
+     infobars::ContentInfoBarManager* infobar_manager =
+         infobars::ContentInfoBarManager::FromWebContents(web_contents);
+ 
+-    if (!google_apis::HasAPIKeyConfigured())
+-      GoogleApiKeysInfoBarDelegate::Create(infobar_manager);
++    // if (!google_apis::HasAPIKeyConfigured())
++    //   GoogleApiKeysInfoBarDelegate::Create(infobar_manager);
+ 
+     if (ObsoleteSystem::IsObsoleteNowOrSoon()) {
+       PrefService* local_state = g_browser_process->local_state();

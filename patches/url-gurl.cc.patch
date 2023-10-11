@@ -1,0 +1,23 @@
+diff --git a/url/gurl.cc b/url/gurl.cc
+index 9f2e5fad685d46ef4cb61b224cc3fbd3500b7b0a..761fe568274f5f62add5a996320c8fabadfeee84 100644
+--- a/url/gurl.cc
++++ b/url/gurl.cc
+@@ -364,6 +364,18 @@ bool GURL::SchemeIs(base::StringPiece lower_ascii_scheme) const {
+   return scheme_piece() == lower_ascii_scheme;
+ }
+ 
++bool GURL::SchemeIsCYFS() const {
++  return SchemeIs(url::kCyfsScheme);
++}
++
++bool GURL::SchemeIsIPFS() const {
++  return SchemeIs(url::kIpfsScheme);
++}
++
++bool GURL::SchemeIsIPNS() const {
++  return SchemeIs(url::kIpnsScheme);
++}
++
+ bool GURL::SchemeIsHTTPOrHTTPS() const {
+   return SchemeIs(url::kHttpsScheme) || SchemeIs(url::kHttpScheme);
+ }

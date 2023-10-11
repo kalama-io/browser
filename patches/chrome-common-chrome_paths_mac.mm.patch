@@ -1,0 +1,13 @@
+diff --git a/chrome/common/chrome_paths_mac.mm b/chrome/common/chrome_paths_mac.mm
+index 112fe01d7f34784c82e4236039bc180c8b58ce8a..9ff8ac924455ab3b4cc4d0621a207ab19c00cd1d 100644
+--- a/chrome/common/chrome_paths_mac.mm
++++ b/chrome/common/chrome_paths_mac.mm
+@@ -58,7 +58,7 @@
+ #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
+       product_dir_name = "Google/Chrome";
+ #else
+-      product_dir_name = "Chromium";
++      product_dir_name = "Kalama";
+ #endif
+     }
+ 

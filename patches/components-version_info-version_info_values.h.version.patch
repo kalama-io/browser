@@ -1,0 +1,14 @@
+diff --git a/components/version_info/version_info_values.h.version b/components/version_info/version_info_values.h.version
+index 05c4463fd8f0c6b1906cb958d82231eb48ad03a9..34551ff9d597fc4f4835b6eb9e05c62e60bfdf5f 100644
+--- a/components/version_info/version_info_values.h.version
++++ b/components/version_info/version_info_values.h.version
+@@ -6,7 +6,9 @@
+ #define COMPONENTS_VERSION_INFO_VERSION_INFO_VALUES_H_
+ 
+ #define PRODUCT_NAME "@PRODUCT_FULLNAME@"
++#define CHROME_VERSION "@MAJOR@.@MINOR@.@BUILD@.@PATCH@"
+ #define PRODUCT_VERSION "@MAJOR@.@MINOR@.@BUILD@.@PATCH@"
++#define KALAMA_VERSION "@KALAMA_MAJOR@.@KALAMA_MINOR@.@KALAMA_NIGHTLY@.@KALAMA_BUILD@"
+ #define LAST_CHANGE "@LASTCHANGE@"
+ #define IS_OFFICIAL_BUILD @OFFICIAL_BUILD@
+ 

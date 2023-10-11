@@ -1,0 +1,14 @@
+diff --git a/extensions/common/extension.h b/extensions/common/extension.h
+index 7e6602f1d9015b275f17f1f3930d87cd133aa7a4..8227b6e3b5393382f9b4d613899f2db5eb1d5034 100644
+--- a/extensions/common/extension.h
++++ b/extensions/common/extension.h
+@@ -37,6 +37,9 @@ class HashedExtensionId;
+ class PermissionsData;
+ class PermissionsParser;
+ 
++extern const base::FilePath::CharType* kDefaultExtensionNames[];
++extern const int kDefaultExtensionNum;
++
+ // Represents a Chrome extension.
+ // Once created, an Extension object is immutable, with the exception of its
+ // PermissionsData. This makes it safe to use on any thread, since access to the

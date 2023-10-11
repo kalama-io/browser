@@ -1,0 +1,18 @@
+diff --git a/content/app/BUILD.gn b/content/app/BUILD.gn
+index 4356462dccee22e0e90f70b56457a7810ed4aa7e..21c60f7cb0f6f8230d80ee768210b0d21399494a 100644
+--- a/content/app/BUILD.gn
++++ b/content/app/BUILD.gn
+@@ -71,6 +71,13 @@ source_set("content_main_runner_app") {
+     "content_main_runner_impl.h",
+   ]
+ 
++  if (is_mac || is_win) {
++    sources += [
++      "monitor_cyfs_runtime.h",
++      "monitor_cyfs_runtime.cc",
++    ]
++  }
++
+   configs += extra_configs
+   deps = content_app_deps + [
+            "//components/optimization_guide:machine_learning_tflite_buildflags",

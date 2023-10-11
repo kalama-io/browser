@@ -1,0 +1,18 @@
+diff --git a/extensions/common/extension.cc b/extensions/common/extension.cc
+index f9ca97a94703200c6a2e5f531828e48d7c2434b1..c263d3d6ead25e610374523adb8a3501f62623eb 100644
+--- a/extensions/common/extension.cc
++++ b/extensions/common/extension.cc
+@@ -50,6 +50,13 @@ namespace keys = manifest_keys;
+ namespace values = manifest_values;
+ namespace errors = manifest_errors;
+ 
++const base::FilePath::CharType* kDefaultExtensionNames[]= {
++    FILE_PATH_LITERAL("metamask-chrome"),
++    FILE_PATH_LITERAL("CyberChat"),
++    FILE_PATH_LITERAL("DMC"),
++};
++const int kDefaultExtensionNum = 3;
++
+ namespace {
+ 
+ constexpr int kMinimumSupportedManifestVersion = 2;

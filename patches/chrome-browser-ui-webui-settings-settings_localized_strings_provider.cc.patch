@@ -1,0 +1,21 @@
+diff --git a/chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc b/chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
+index 2c54740738d1fbaf977eb150e91428596ff9ed94..2122fe59596b010d6e4935e6be2f255a9dcc2a75 100644
+--- a/chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
++++ b/chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
+@@ -350,9 +350,16 @@ void AddAboutStrings(content::WebUIDataSource* html_source, Profile* profile) {
+       l10n_util::GetStringUTF16(IDS_SETTINGS_UPGRADE_UP_TO_DATE));
+ #endif
+ 
++  std::string cyfs_browser_version = chrome::GetCYFSBrowserVersion();
++  std::string cyfs_version = cyfs_browser_version + std::string(" Chromium: ") + version_info::GetVersionNumber();
++
+   std::u16string browser_version = VersionUI::GetAnnotatedVersionStringForUi();
+ 
+   html_source->AddString("aboutBrowserVersion", browser_version);
++  std::string runtime_version_string = chrome::GetCYFSRuntimeVersion();
++  std::string runtime_version = std::string("Module Version: ") + runtime_version_string;
++  html_source->AddString("aboutRuntimeVersion", runtime_version);
++
+   html_source->AddString(
+       "aboutProductCopyright",
+       base::i18n::MessageFormatter::FormatWithNumberedArgs(

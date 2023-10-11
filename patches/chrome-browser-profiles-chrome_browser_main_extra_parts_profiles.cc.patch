@@ -1,0 +1,23 @@
+diff --git a/chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc b/chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
+index 30cf8620c9c4e86fc32cdc6f541476058376ce35..466306a5e06801962521bb6de4e2c366f7a7eabc 100644
+--- a/chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
++++ b/chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
+@@ -44,6 +44,7 @@
+ #include "chrome/browser/content_settings/cookie_settings_factory.h"
+ #include "chrome/browser/content_settings/host_content_settings_map_factory.h"
+ #include "chrome/browser/custom_handlers/protocol_handler_registry_factory.h"
++#include "chrome/browser/cyfs_init/cyfs_init_service_factory.h"
+ #include "chrome/browser/device_api/managed_configuration_api_factory.h"
+ #include "chrome/browser/dips/dips_cleanup_service_factory.h"
+ #include "chrome/browser/dips/dips_service_factory.h"
+@@ -517,6 +518,10 @@ void ChromeBrowserMainExtraPartsProfiles::
+   AccountInvestigatorFactory::GetInstance();
+   AccountPasswordStoreFactory::GetInstance();
+   AccountReconcilorFactory::GetInstance();
++  CyfsRuntimeInitServiceFactory::GetInstance();
++#if !BUILDFLAG(IS_ANDROID)
++  AccuracyServiceFactory::GetInstance();
++#endif
+   AdaptiveQuietNotificationPermissionUiEnabler::Factory::GetInstance();
+ #if BUILDFLAG(IS_ANDROID)
+   AndroidSessionDurationsServiceFactory::GetInstance();

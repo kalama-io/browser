@@ -1,0 +1,12 @@
+diff --git a/chrome/common/BUILD.gn b/chrome/common/BUILD.gn
+index c3ec18003787c0ea08eb6ecf741e485ef7ffbfb3..115371b14a63bf73dcbea50ab28d5d772aa71ad6 100644
+--- a/chrome/common/BUILD.gn
++++ b/chrome/common/BUILD.gn
+@@ -503,6 +503,7 @@ process_version("version_header") {
+ 
+   sources = [
+     "//chrome/VERSION",
++    "//chrome/KALAMA_VERSION",
+     branding_file_path,
+   ]
+ 

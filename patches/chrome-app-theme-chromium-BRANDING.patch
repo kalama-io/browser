@@ -1,0 +1,23 @@
+diff --git a/chrome/app/theme/chromium/BRANDING b/chrome/app/theme/chromium/BRANDING
+index f8363d5b294fe210ebfdd18374e95b54d6ff5c17..5286186e498f84ae8bb8d0cce64bc45bc4c942cd 100644
+--- a/chrome/app/theme/chromium/BRANDING
++++ b/chrome/app/theme/chromium/BRANDING
+@@ -1,10 +1,10 @@
+-COMPANY_FULLNAME=The Chromium Authors
+-COMPANY_SHORTNAME=The Chromium Authors
+-PRODUCT_FULLNAME=Chromium
+-PRODUCT_SHORTNAME=Chromium
+-PRODUCT_INSTALLER_FULLNAME=Chromium Installer
+-PRODUCT_INSTALLER_SHORTNAME=Chromium Installer
+-COPYRIGHT=Copyright @LASTCHANGE_YEAR@ The Chromium Authors. All rights reserved.
+-MAC_BUNDLE_ID=org.chromium.Chromium
++COMPANY_FULLNAME=Kalama,Inc
++COMPANY_SHORTNAME=Kalama,Inc
++PRODUCT_FULLNAME=Kalama
++PRODUCT_SHORTNAME=Kalama
++PRODUCT_INSTALLER_FULLNAME=Kalama Installer
++PRODUCT_INSTALLER_SHORTNAME=Kalama Installer
++COPYRIGHT=Copyright @LASTCHANGE_YEAR@ Kalama,Inc. All rights reserved.
++MAC_BUNDLE_ID=com.kalama.browser
+ MAC_CREATOR_CODE=Cr24
+ MAC_TEAM_ID=

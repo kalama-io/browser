@@ -1,0 +1,37 @@
+diff --git a/chrome/browser/ui/toolbar/chrome_location_bar_model_delegate.cc b/chrome/browser/ui/toolbar/chrome_location_bar_model_delegate.cc
+index a5c9408f6c2a0965d8904dda2ce7a44371f82198..f2d08fd79517f7c21929cf3d59fcb0f28a2655f3 100644
+--- a/chrome/browser/ui/toolbar/chrome_location_bar_model_delegate.cc
++++ b/chrome/browser/ui/toolbar/chrome_location_bar_model_delegate.cc
+@@ -29,6 +29,7 @@
+ #include "components/search/ntp_features.h"
+ #include "components/security_interstitials/content/security_interstitial_tab_helper.h"
+ #include "components/security_state/core/security_state.h"
++#include "components/vector_icons/vector_icons.h"
+ #include "content/public/browser/navigation_controller.h"
+ #include "content/public/browser/navigation_entry.h"
+ #include "content/public/browser/ssl_status.h"
+@@ -138,6 +139,11 @@ bool ChromeLocationBarModelDelegate::
+ 
+ security_state::SecurityLevel ChromeLocationBarModelDelegate::GetSecurityLevel()
+     const {
++  GURL url;
++  GetURL(&url);
++  if (url.SchemeIsCYFS() || url.SchemeIsIPFS() || url.SchemeIsIPNS()) {
++    return security_state::SECURE;
++  }
+   content::WebContents* web_contents = GetActiveWebContents();
+   // If there is no active WebContents (which can happen during toolbar
+   // initialization), assume no security style.
+@@ -196,6 +202,12 @@ const gfx::VectorIcon* ChromeLocationBarModelDelegate::GetVectorIconOverride()
+                ? &vector_icons::kExtensionChromeRefreshIcon
+                : &omnibox::kExtensionAppIcon;
+   }
++  if (url.SchemeIsCYFS()) {
++    return &vector_icons::kHttpsValidIcon;
++  }
++  if (url.SchemeIsIPFS() || url.SchemeIsIPNS()) {
++    return &vector_icons::kHttpsValidIcon;
++  }
+ #endif
+ 
+   return nullptr;

@@ -1,0 +1,14 @@
+diff --git a/chrome/browser/profiles/profile_io_data.cc b/chrome/browser/profiles/profile_io_data.cc
+index 214f806bac0554c3d3a58b2e87b9f32ac6551b48..ab2a756a1d17644ea5dd15bb4868efd4c9f2b75c 100644
+--- a/chrome/browser/profiles/profile_io_data.cc
++++ b/chrome/browser/profiles/profile_io_data.cc
+@@ -26,6 +26,9 @@ bool ProfileIOData::IsHandledProtocol(const std::string& scheme) {
+   static const char* const kProtocolList[] = {
+     url::kHttpScheme,
+     url::kHttpsScheme,
++    url::kCyfsScheme,
++    url::kIpfsScheme,
++    url::kIpnsScheme,
+ #if BUILDFLAG(ENABLE_WEBSOCKETS)
+     url::kWsScheme,
+     url::kWssScheme,

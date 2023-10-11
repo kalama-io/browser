@@ -1,0 +1,29 @@
+diff --git a/content/browser/loader/file_url_loader_factory.cc b/content/browser/loader/file_url_loader_factory.cc
+index 3b04e132aa26659aa3aa57ea6020751c002a2b17..79a6ad1143e0bfdaad0a2c54d89144b0e4c6d747 100644
+--- a/content/browser/loader/file_url_loader_factory.cc
++++ b/content/browser/loader/file_url_loader_factory.cc
+@@ -848,15 +848,15 @@ void FileURLLoaderFactory::CreateLoaderAndStartInternal(
+     mojo::PendingRemote<network::mojom::URLLoaderClient> client) {
+   DCHECK_CALLED_ON_VALID_THREAD(thread_checker_);
+ 
+-  if (response_type == network::mojom::FetchResponseType::kCors) {
+-    // FileURLLoader doesn't support CORS and it's not covered by CorsURLLoader,
+-    // so we need to reject requests that need CORS manually.
+-    mojo::Remote<network::mojom::URLLoaderClient>(std::move(client))
+-        ->OnComplete(
+-            network::URLLoaderCompletionStatus(network::CorsErrorStatus(
+-                network::mojom::CorsError::kCorsDisabledScheme)));
+-    return;
+-  }
++  // if (response_type == network::mojom::FetchResponseType::kCors) {
++  //   // FileURLLoader doesn't support CORS and it's not covered by CorsURLLoader,
++  //   // so we need to reject requests that need CORS manually.
++  //   mojo::Remote<network::mojom::URLLoaderClient>(std::move(client))
++  //       ->OnComplete(
++  //           network::URLLoaderCompletionStatus(network::CorsErrorStatus(
++  //               network::mojom::CorsError::kCorsDisabledScheme)));
++  //   return;
++  // }
+ 
+   // Check file path just after all CORS flag checks are handled.
+   base::FilePath file_path;

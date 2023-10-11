@@ -1,0 +1,13 @@
+diff --git a/chrome/common/webui_url_constants.h b/chrome/common/webui_url_constants.h
+index caca46377bbeb9d0965dfea968f2837f7e218bc2..3daafeaaa2c16e2a2eb5918f8c23e4e3d5650ed3 100644
+--- a/chrome/common/webui_url_constants.h
++++ b/chrome/common/webui_url_constants.h
+@@ -38,6 +38,8 @@ extern const char kChromeUIAppIconHost[];
+ extern const char kChromeUIAppIconURL[];
+ extern const char kChromeUIAppLauncherPageHost[];
+ extern const char kChromeUIAppsURL[];
++extern const char kCyfsBrowserURL[];
++extern const char kCyfsBrowserGuideURL[];
+ extern const char kChromeUIAppsWithDeprecationDialogURL[];
+ extern const char kChromeUIAppsWithForceInstalledDeprecationDialogURL[];
+ extern const char kChromeUIAutofillInternalsHost[];

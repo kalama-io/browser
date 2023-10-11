@@ -1,0 +1,88 @@
+diff --git a/chrome/common/channel_info_mac.mm b/chrome/common/channel_info_mac.mm
+index 8c65b851c47d6980e4c7af1db0127b09549e21d3..807ef7b839ee30acf8b2833d68c7c4d65fab5396 100644
+--- a/chrome/common/channel_info_mac.mm
++++ b/chrome/common/channel_info_mac.mm
+@@ -4,6 +4,10 @@
+ 
+ #include "chrome/common/channel_info.h"
+ 
++#include "base/path_service.h"
++#include "base/files/file_path.h"
++#include <fstream>
++
+ #import <Foundation/Foundation.h>
+ 
+ #include <tuple>
+@@ -14,6 +18,7 @@
+ #include "base/strings/sys_string_conversions.h"
+ #include "build/branding_buildflags.h"
+ #include "components/version_info/version_info.h"
++#include "base/logging.h"
+ 
+ namespace chrome {
+ 
+@@ -167,6 +172,64 @@ bool IsExtendedStableChannel() {
+   return GetChannelState().is_extended_stable;
+ }
+ 
++std::string GetCYFSRuntimeVersion() {
++  std::string version_str("0.0.1");
++  base::FilePath user_data_path;
++  if (!base::PathService::Get(base::DIR_APP_DATA, &user_data_path)) {
++    VLOG(1) << "failed to get user data dir";
++    return version_str;
++  }
++  user_data_path = user_data_path.AppendASCII("cyfs")
++  .AppendASCII("services")
++  .AppendASCII("runtime")
++  .AppendASCII("www")
++  .AppendASCII("version.html");
++
++  std::ifstream input_file(user_data_path.AsUTF8Unsafe(), std::ios::binary);
++  if (!input_file.is_open()) {
++    LOG(INFO) << "failed to open " << user_data_path;
++	  return version_str;
++  }
++
++  std::string().swap(version_str);
++  while (input_file) {
++    std::string buffer(1024, '\0');
++    input_file.read(&buffer.front(), buffer.size());
++    version_str = buffer.substr(0, input_file.gcount());
++  }
++  LOG(INFO) << "Cyfs runtime version " << version_str;
++  return version_str;
++}
++
++std::string GetCYFSBrowserVersion() {
++  std::string version_str("0.0.1");
++  base::FilePath user_data_path;
++  if (!base::PathService::Get(base::DIR_APP_DATA, &user_data_path)) {
++    VLOG(1) << "failed to get user data dir";
++    return version_str;
++  }
++  user_data_path = user_data_path.AppendASCII("cyfs")
++  .AppendASCII("services")
++  .AppendASCII("runtime")
++  .AppendASCII("www")
++  .AppendASCII("browser_version.html");
++
++  std::ifstream input_file(user_data_path.AsUTF8Unsafe(), std::ios::binary);
++  if (!input_file.is_open()) {
++    LOG(INFO) << "failed to open " << user_data_path;
++	  return version_str;
++  }
++
++  std::string().swap(version_str);
++  while (input_file) {
++    std::string buffer(1024, '\0');
++    input_file.read(&buffer.front(), buffer.size());
++    version_str = buffer.substr(0, input_file.gcount());
++  }
++  LOG(INFO) << "Cyfs Browser version " << version_str;
++  return version_str;
++}
++
+ #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
+ 
+ namespace {

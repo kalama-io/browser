@@ -1,0 +1,21 @@
+diff --git a/chrome/installer/util/install_util.cc b/chrome/installer/util/install_util.cc
+index 5efc79e743383c42d243fb08457941aaf145a6f1..b0af43a0cbdda60eb9699f585c3980f7b0e1aae1 100644
+--- a/chrome/installer/util/install_util.cc
++++ b/chrome/installer/util/install_util.cc
+@@ -30,6 +30,7 @@
+ #include "base/win/shortcut.h"
+ #include "base/win/win_util.h"
+ #include "base/win/windows_version.h"
++#include "base/debug/stack_trace.h"
+ #include "chrome/common/chrome_constants.h"
+ #include "chrome/common/chrome_paths.h"
+ #include "chrome/install_static/install_details.h"
+@@ -199,6 +200,8 @@ base::CommandLine InstallUtil::GetChromeUninstallCmd(bool system_install) {
+ }
+ 
+ base::Version InstallUtil::GetChromeVersion(bool system_install) {
++  VLOG(1) << __FUNCTION__ << " key: " << install_static::GetClientsKeyPath().c_str() <<
++          " kRegVersionField : " << google_update::kRegVersionField;
+   base::Version version;
+   RegKey key;
+   std::wstring version_str;

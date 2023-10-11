@@ -1,0 +1,18 @@
+diff --git a/chrome/browser/ui/toolbar/toolbar_actions_model.cc b/chrome/browser/ui/toolbar/toolbar_actions_model.cc
+index 3e5b892b288c05476d09f3edcbfd837e1ee671af..d96d41dbca91b07c7731e752656a4d1282a9c0db 100644
+--- a/chrome/browser/ui/toolbar/toolbar_actions_model.cc
++++ b/chrome/browser/ui/toolbar/toolbar_actions_model.cc
+@@ -102,6 +102,13 @@ void ToolbarActionsModel::OnExtensionLoaded(
+   // hides the browser action and then disables and enables the extension.
+   if (!HasAction(extension->id()) && ShouldAddExtension(extension))
+     AddAction(extension->id());
++
++  auto location = extension->manifest()->location();
++  if (extensions::Manifest::IsUnpackedLocation(location)) {
++      extensions::ExtensionIdList pinned = extension_prefs_->GetPinnedExtensions();
++      pinned.emplace_back(extension->id());
++      extension_prefs_->SetPinnedExtensions(pinned);
++    }
+ }
+ 
+ void ToolbarActionsModel::OnExtensionUnloaded(

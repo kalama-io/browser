@@ -1,0 +1,20 @@
+diff --git a/chrome/browser/resources/history/side_bar.html b/chrome/browser/resources/history/side_bar.html
+index 08f4a7f3fdb0cd5f21aba0a0564799bb58555a97..aaba3a398bf33cbf26a4ab3be9de339971263bb4 100644
+--- a/chrome/browser/resources/history/side_bar.html
++++ b/chrome/browser/resources/history/side_bar.html
+@@ -87,6 +87,7 @@
+         $i18n{historyMenuItem}
+         <paper-ripple></paper-ripple>
+       </a>
++      <!--
+       <a id="syncedTabs" role="menuitem" href="/syncedTabs"
+           class="page-item cr-nav-menu-item"
+           path="syncedTabs" on-click="onItemClick_">
+@@ -94,6 +95,7 @@
+         $i18n{openTabsMenuItem}
+         <paper-ripple></paper-ripple>
+       </a>
++      -->
+       <!-- tabindex is needed below because <a> without href attribute is not
+             focusable in sequential keyboard navigation by default. -->
+       <a role="menuitem" id="toggle-history-clusters"

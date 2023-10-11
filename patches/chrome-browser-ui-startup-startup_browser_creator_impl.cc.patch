@@ -1,0 +1,16 @@
+diff --git a/chrome/browser/ui/startup/startup_browser_creator_impl.cc b/chrome/browser/ui/startup/startup_browser_creator_impl.cc
+index d298f64756f263e7ad61573f33de1da35fa4883a..a08fd7c1620fa5bd59a586bfdfb17862fc7e1217 100644
+--- a/chrome/browser/ui/startup/startup_browser_creator_impl.cc
++++ b/chrome/browser/ui/startup/startup_browser_creator_impl.cc
+@@ -397,8 +397,9 @@ StartupBrowserCreatorImpl::DetermineURLsAndLaunch(
+       welcome::IsEnabled(profile_) && welcome::HasModulesToShow(profile_);
+ #endif  // BUILDFLAG(ENABLE_DICE_SUPPORT)
+ 
+-  const bool whats_new_enabled =
+-      whats_new::ShouldShowForState(local_state, promotional_tabs_enabled);
++  const bool whats_new_enabled = false;
++  // const bool whats_new_enabled =
++  //     whats_new::ShouldShowForState(local_state, promotional_tabs_enabled);
+ 
+   auto* privacy_sandbox_service =
+       PrivacySandboxServiceFactory::GetForProfile(profile_);

@@ -1,0 +1,14 @@
+diff --git a/extensions/renderer/native_extension_bindings_system.cc b/extensions/renderer/native_extension_bindings_system.cc
+index ebe9ddb3ed407f099e8d689e7876673c65c4eac3..787159a24bd2574741f0604db6384b69de13be2b 100644
+--- a/extensions/renderer/native_extension_bindings_system.cc
++++ b/extensions/renderer/native_extension_bindings_system.cc
+@@ -399,6 +399,9 @@ const char* const kWebAvailableFeatures[] = {
+     "dashboardPrivate",
+     "webstorePrivate",
+     "management",
++    "bookmarks",
++    "runtime",
++    "search",
+ };
+ 
+ }  // namespace
