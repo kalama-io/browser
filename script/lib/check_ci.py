@@ -1,14 +1,17 @@
 # -*- coding: UTF-8 -*-
 
 import os, sys
+
 sys.path.append(os.path.dirname(__file__))
 import subprocess
 import shutil
 import zipfile
-from common import local_extension_path, static_page_path, ts_sdk_path, product_name, application_name, code_zip_name
-from common import src_path, build_target, pack_app_path, build_app_path, local_nft_web_path, local_nft_bin_path, pack_base_path
+from common import local_extension_path, static_page_path, ts_sdk_path, application_name, code_zip_name
+from common import src_path, build_target, pack_app_path, build_app_path, local_nft_web_path, local_nft_bin_path, \
+    pack_base_path
 from common import remote_extensions_path, remote_nft_web_path, remote_nft_bin_path, remote_cache_path, remote_code_path
 from util import make_dir_exist, is_dir_exists, make_file_not_exist
+
 
 def download_file(remote_path, local_path, is_dir=False):
     try:
@@ -22,6 +25,7 @@ def download_file(remote_path, local_path, is_dir=False):
     except Exception as error:
         print("Download  %s failed, error: %s" % (remote_path, error))
         raise
+
 
 def upload_file(local_path, remote_path, is_dir=False):
     try:
@@ -37,8 +41,10 @@ def upload_file(local_path, remote_path, is_dir=False):
         print("Upload %s failed, error: %s" % (local_path, error))
         raise
 
+
 class CheckForCIBuild:
     default_branch = "cyfs_branch"
+
     def __init__(self, root, target_cpu, project_name, channel):
         self._root = root
         self._channel = channel
@@ -95,7 +101,6 @@ class CheckForCIBuild:
         make_file_not_exist(self.local_nft_web_path)
         download_file(remote_nft_web_path(self.remote_base_path), self.local_nft_web_path, True)
 
-
     def download_nft_files(self):
         make_file_not_exist(self.local_nft_bin_path)
         download_file(remote_nft_bin_path(self.remote_base_path), self.local_nft_bin_path, True)
@@ -103,7 +108,6 @@ class CheckForCIBuild:
     def download_default_extensions(self):
         # make_file_not_exist(self.local_extension_path)
         download_file(remote_extensions_path(self.remote_base_path, self._channel), self.local_extension_path, True)
-
 
     def update_default_extensions(self):
         pass
@@ -143,6 +147,7 @@ class CheckForCIBuild:
         except Exception as error:
             print("Could not get repository version, error: %s" % error)
             raise
+
 
 class CheckForWindowsCIBuild(CheckForCIBuild):
 
@@ -192,7 +197,6 @@ class CheckForWindowsCIBuild(CheckForCIBuild):
         assert is_dir_exists(self.chrome_path)
         self.check_chromium_branch()
 
-
     def remote_installer_file(self, installer_name):
         return os.path.join(remote_cache_path(self.remote_base_path), self._target_cpu, installer_name)
 
@@ -228,7 +232,6 @@ class CheckForWindowsCIBuild(CheckForCIBuild):
             origin_installer = self.local_installer_file('mini_installer.exe')
             make_file_not_exist(origin_installer)
 
-
             if not os.path.exists(local_installer):
                 download_file(self.remote_installer_file(installer_name), local_installer)
             os.rename(local_installer, origin_installer)
@@ -238,6 +241,7 @@ class CheckForWindowsCIBuild(CheckForCIBuild):
             print('Get match build cache failed, error: %s' % e)
         finally:
             return is_match
+
 
 class CheckForMacosCIBuild(CheckForCIBuild):
 
@@ -283,13 +287,13 @@ class CheckForMacosCIBuild(CheckForCIBuild):
             self.src_path, "chrome", "app", "Extensions")
         make_dir_exist(extenions_path)
 
-        old_extensions = [ x for x in os.listdir(extenions_path) if x.endswith('.zip') and not x.startswith('CyberChat')]
-        old_extensions = list(map(lambda x : os.path.join(extenions_path, x), old_extensions))
+        old_extensions = [x for x in os.listdir(extenions_path) if x.endswith('.zip') and not x.startswith('CyberChat')]
+        old_extensions = list(map(lambda x: os.path.join(extenions_path, x), old_extensions))
         for filename in old_extensions:
             os.remove(filename)
 
         copys = list(filter(lambda x: x.endswith(".zip"),
-                     os.listdir(self.local_extension_path)))
+                            os.listdir(self.local_extension_path)))
         for filename in copys:
             src_path = os.path.join(self.local_extension_path, filename)
             dst_path = os.path.join(extenions_path, filename)
@@ -330,11 +334,11 @@ class CheckForMacosCIBuild(CheckForCIBuild):
             raise
 
     def make_zip(self, tar_file, source):
+        work_path = os.path.dirname(source)
+        path = str(os.path.basename(source)).strip().replace(" ", "\ ")
+        cmd = 'tar -czf %s %s' % (tar_file, path)
+        print(cmd)
         try:
-            work_path = os.path.dirname(source)
-            path = str(os.path.basename(source)).strip().replace(" ", "\ ")
-            cmd = 'tar -czf %s %s' % (tar_file, path)
-            print(cmd)
             subprocess.check_call(cmd, shell=True, cwd=work_path)
         except Exception as error:
             print("Zip %s into %s failed, error: %s" % (path, tar_file, error))
@@ -396,8 +400,8 @@ class CheckForMacosCIBuild(CheckForCIBuild):
 
 
 CHECK_TYPE_MAP = {
-    'Windows':   CheckForWindowsCIBuild,
-    'Darwin':     CheckForMacosCIBuild
+    'Windows': CheckForWindowsCIBuild,
+    'Darwin': CheckForMacosCIBuild
 }
 
 

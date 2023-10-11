@@ -1,5 +1,5 @@
-
 import os, sys, platform
+
 sys.path.append(os.path.dirname(__file__))
 
 import subprocess
@@ -103,10 +103,10 @@ class PackForWindows(Pack):
     def make_nsis_installer(self):
         try:
             cmd = [self.nsis_bin_path,
-                '/DBrowserVersion=%s' % self._version,
-                '/Dchannel=%s' % self._channel,
-                self.nsis_script
-            ]
+                   '/DBrowserVersion=%s' % self._version,
+                   '/Dchannel=%s' % self._channel,
+                   self.nsis_script
+                   ]
             self.execute_cmd(cmd)
             print('Make installer success')
         except Exception as e:
@@ -142,7 +142,7 @@ class PackForMacos(Pack):
     def pack(self):
         self.check_requirements()
         self.copy_files_for_pack()
-        one_step_pkg =self.build_pkg('%s_browser_package' % (pkg_prefix()))
+        one_step_pkg = self.build_pkg('%s_browser_package' % (pkg_prefix()))
         two_step_pkg = self.build_pkg('%s_browser' % (pkg_prefix()))
         make_file_not_exist(one_step_pkg)
         self.build_dmg()
@@ -170,7 +170,8 @@ class PackForMacos(Pack):
         assert is_dir_exists(self.pack_app_path), "Copy application  failed"
         shutil.rmtree(self.build_app_path)
 
-    def delete_build_dir(self, path, exts=[".pkg", ".dmg"]):
+    def delete_build_dir(self, path, exts=None):
+        exts = exts or [".pkg", ".dmg"]
         try:
             if not os.path.exists(path):
                 return
@@ -211,9 +212,8 @@ class PackForMacos(Pack):
         print("-> Begin build dmg , cmd = %s" % cmd)
         self.execute_cmd(cmd)
         print("<- End build dmg")
-        assert os.path.exists(self.dmg_file),  "Build dmg %s failed" % (self.dmg_file)
+        assert os.path.exists(self.dmg_file), "Build dmg %s failed" % (self.dmg_file)
         print("Build dmg %s succeeded" % (self.dmg_file))
-
 
     def add_custom_icon_for_dmg(self):
         print('Begin add custom icon for dmg')
@@ -229,10 +229,9 @@ class PackForMacos(Pack):
         print('End add custom icon for dmg')
 
 
-
 PACK_TYPE_MAP = {
-    'Windows':   PackForWindows,
-    'Darwin':     PackForMacos
+    'Windows': PackForWindows,
+    'Darwin': PackForMacos
 }
 
 
@@ -252,7 +251,8 @@ def make_installer(root, target_cpu, project_name, version, channel, reuse_last_
     except Exception:
         print("Make Installer failed, error: %s" % Exception)
 
+
 if __name__ == "__main__":
     root = os.path.normpath(os.path.join(
-            os.path.dirname(os.path.abspath(__file__)), os.pardir, os.pardir))
-    make_installer(root, 'X86', 'Default', '564', 'beta')
+        os.path.dirname(os.path.abspath(__file__)), os.pardir, os.pardir))
+    make_installer(root, 'X86', 'Default', '564', 'beta', None)

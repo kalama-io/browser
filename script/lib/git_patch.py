@@ -23,6 +23,7 @@ def get_file_hash(file):
         sha1obj.update(f.read())
         return sha1obj.hexdigest()
 
+
 def get_patch_apply_to(full_file):
     origin_files = []
     with open(full_file, 'r') as f:
@@ -33,6 +34,7 @@ def get_patch_apply_to(full_file):
                 origin_files.append(filename)
     return origin_files
 
+
 def git_cmd(command, **kwargs):
     try:
         print('Git Cmd : %s' % (' '.join(command)))
@@ -41,9 +43,10 @@ def git_cmd(command, **kwargs):
         print('Git cmd %s failed, error: %s' % (command, e))
         raise
 
+
 def reset_repo_files(src_path, all_repo_paths):
     if not isinstance(all_repo_paths, list):
-        all_repo_paths = [ all_repo_paths ]
+        all_repo_paths = [all_repo_paths]
     try:
         cmd = ['git', 'checkout'] + all_repo_paths
         git_cmd(cmd, cwd=src_path)
@@ -52,15 +55,17 @@ def reset_repo_files(src_path, all_repo_paths):
         print(msg)
         sys.exit(msg)
 
+
 def apply_patch(src_path, patch):
+    cmd = ['git', 'apply', patch,
+           '--ignore-space-change', '--ignore-whitespace']
     try:
-        cmd = ['git', 'apply', patch,
-               '--ignore-space-change', '--ignore-whitespace']
         git_cmd(cmd, cwd=src_path)
     except Exception as e:
         msg = 'Apply patch cmd %s failed: %s' % (''.join(cmd), e)
         print(msg)
         sys.exit(msg)
+
 
 def get_patch_info(patch_info):
     patch_infos = []
@@ -71,6 +76,7 @@ def get_patch_info(patch_info):
             patch_infos.append(FileInfo(item['file'], item['hash']))
     return patch_infos
 
+
 class GitPatch:
     def __init__(self, src_path, patch_base_path, patch_name):
         self._src_path = os.path.normpath(src_path)
@@ -79,7 +85,7 @@ class GitPatch:
 
         self._patch_path = os.path.normpath(os.path.join(self._base_path, self._patch_name))
         origin_files = get_patch_apply_to(self._patch_path)
-        self._origin_files = [ os.path.normpath(x) for x in origin_files]
+        self._origin_files = [os.path.normpath(x) for x in origin_files]
 
         pacth_info_file = self._patch_name[:-len(patch_suffix)] + patchinfo_suffix
         self._patch_info_path = os.path.normpath(os.path.join(self._base_path, pacth_info_file))
@@ -109,6 +115,7 @@ class GitPatch:
         apply_patch(self._src_path, self._patch_path)
         print('End Applying patche %s' % self._patch_path)
 
+
 class GitPatcher:
     def __init__(self, src_path, patch_base_path, patchs):
         self._src_path = src_path
@@ -128,7 +135,7 @@ class GitPatcher:
         full_path = os.path.normpath(os.path.join(self.src_path, filename))
         return get_file_hash(full_path)
 
-    def get_patch_hash(self,filename):
+    def get_patch_hash(self, filename):
         full_path = os.path.normpath(os.path.join(self.patch_base_path, filename))
         return get_file_hash(full_path)
 
@@ -158,7 +165,7 @@ class GitPatcher:
         return False
 
     def apply_patchs(self):
-        print('Begin apply patches for %s ' %self._src_path)
+        print('Begin apply patches for %s ' % self._src_path)
 
         for patch in self._patchs:
             if self.check_if_needed_apply(patch):
@@ -171,7 +178,7 @@ class GitPatcher:
         self.perform_apply_for_patches()
 
         self.handle_obsolet_patch_infos()
-        print('End apply patches for %s ' %self._src_path)
+        print('End apply patches for %s ' % self._src_path)
 
     def perform_apply_for_patches(self):
         print('Begin perform apply patches')
@@ -242,10 +249,10 @@ class GitPatcher:
             with open(patch_json_file, 'r') as f:
                 patch_json_data = json.load(f)
         except Exception as e:
-            print('Read %s failed, error: %s' %(patch_json_file, e))
+            print('Read %s failed, error: %s' % (patch_json_file, e))
 
         for relpath, patchs in patch_json_data.items():
-            relpath = relpath.replace("\\",'/')
+            relpath = relpath.replace("\\", '/')
             src_path = os.path.normpath(os.path.join(root_src_path, relpath))
             patch_base_path = os.path.normpath(os.path.join(root_patch_base_path, relpath))
             git_patcher = cls(src_path, patch_base_path, patchs)
@@ -257,7 +264,7 @@ class GitPatcher:
                 change_json_data = json.load(f)
                 need_copy_files = change_json_data['Add']['files'] + change_json_data['Update']['files']
         except Exception as e:
-            print('Read %s failed, error: %s' %(change_json_file, e))
+            print('Read %s failed, error: %s' % (change_json_file, e))
 
         print('Begin copying files')
         for file in need_copy_files:
@@ -281,6 +288,7 @@ def main():
     this_path = os.path.dirname(os.path.abspath(__file__))
     root = os.path.normpath(os.path.join(this_path, os.pardir, os.pardir))
     GitPatcher.update(root)
+
 
 if __name__ == "__main__":
     main()

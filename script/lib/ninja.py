@@ -3,6 +3,7 @@
 import os
 import sys, platform
 import subprocess
+
 sys.path.append(os.path.dirname(__file__))
 from common import MAC_CPUS, build_target, last_args_file, toolchain_ninja_file, get_default_args_array
 from util import make_dir_exist
@@ -18,6 +19,7 @@ IS_MAC = platform.system() == 'Darwin'
 IS_WIN = platform.system() == 'Windows'
 DEFAULT_CPU = "X86"
 
+
 def execute_cmd(cmd, **kwargs):
     try:
         print('Execute cmd: %s' % ' '.join(cmd))
@@ -31,6 +33,7 @@ def execute_cmd(cmd, **kwargs):
         print('Execute cmd %s failed: %s' % (' '.join(cmd), e))
         raise
 
+
 def check_map_equals(a, b):
     is_equal = False
     try:
@@ -43,6 +46,7 @@ def check_map_equals(a, b):
         print(e)
     finally:
         return is_equal
+
 
 class LogRecord:
     def __init__(self, root, build_target, build_type):
@@ -60,6 +64,7 @@ class LogRecord:
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.f.close()
+
 
 class BuildHelper():
     def __init__(self, src_root, project_name, target_cpu):
@@ -124,7 +129,7 @@ class BuildHelper():
     def run_ninja(self):
         try:
             print('Begin run ninja')
-            cmd = ['autoninja', '-C', 'out/%s' % (self._build_target) ]
+            cmd = ['autoninja', '-C', 'out/%s' % (self._build_target)]
             cmd.extend(self._target)
             with LogRecord(self._src_root, self._build_target, 'NINJA') as log_fd:
                 execute_cmd(cmd, log_fd=log_fd, cwd=self._src_root)
@@ -142,11 +147,12 @@ class BuildHelper():
         current_args_map = self.get_default_args_map()
         return not check_map_equals(last_args_map, current_args_map)
 
-    def run_gn_gen(self, gn_args=[]):
+    def run_gn_gen(self, gn_args=None):
+        gn_args = gn_args or []
         print('Begin gn gen project %s ' % (self._build_target))
         try:
             cmd = ['gn', 'gen', 'out/%s' % (self._build_target),
-                    '--args=' + ' '.join(gn_args)]
+                   '--args=' + ' '.join(gn_args)]
             with LogRecord(self._src_root, self._build_target, 'GN') as log_fd:
                 execute_cmd(cmd, log_fd=log_fd, cwd=self._src_root)
         except Exception as e:
@@ -178,25 +184,27 @@ class BuildHelper():
         build = BuildHelper(src_root, project_name, target_cpu)
         build.run_build_target()
 
+
 def build_browser(src_root, project_name, target_cpu):
     BuildHelper.start_build(src_root, project_name, target_cpu)
+
 
 def main(args):
     parser = argparse.ArgumentParser()
     parser.add_argument('--src-path',
-        help='The chromium src path.',
-        type=str,
-        required=False)
+                        help='The chromium src path.',
+                        type=str,
+                        required=False)
     parser.add_argument('--project-name',
-        help='The project name.',
-        type=str,
-        default='Browser',
-        required=True)
+                        help='The project name.',
+                        type=str,
+                        default='Browser',
+                        required=True)
     parser.add_argument('--target-cpu',
-        help='The target cpu, like X86 and ARM',
-        type=str,
-        default=DEFAULT_CPU,
-        required=False)
+                        help='The target cpu, like X86 and ARM',
+                        type=str,
+                        default=DEFAULT_CPU,
+                        required=False)
     opt = parser.parse_args(args)
 
     assert opt.project_name and opt.project_name.strip(), \
@@ -205,11 +213,11 @@ def main(args):
     if opt.src_path is None or not os.path.exists(opt.src_path):
         opt.src_path = src_path
 
-
     if IS_MAC:
         assert opt.target_cpu in MAC_CPUS
 
     build_browser(opt.src_path, opt.project_name, opt.target_cpu)
+
 
 if __name__ == '__main__':
     try:

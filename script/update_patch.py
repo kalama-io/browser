@@ -42,7 +42,8 @@ class UpdatePatcher:
     change_record = 'change_files.json'
     patch_record = 'patch_files.json'
 
-    def __init__(self, root, src_path, root_patch_path, root_resource_path, is_3rd_party=False, commid_ids=[]):
+    def __init__(self, root, src_path, root_patch_path, root_resource_path, is_3rd_party=False, commid_ids=None):
+        commid_ids = commid_ids or []
         assert len(commid_ids) == 2 or len(commid_ids) == 0
         self._root = root
         self._root_src_path = os.path.join(root, "src")
@@ -146,9 +147,9 @@ class UpdatePatcher:
 
     def write_patch_file(self, origin_file):
         is_ok = True
+        patch_name = origin_file.replace('/', '-') + patch_suffix
+        full_path = os.path.join(self.patch_path, patch_name)
         try:
-            patch_name = origin_file.replace('/', '-') + patch_suffix
-            full_path = os.path.join(self.patch_path, patch_name)
             cmd = ['git', 'diff']
             cmd.extend(self.commid_ids)
             cmd.append('--output=%s' % full_path)

@@ -1,18 +1,19 @@
-
 import os, sys, platform
 import argparse
+
 sys.path.append(os.path.dirname(__file__))
 
 import subprocess
 import shutil
 from util import is_dir_exists, make_dir_exist, make_file_not_exist
-from common import pack_base_path,pkg_base_path,pkg_build_path, src_path, nsis_bin_path
-from common import pack_app_path,build_target, build_app_path, build_target_path, application_name
+from common import pack_base_path, pkg_base_path, pkg_build_path, src_path, nsis_bin_path
+from common import pack_app_path, build_target, build_app_path, build_target_path, application_name
 from common import pkg_prefix, MAC_CPUS
 
 IS_MAC = platform.system() == "Darwin"
 IS_WIN = platform.system() == "Windows"
 DEFAULT_CPU = "X86"
+
 
 class Pack:
     def __init__(self, root, target_cpu, project_name, version, channel):
@@ -85,10 +86,10 @@ class PackForWindows(Pack):
     def make_nsis_installer(self):
         try:
             cmd = [self.nsis_bin_path,
-            '/DBrowserVersion=%s' % self._version,
-            '/Dchannel=%s' % self._channel,
-            self.nsis_script
-        ]
+                   '/DBrowserVersion=%s' % self._version,
+                   '/Dchannel=%s' % self._channel,
+                   self.nsis_script
+                   ]
             self.execute_cmd(cmd)
             print('Make installer success')
         except Exception as e:
@@ -121,10 +122,23 @@ class PackForMacos(Pack):
         dmg_filename = "kalama-%s-%s.dmg" % (self._version, cpu_type)
         return os.path.join(self.pack_base_path, dmg_filename)
 
+    def add_custom_icon_for_dmg(self):
+        print('Begin add custom icon for dmg')
+        os.chdir(self.pack_base_path)
+        cmd = 'cp app.icns app_copy.icns && sips -i app_copy.icns'
+        self.execute_cmd(cmd)
+        cmd = 'DeRez -only icns app_copy.icns > icns.rsrc'
+        self.execute_cmd(cmd)
+        cmd = 'Rez -append icns.rsrc -o %s' % os.path.basename(self.dmg_file)
+        self.execute_cmd(cmd)
+        cmd = 'SetFile -a C %s' % os.path.basename(self.dmg_file)
+        self.execute_cmd(cmd)
+        print('End add custom icon for dmg')
+
     def pack(self):
         self.check_requirements()
         self.copy_files_for_pack()
-        one_step_pkg =self.build_pkg('%s_browser_package' % (pkg_prefix()))
+        one_step_pkg = self.build_pkg('%s_browser_package' % (pkg_prefix()))
         two_step_pkg = self.build_pkg('%s_browser' % (pkg_prefix()))
         make_file_not_exist(one_step_pkg)
         self.build_dmg()
@@ -149,7 +163,8 @@ class PackForMacos(Pack):
         assert is_dir_exists(self.pack_app_path), 'Copy application %s to %s failed' % (
             self.build_app_path, self.pack_app_path)
 
-    def delete_build_dir(self, path, exts=['.pkg', '.dmg']):
+    def delete_build_dir(self, path, exts=None):
+        exts = exts or ['.pkg', '.dmg']
         try:
             if not os.path.exists(path): return
 
@@ -189,13 +204,13 @@ class PackForMacos(Pack):
         print('-> Begin build dmg , cmd = %s' % cmd)
         self.execute_cmd(cmd)
         print('<- End build dmg')
-        assert os.path.exists(self.dmg_file),  "Build dmg %s failed" % (self.dmg_file)
+        assert os.path.exists(self.dmg_file), "Build dmg %s failed" % (self.dmg_file)
         print("Build dmg %s succeeded" % (self.dmg_file))
 
 
 PACK_TYPE_MAP = {
-    'Windows':   PackForWindows,
-    'Darwin':     PackForMacos
+    'Windows': PackForWindows,
+    'Darwin': PackForMacos
 }
 
 
@@ -216,6 +231,7 @@ def make_installer(root, project_name, version, target_cpu, channel):
     except Exception as e:
         print('Make Installer failed, error: %s' % e)
 
+
 def _parse_args(args):
     parser = argparse.ArgumentParser()
     parser.add_argument("--project-name",
@@ -232,10 +248,10 @@ def _parse_args(args):
                         default=DEFAULT_CPU,
                         required=False)
     parser.add_argument("--channel",
-                    help="The cyfs channel, like nightly and beta",
-                    type=str,
-                    default='nightly',
-                    required=False)
+                        help="The cyfs channel, like nightly and beta",
+                        type=str,
+                        default='nightly',
+                        required=False)
     opt = parser.parse_args(args)
 
     assert opt.project_name.strip()
@@ -246,11 +262,13 @@ def _parse_args(args):
 
     return opt
 
+
 def main(args):
     root = os.path.normpath(os.path.join(os.path.dirname(
         os.path.abspath(__file__)), os.pardir, os.pardir))
     opt = _parse_args(args)
     make_installer(root, opt.project_name, opt.version, opt.target_cpu, opt.channel)
+
 
 if __name__ == "__main__":
     try:
