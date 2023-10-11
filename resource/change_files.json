@@ -31,6 +31,40 @@
     },
     "Update": {
         "update_time": "2023-10-11 14:03:53.478276",
-        "files": []
+        "files": [
+            "chrome/app/chromium_strings.grd",
+            "chrome/app/generated_resources.grd",
+            "chrome/app/resources/chromium_strings_zh-CN.xtb",
+            "chrome/app/resources/generated_resources_zh-CN.xtb",
+            "chrome/app/settings_chromium_strings.grdp",
+            "chrome/app/settings_strings.grdp",
+            "chrome/app/theme/chromium/mac/app.icns",
+            "chrome/app/theme/chromium/product_logo_128.png",
+            "chrome/app/theme/chromium/product_logo_22_mono.png",
+            "chrome/app/theme/chromium/product_logo_24.png",
+            "chrome/app/theme/chromium/product_logo_256.png",
+            "chrome/app/theme/chromium/product_logo_48.png",
+            "chrome/app/theme/chromium/product_logo_64.png",
+            "chrome/app/theme/chromium/win/chromium.ico",
+            "chrome/app/theme/chromium/win/tiles/Logo.png",
+            "chrome/app/theme/chromium/win/tiles/SmallLogo.png",
+            "chrome/app/theme/default_100_percent/chromium/product_logo_16.png",
+            "chrome/app/theme/default_100_percent/chromium/product_logo_32.png",
+            "chrome/app/theme/default_100_percent/chromium/product_logo_name_22.png",
+            "chrome/app/theme/default_100_percent/chromium/product_logo_name_22_white.png",
+            "chrome/app/theme/default_200_percent/chromium/product_logo_16.png",
+            "chrome/app/theme/default_200_percent/chromium/product_logo_32.png",
+            "chrome/app/theme/default_200_percent/chromium/product_logo_name_22.png",
+            "chrome/app/theme/default_200_percent/chromium/product_logo_name_22_white.png",
+            "chrome/browser/browser_resources.grd",
+            "components/components_chromium_strings.grd",
+            "components/password_manager_strings.grdp",
+            "components/resources/default_100_percent/chromium/product_logo.png",
+            "components/resources/default_100_percent/chromium/product_logo_white.png",
+            "components/resources/default_200_percent/chromium/product_logo.png",
+            "components/resources/default_200_percent/chromium/product_logo_white.png",
+            "components/strings/components_chromium_strings_zh-CN.xtb",
+            "components/strings/components_strings_zh-CN.xtb"            
+        ]
     }
 }
