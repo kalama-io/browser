@@ -12,14 +12,14 @@ not_patched_end_path = []
 not_patched_file = []
 
 update_suffix = ['.xtb', '.grd', '.grdp']
-root_update_files = ['chrome/browser/resources/cyfs_init/starting.png']
+root_update_files = [os.path.join('chrome', 'browser', 'resources', 'cyfs_init', 'starting.png')]
 update_files = []
 not_update_suffix = ['.log']
 
 create_patch_args = ['--src-prefix=a/', '--dst-prefix=b/', '--full-index']
-get_diff_args = ['--diff-filter=M', '--name-only', '--ignore-space-at-eol']
+get_diff_args = ['--diff-filter=M', '--name-only', '--ignore-space-at-eol', 'HEAD^']
 
-sub_paths = ['third_party\devtools-frontend\src']
+sub_paths = [os.path.join('third_party', 'devtools-frontend', 'src')]
 
 
 def check_patch_filter(file):
@@ -235,9 +235,9 @@ class UpdatePatcher:
         return [file for (file, action) in unstaged_file_infos.items() if action == action_]
 
     def update_change_files(self):
-        ''' Update the change files which untracked by current repository
+        """ Update the change files which untracked by current repository
             and record the change files to json file for apply patches
-        '''
+        """
         print('Begin update add files')
         unstaged_files = self.get_files_by_action('?')
         unstaged_files = [x for x in unstaged_files if os.path.splitext(x)[
@@ -274,21 +274,23 @@ def main(args):
     print('Begin create patch')
     this_path = os.path.dirname(os.path.abspath(__file__))
     root = os.path.normpath(os.path.join(this_path, os.pardir))
+    print('Root folder is {}'.format(root))
 
-    root_patch_path = os.path.join(root, 'patchs')
+    root_patch_path = os.path.join(root, 'patches')
     root_resource_path = os.path.join(root, 'resource')
     # change_record_file = os.path.join(root_resource_path, 'change_files.json')
 
-    ### Create patch for chromium src
+    # Create patch for chromium src
     print('Begin create patch for chromium src')
     src_path = os.path.join(root, 'src')
     UpdatePatcher.update_patch(root, src_path, root_patch_path, root_resource_path, False)
     print('End create patch for chromium src')
 
-    ## Crearte patch for chromium 3rd party src
+    # Create patch for chromium 3rd party src
     print('Begin create patch for chromium 3rd party src')
     for sub_path in sub_paths:
         src_path = os.path.join(src_path, sub_path)
+        print('third party src {}'.format(src_path))
         assert os.path.exists(src_path)
         UpdatePatcher.update_patch(root, src_path, root_patch_path, root_resource_path, True)
     print('End create patch for chromium src')

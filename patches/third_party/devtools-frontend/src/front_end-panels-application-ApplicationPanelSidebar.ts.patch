@@ -1,0 +1,16 @@
+diff --git a/front_end/panels/application/ApplicationPanelSidebar.ts b/front_end/panels/application/ApplicationPanelSidebar.ts
+index c03c995e8d4dc248e19d9f4a3684cd1c81a95b1a..3e15e1a353a19081653ad3fa1254495da1d0a308 100644
+--- a/front_end/panels/application/ApplicationPanelSidebar.ts
++++ b/front_end/panels/application/ApplicationPanelSidebar.ts
+@@ -579,8 +579,9 @@ export class ApplicationPanelSidebar extends UI.Widget.VBox implements SDK.Targe
+     // debug why the frame was unreachable.
+     const urlToParse = frame.unreachableUrl() || frame.url;
+     const parsedURL = Common.ParsedURL.ParsedURL.fromString(urlToParse);
+-    if (!parsedURL || (parsedURL.scheme !== 'http' && parsedURL.scheme !== 'https' && parsedURL.scheme !== 'file')) {
+-      return;
++    const valid_schemes = ['cyfs', 'ipfs', 'ipns', 'http', 'https', 'file'];
++    if (!parsedURL || !valid_schemes.includes(parsedURL.scheme)) {
++       return;
+     }
+ 
+     const domain = parsedURL.securityOrigin();

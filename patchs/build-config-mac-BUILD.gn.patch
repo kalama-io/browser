@@ -1,5 +1,5 @@
 diff --git a/build/config/mac/BUILD.gn b/build/config/mac/BUILD.gn
-index 8ee1760a41e4c..302430bbd67b9 100644
+index 8ee1760a41e4c..b3732f79ef161 100644
 --- a/build/config/mac/BUILD.gn
 +++ b/build/config/mac/BUILD.gn
 @@ -76,7 +76,7 @@ config("runtime_library") {

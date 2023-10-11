@@ -20,7 +20,7 @@ KALAMA_BUILD=%s
 '''
 
 IS_MAC = platform.system() == "Darwin"
-DEFAULT_CPU = "X86"
+DEFAULT_CPU = 'X86'
 
 
 def _parse_args(args):
@@ -101,14 +101,14 @@ def main(args):
     opt = _parse_args(args)
     prepare_cyfs_components(root, opt.channel, opt.target_cpu, opt.version)
     check_requirements(root, opt.target_cpu)
-    ### patch
+    # patch
     GitPatcher.update(root)
     update_product_version(root, opt.channel, opt.version)
 
-    ### use chromium gn and ninja tool compile source code
+    # use chromium gn and ninja tool compile source code
     build_browser(src_path(root), opt.project_name, opt.target_cpu)
 
-    ### pack
+    # pack
     make_installer(root, opt.project_name, opt.version, opt.target_cpu, opt.channel)
 
     print("Build finished!!")
