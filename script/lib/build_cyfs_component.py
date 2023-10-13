@@ -92,7 +92,7 @@ def fetch_source_code(root, repo_url, branch_name, local_repo_name=None):
         else:
             git_reset_repo(local_path)
             current_branch_name = get_current_branch_name(local_path)
-            if current_branch_name == None or current_branch_name != branch_name:
+            if current_branch_name is None or current_branch_name != branch_name:
                 git_checkout(local_path, branch_name)
             git_pull_repo(repo_url, local_path)
         return local_path

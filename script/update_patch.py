@@ -4,6 +4,7 @@ import os
 import shutil
 import subprocess
 import sys
+import argparse
 
 patch_suffix = '.patch'
 not_patched_suffix = ['.png', '.jpg', '.jpeg', '.ico', '.icon', '.svg', '.icns', '.grd', '.grdp', '.xtb']
@@ -17,7 +18,7 @@ update_files = []
 not_update_suffix = ['.log']
 
 create_patch_args = ['--src-prefix=a/', '--dst-prefix=b/', '--full-index']
-get_diff_args = ['--diff-filter=M', '--name-only', '--ignore-space-at-eol', 'HEAD^']
+get_diff_args = ['--diff-filter=M', '--name-only', '--ignore-space-at-eol']
 
 sub_paths = [os.path.join('third_party', 'devtools-frontend', 'src')]
 
@@ -150,7 +151,7 @@ class UpdatePatcher:
         patch_name = origin_file.replace('/', '-') + patch_suffix
         full_path = os.path.join(self.patch_path, patch_name)
         try:
-            cmd = ['git', 'diff', 'HEAD^']
+            cmd = ['git', 'diff']
             cmd.extend(self.commid_ids)
             cmd.append('--output=%s' % full_path)
             cmd.extend(create_patch_args)
@@ -264,26 +265,55 @@ class UpdatePatcher:
         print('End update add files')
 
     @classmethod
-    def update_patch(cls, root, src_path, resource_path, patch_path, is_3rd_party):
-        update_patcher = cls(root, src_path, resource_path, patch_path, is_3rd_party)
+    def update_patch(cls, root, src_path, resource_path, patch_path, is_3rd_party, commits=None):
+        update_patcher = cls(root, src_path, resource_path, patch_path, is_3rd_party, commits)
         update_patcher.create_patch()
         update_patcher.update_change_files()
 
 
+def _parse_args(args):
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--commits",
+                        help="The commit range.",
+                        nargs='+',
+                        type=str,
+                        default=None)
+    parser.add_argument("--patch_path",
+                        help="The patch path.",
+                        type=str,
+                        default='patches')
+    parser.add_argument("--res_path",
+                        help="The resource path.",
+                        type=str,
+                        default="resource")
+
+    opt = parser.parse_args(args)
+    return opt
+
+
 def main(args):
+    opt = _parse_args(args)
+    commits = opt.commits
     print('Begin create patch')
     this_path = os.path.dirname(os.path.abspath(__file__))
     root = os.path.normpath(os.path.join(this_path, os.pardir))
     print('Root folder is {}'.format(root))
 
-    root_patch_path = os.path.join(root, 'patches')
-    root_resource_path = os.path.join(root, 'resource')
+    root_patch_path = os.path.join(root, opt.patch_path)
+    root_resource_path = os.path.join(root, opt.res_path)
     # change_record_file = os.path.join(root_resource_path, 'change_files.json')
 
     # Create patch for chromium src
     print('Begin create patch for chromium src')
     src_path = os.path.join(root, 'src')
-    UpdatePatcher.update_patch(root, src_path, root_patch_path, root_resource_path, False)
+    UpdatePatcher.update_patch(
+        root,
+        src_path,
+        root_patch_path,
+        root_resource_path,
+        False,
+        commits
+    )
     print('End create patch for chromium src')
 
     # Create patch for chromium 3rd party src
