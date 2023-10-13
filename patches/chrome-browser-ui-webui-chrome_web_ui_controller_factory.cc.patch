@@ -1,5 +1,5 @@
 diff --git a/chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc b/chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
-index 75ab7f0bbbeedb05a8b82f9e80e5200a5f89575e..2d084a99cadb28c045f0f1a9d45aef43cc345e6f 100644
+index 75ab7f0bbbeedb05a8b82f9e80e5200a5f89575e..e06e5c0dc7f332a2c88cdefc0fb5d6575b588fc6 100644
 --- a/chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
 +++ b/chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
 @@ -38,6 +38,7 @@
@@ -10,16 +10,15 @@ index 75ab7f0bbbeedb05a8b82f9e80e5200a5f89575e..2d084a99cadb28c045f0f1a9d45aef43
  #include "chrome/browser/ui/webui/device_log_ui.h"
  #include "chrome/browser/ui/webui/download_internals/download_internals_ui.h"
  #include "chrome/browser/ui/webui/engagement/site_engagement_ui.h"
-@@ -70,6 +71,8 @@
+@@ -70,6 +71,7 @@
  #include "chrome/browser/ui/webui/user_actions/user_actions_ui.h"
  #include "chrome/browser/ui/webui/version/version_ui.h"
  #include "chrome/browser/ui/webui/webui_util.h"
-+#include "chrome/browser/web_applications/system_web_apps/system_web_app_manager.h"
 +#include "chrome/browser/web_applications/web_app_provider.h"
  #include "chrome/common/buildflags.h"
  #include "chrome/common/chrome_features.h"
  #include "chrome/common/pref_names.h"
-@@ -428,6 +431,9 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* web_ui,
+@@ -428,6 +430,9 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* web_ui,
    if (url.SchemeIs(content::kChromeUIUntrustedScheme))
      return nullptr;
  

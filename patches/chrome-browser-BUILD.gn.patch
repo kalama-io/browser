@@ -1,0 +1,30 @@
+diff --git a/chrome/browser/BUILD.gn b/chrome/browser/BUILD.gn
+index ff490f2ffb3f5af65d8af96ff708f9292ffb5e33..34da4d7dd5c2d6dc91883d32313b5403850bcca2 100644
+--- a/chrome/browser/BUILD.gn
++++ b/chrome/browser/BUILD.gn
+@@ -44,6 +44,7 @@ import("//third_party/widevine/cdm/widevine.gni")
+ import("//tools/grit/grit_rule.gni")
+ import("//ui/base/ui_features.gni")
+ 
++
+ # //build/config/android/rules.gni imports //tools/grit/grit_rule.gni, which
+ # produces a conflict for the "grit" template so we have to only include one.
+ if (is_android) {
+@@ -1877,6 +1878,8 @@ static_library("browser") {
+     "webid/federated_identity_permission_context.h",
+     "webid/federated_identity_permission_context_factory.cc",
+     "webid/federated_identity_permission_context_factory.h",
++    "cyfs_init/cyfs_init_service_factory.h",
++    "cyfs_init/cyfs_init_service_factory.cc"
+   ]
+ 
+   if (!is_android) {
+@@ -2595,6 +2598,8 @@ static_library("browser") {
+     ]
+   }
+ 
++  deps += ["//components/cyfs_init"]
++
+   if (is_android) {
+     sources += [
+       "accessibility/accessibility_prefs/android/accessibility_prefs_controller.cc",

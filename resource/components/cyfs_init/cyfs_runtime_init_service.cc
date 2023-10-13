@@ -201,12 +201,12 @@ bool CyfsRuntimeInitService::ParseBody(const std::string& body,
     return false;
   }
 
-  base::DictionaryValue* dictionary = nullptr;
-  if (!value->GetAsDictionary(&dictionary)) {
+  base::Value::Dict* dictionary = value->GetIfDict();
+  if (!dictionary) {
     LOG(ERROR) << "Invalid JSON";
     return false;
   }
-  absl::optional<bool> activation_ = dictionary->FindBoolKey("activation");
+  absl::optional<bool> activation_ = dictionary->FindBool("activation");
   if (activation_) {
     *activation = (*activation_ ? "true" : "false");
   }

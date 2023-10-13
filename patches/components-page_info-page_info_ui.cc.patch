@@ -1,5 +1,5 @@
 diff --git a/components/page_info/page_info_ui.cc b/components/page_info/page_info_ui.cc
-index 59af8d65b18cd0673a65be5ae9c420d237510143..7b30a45917a82ccb8e3e380fdef6b5f9f7170579 100644
+index 59af8d65b18cd0673a65be5ae9c420d237510143..26d4a262c3b5d5087f775f15f6c4073f14808843 100644
 --- a/components/page_info/page_info_ui.cc
 +++ b/components/page_info/page_info_ui.cc
 @@ -408,6 +408,12 @@ PageInfoUI::AdPersonalizationInfo::~AdPersonalizationInfo() = default;
@@ -10,7 +10,7 @@ index 59af8d65b18cd0673a65be5ae9c420d237510143..7b30a45917a82ccb8e3e380fdef6b5f9
 +  if (url.SchemeIsIPFS() || url.SchemeIsCYFS() || url.SchemeIsIPNS()) {
 +      return CreateSecurityDescription(
 +      SecuritySummaryColor::GREEN, IDS_PAGE_INFO_SECURE_SUMMARY,
-+      IDS_PAGE_INFO_SECURE_DETAILS_V2, SecurityDescriptionType::CONNECTION);
++      IDS_PAGE_INFO_SECURE_DETAILS, SecurityDescriptionType::CONNECTION);
 +  }
    switch (identity_info.safe_browsing_status) {
      case PageInfo::SAFE_BROWSING_STATUS_NONE:

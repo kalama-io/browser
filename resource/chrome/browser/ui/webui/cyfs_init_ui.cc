@@ -4,8 +4,8 @@
 #include <memory>
 #include <string>
 
-#include "base/bind.h"
-#include "base/callback_helpers.h"
+#include "base/functional/bind.h"
+#include "base/functional/callback_helpers.h"
 #include "base/values.h"
 
 #include "ui/base/webui/web_ui_util.h"
@@ -176,7 +176,9 @@ CyfsInitUI::CyfsInitUI(content::WebUI* web_ui)
   web_ui->AddMessageHandler(std::make_unique<CyfsInitMessageHandler>());
   // Set up the chrome://cyfs-init source.
   content::WebUIDataSource* html_source =
-      content::WebUIDataSource::Create(chrome::kChromeUICyfsInitHost);
+      content::WebUIDataSource::CreateAndAdd(
+          Profile::FromWebUI(web_ui),
+          chrome::kChromeUICyfsInitHost);
 
   html_source->OverrideContentSecurityPolicy(
       network::mojom::CSPDirectiveName::ScriptSrc,
@@ -201,8 +203,8 @@ CyfsInitUI::CyfsInitUI(content::WebUI* web_ui)
 
   html_source->SetDefaultResource(IDR_CYFS_INIT_UI_HTML);
 
-  content::WebUIDataSource::Add(web_ui->GetWebContents()->GetBrowserContext(),
-                                html_source);
+  //content::WebUIDataSource::Add(web_ui->GetWebContents()->GetBrowserContext(),
+  //                              html_source);
 }
 
 CyfsInitUI::~CyfsInitUI() {}

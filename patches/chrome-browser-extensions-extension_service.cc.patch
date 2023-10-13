@@ -1,5 +1,5 @@
 diff --git a/chrome/browser/extensions/extension_service.cc b/chrome/browser/extensions/extension_service.cc
-index 8f0d563763ee017d683bcb9a78eba7acd2f08bc6..b71e4e37f8b11ca74aae168df238c5a402ea617e 100644
+index 8f0d563763ee017d683bcb9a78eba7acd2f08bc6..ffb918e09c4e3d696dd2e3600084c082a16a957e 100644
 --- a/chrome/browser/extensions/extension_service.cc
 +++ b/chrome/browser/extensions/extension_service.cc
 @@ -82,6 +82,7 @@
@@ -10,7 +10,7 @@ index 8f0d563763ee017d683bcb9a78eba7acd2f08bc6..b71e4e37f8b11ca74aae168df238c5a4
  #include "extensions/browser/blocklist_extension_prefs.h"
  #include "extensions/browser/blocklist_state.h"
  #include "extensions/browser/disable_reason.h"
-@@ -805,6 +806,24 @@ bool ExtensionService::UninstallExtension(
+@@ -805,6 +806,23 @@ bool ExtensionService::UninstallExtension(
    // Callers should not send us nonexistent extensions.
    CHECK(extension.get());
  
@@ -21,10 +21,9 @@ index 8f0d563763ee017d683bcb9a78eba7acd2f08bc6..b71e4e37f8b11ca74aae168df238c5a4
 +    std::string extension_path_name = extension_path.BaseName().AsUTF8Unsafe();
 +    {
 +      PrefService* prefs = profile()->GetPrefs();
-+      ListPrefUpdate update(prefs, pref_names::KDefaultExtensionBlackList);
-+      base::Value* default_extension_blacklist = update.Get();
++      ScopedListPrefUpdate update(prefs, pref_names::KDefaultExtensionBlackList);
 +      VLOG(1) << "Add extension " << extension_path_name << " to default extension black list";
-+      default_extension_blacklist->Append(extension_path_name);
++      update->Append(extension_path_name);
 +    }
 +    // delete extension path
 +    if (base::PathExists(extension_path)) {

@@ -1,5 +1,5 @@
 diff --git a/chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc b/chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
-index 2c54740738d1fbaf977eb150e91428596ff9ed94..2122fe59596b010d6e4935e6be2f255a9dcc2a75 100644
+index 2c54740738d1fbaf977eb150e91428596ff9ed94..0ae8bdb93fe41226f34db4b2be5c9a923f8b212c 100644
 --- a/chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
 +++ b/chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
 @@ -350,9 +350,16 @@ void AddAboutStrings(content::WebUIDataSource* html_source, Profile* profile) {
@@ -7,7 +7,7 @@ index 2c54740738d1fbaf977eb150e91428596ff9ed94..2122fe59596b010d6e4935e6be2f255a
  #endif
  
 +  std::string cyfs_browser_version = chrome::GetCYFSBrowserVersion();
-+  std::string cyfs_version = cyfs_browser_version + std::string(" Chromium: ") + version_info::GetVersionNumber();
++  std::string cyfs_version = cyfs_browser_version + std::string(" Chromium: ") + std::string(version_info::GetVersionNumber());
 +
    std::u16string browser_version = VersionUI::GetAnnotatedVersionStringForUi();
  

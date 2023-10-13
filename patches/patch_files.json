@@ -1,6 +1,5 @@
 {
     ".": [
-        ".gitignore.patch",
         "build-toolchain-win-setup_toolchain.py.patch",
         "build-win-reorder-imports.py.patch",
         "chrome-BUILD.gn.patch",
@@ -12,6 +11,7 @@
         "chrome-app-version_assembly-BUILD.gn.patch",
         "chrome-app-version_assembly-chrome_exe_manifest.template.patch",
         "chrome-app-version_assembly-version_assembly_manifest.template.patch",
+        "chrome-browser-BUILD.gn.patch",
         "chrome-browser-chrome_browser_main_win.cc.patch",
         "chrome-browser-chrome_content_browser_client.cc.patch",
         "chrome-browser-extensions-api-runtime-chrome_runtime_api_delegate.cc.patch",
@@ -69,6 +69,7 @@
         "chrome-installer-util-util_constants.h.patch",
         "chrome-process_version_rc_template.gni.patch",
         "chrome-tools-build-win-create_installer_archive.py.patch",
+        "chrome-version.gni.patch",
         "components-os_crypt-sync-keychain_password_mac.mm.patch",
         "components-page_info-page_info_ui.cc.patch",
         "components-version_info-BUILD.gn.patch",
@@ -115,7 +116,6 @@
         "url-url_util.cc.patch"
     ],
     "third_party/devtools-frontend/src": [
-        "front_end-panels-application-ApplicationPanelSidebar.ts.patch",
-        "test-e2e-sources-sourcemap_test.ts.patch"
+        "front_end-panels-application-ApplicationPanelSidebar.ts.patch"
     ]
 }
