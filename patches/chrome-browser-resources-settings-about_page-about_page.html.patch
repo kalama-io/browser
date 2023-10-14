@@ -1,0 +1,28 @@
+diff --git a/chrome/browser/resources/settings/about_page/about_page.html b/chrome/browser/resources/settings/about_page/about_page.html
+index 44c11d17ed00bb015c30c41b1770d961f4117ae1..f0233b6d345607b87dc1bc5e0e8182ed9d59075b 100644
+--- a/chrome/browser/resources/settings/about_page/about_page.html
++++ b/chrome/browser/resources/settings/about_page/about_page.html
+@@ -98,6 +98,11 @@
+         </span>
+ </if>
+       </div>
++        <div class="cr-row one-line">
++            <div class="flex cr-padded-text" >
++                <div class="secondary">$i18n{aboutRuntimeVersion}</div>
++            </div>
++        </div>
+ <if expr="_google_chrome and is_macosx">
+       <template is="dom-if" if="[[!promoteUpdaterStatus_.hidden]]">
+         <div id="promoteUpdater"
+@@ -120,9 +125,9 @@
+         </div>
+       </template>
+ </if>
+-      <cr-link-row class="hr" id="help" on-click="onHelpClick_"
++      <!--<cr-link-row class="hr" id="help" on-click="onHelpClick_"
+           label="$i18n{aboutGetHelpUsingChrome}"
+-          external></cr-link-row>
++          external></cr-link-row>-->
+ <if expr="_google_chrome">
+       <cr-link-row class="hr" id="reportIssue" on-click="onReportIssueClick_"
+           hidden="[[!prefs.feedback_allowed.value]]"
