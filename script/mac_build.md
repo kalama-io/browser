@@ -51,7 +51,7 @@ cd ${root}/src
 
 git fetch --tags
 
-git checkout -b kalama_branch 103.0.5047.0
+git checkout -b kalama_branch 117.0.5938.153
 
 gclient sync --with_branch_heads --with_tags
 ```
