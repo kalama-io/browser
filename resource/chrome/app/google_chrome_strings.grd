@@ -824,7 +824,7 @@ Permissions you've already given to websites and apps may apply to this account.
       </message>
 
       <if expr="use_titlecase and not chromeos_ash">
-        <message name="IDS_ABOUT" desc="In Title Case: The text label of the About Kalamamenu item">
+        <message name="IDS_ABOUT" desc="In Title Case: The text label of the About Kalama menu item">
           About &amp;Google Chrome
         </message>
         <message name="IDS_RELAUNCH_TO_UPDATE" desc="In Title Case: The text label of the relaunch to update Chrome menu item">
@@ -832,7 +832,7 @@ Permissions you've already given to websites and apps may apply to this account.
         </message>
       </if>
       <if expr="not use_titlecase and not chromeos_ash">
-        <message name="IDS_ABOUT" desc="The text label of the About Kalamamenu item">
+        <message name="IDS_ABOUT" desc="The text label of the About Kalama menu item">
           About &amp;Google Chrome
         </message>
         <message name="IDS_RELAUNCH_TO_UPDATE" desc="The text label of the relaunch to update Chrome menu item">
@@ -840,7 +840,7 @@ Permissions you've already given to websites and apps may apply to this account.
         </message>
       </if>
       <if expr="chromeos_ash">
-        <message name="IDS_ABOUT" desc="The text label of the About Kalamamenu item">
+        <message name="IDS_ABOUT" desc="The text label of the About Kalama menu item">
           About &amp;Google Chrome
         </message>
         <if expr="reven">

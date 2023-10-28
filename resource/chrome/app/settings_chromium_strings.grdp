@@ -22,7 +22,7 @@
         About Kalama
       </message>
       <message name="IDS_SETTINGS_GET_HELP_USING_CHROME" desc="Text of the button which takes the user to the Kalama help page.">
-        Get help with Chromium
+        Get help with Kalama
       </message>
     </else>
   </if>

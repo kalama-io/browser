@@ -255,13 +255,13 @@
     See Chrome tips
   </message>
   <message name="IDS_OMNIBOX_PEDAL_SEE_CHROME_TIPS_SUGGESTION_CONTENTS" desc="The button hover tooltip text to describe pedal action, SEE_CHROME_TIPS">
-    Learn About Kalamafeatures
+    Learn About Kalama features
   </message>
   <message name="IDS_ACC_OMNIBOX_PEDAL_SEE_CHROME_TIPS_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to SEE_CHROME_TIPS.">
     <ph name="SEE_CHROME_TIPS_FOCUSED_FRIENDLY_MATCH_TEXT">$1<ex>The Chromium Projects http://www.chromium.org bookmark</ex></ph>, press Tab then Enter to learn About Kalamafeatures
   </message>
   <message name="IDS_ACC_OMNIBOX_PEDAL_SEE_CHROME_TIPS" desc="Announcement when pedal action button is focused, SEE_CHROME_TIPS">
-    See Chrome tips button, activate to learn About Kalamafeatures
+    See Chrome tips button, activate to learn About Kalama features
   </message>
 
   <message name="IDS_OMNIBOX_PEDAL_MANAGE_GOOGLE_ACCOUNT_HINT" desc="The button text contents to suggest pedal action, MANAGE_GOOGLE_ACCOUNT">

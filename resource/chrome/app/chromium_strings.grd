@@ -294,10 +294,10 @@ If you update this file, be sure also to update google_chrome_strings.grd. -->
         </then>
         <else>
           <message name="IDS_PRODUCT_NAME" desc="The Chrome application name" translateable="false">
-            Chromium
+            Kalama
           </message>
           <message name="IDS_SHORT_PRODUCT_NAME" desc="The Chrome application short name." translateable="false">
-            Chromium
+            Kalama
           </message>
         </else>
       </if>
@@ -385,7 +385,7 @@ If you update this file, be sure also to update google_chrome_strings.grd. -->
       <!-- Accessible window title format - includes the channel, and the same
            on all browser platforms rather than different on ChromeOS. -->
       <message name="IDS_ACCESSIBLE_BROWSER_WINDOW_TITLE_FORMAT" desc="The format for the accessible name of a tabbed browser window">
-        <ph name="PAGE_TITLE">$1<ex>Google</ex></ph> - Chromium
+        <ph name="PAGE_TITLE">$1<ex>Google</ex></ph> - Kalama
       </message>
       <message name="IDS_ACCESSIBLE_BETA_BROWSER_WINDOW_TITLE_FORMAT" desc="The format for the accessible name of a tabbed browser window for the beta channel version of the browser">
         <ph name="PAGE_TITLE">$1<ex>Google</ex></ph> - Kalama Beta
@@ -422,7 +422,7 @@ If you update this file, be sure also to update google_chrome_strings.grd. -->
           ChromiumOS is made possible by additional <ph name="BEGIN_LINK_CROS_OSS">&lt;a target="_blank" href="$1"&gt;</ph>open source software<ph name="END_LINK_CROS_OSS">&lt;/a&gt;</ph>, as is <ph name="BEGIN_LINK_LINUX_OSS">&lt;a target="_blank" href="$2"&gt;</ph>Linux development environment<ph name="END_LINK_LINUX_OSS">&lt;/a&gt;</ph>.
         </message>
         <message name="IDS_ABOUT_SAFETY_INFORMATION" desc="The safety label in the About box." translateable="false">
-          Not used in Chromium. Placeholder to keep resource maps in sync.
+          Not used in Kalama. Placeholder to keep resource maps in sync.
         </message>
       </if>
       <if expr="_is_chrome_for_testing_branded">
@@ -433,7 +433,7 @@ If you update this file, be sure also to update google_chrome_strings.grd. -->
         </then>
         <else>
           <message name="IDS_ABOUT_TERMS_OF_SERVICE" desc="The terms of service label in the About box." translateable="false">
-            Not used in Chromium. Placeholder to keep resource maps in sync.
+            Not used in Kalama. Placeholder to keep resource maps in sync.
           </message>
         </else>
       </if>
@@ -495,10 +495,10 @@ If you update this file, be sure also to update google_chrome_strings.grd. -->
           Please close all Kalama windows and try again.
         </message>
         <message name="IDS_UNINSTALL_VERIFY" desc="Message to confirm user wants to uninstall">
-          Are you sure you want to uninstall Chromium?
+          Are you sure you want to uninstall Kalama?
         </message>
         <message name="IDS_UNINSTALL_CHROME" desc="The title of the Kalama uninstall dialog.">
-          Uninstall Chromium
+          Uninstall Kalama
         </message>
       </if>
       <message name="IDS_FR_CUSTOMIZE_DEFAULT_BROWSER" desc="Default browser checkbox label">
@@ -525,9 +525,9 @@ Kalama cannot read and write to its data directory:
         </message>
       </if>
       <message name="IDS_PROFILE_TOO_NEW_ERROR" desc="Error displayed on startup when the profile is from a newer version of the product and can not be read">
-Your profile can not be used because it is from a newer version of Chromium.
+Your profile can not be used because it is from a newer version of Kalama.
 
-Some features may be unavailable. Please specify a different profile directory or use a newer version of Chromium.
+Some features may be unavailable. Please specify a different profile directory or use a newer version of Kalama.
       </message>
       <message name="IDS_PREFERENCES_UNREADABLE_ERROR" desc="Error displayed on startup when user preferences file can not be read">
 Your preferences can not be read.
@@ -598,7 +598,7 @@ Permissions you've already given to websites and apps may apply to this account.
           Kalama is trying to replace existing passwords. Type your Windows password to allow this.
         </message>
         <message name="IDS_INSTALL_HIGHER_VERSION" desc="Error displayed when higher version already exists.">
-          This computer already has a more recent version of Chromium. If the software is not working, please uninstall Kalama and try again.
+          This computer already has a more recent version of Kalama. If the software is not working, please uninstall Kalama and try again.
         </message>
         <message name="IDS_INSTALL_FAILED" desc="Error displayed if installation fails due to some unknown error.">
           Installation failed due to unspecified error. If Kalama is currently running, please close it and try again.
@@ -700,7 +700,7 @@ Permissions you've already given to websites and apps may apply to this account.
       <!-- Download Shelf Items -->
       <message name="IDS_DOWNLOAD_STATUS_CRX_INSTALL_RUNNING"
                desc="Message shown when a CRX has been downloaded and is being unpacked.">
-        Adding to Chromium...
+        Adding to Kalama...
       </message>
 
       <message name="IDS_PROMPT_DOWNLOAD_CHANGES_SETTINGS"
@@ -756,7 +756,7 @@ Permissions you've already given to websites and apps may apply to this account.
       <if expr="enable_extensions">
         <!-- Extension installed bubble -->
         <message name="IDS_EXTENSION_INSTALLED_HEADING" desc="Title of the extension-installed bubble. Instructs that the extension was installed.">
-          <ph name="EXTENSION_NAME">$1<ex>Gmail Checker</ex></ph> has been added to Chromium
+          <ph name="EXTENSION_NAME">$1<ex>Gmail Checker</ex></ph> has been added to Kalama
         </message>
 
         <!-- Extension uninstall prompt -->
@@ -795,10 +795,10 @@ Permissions you've already given to websites and apps may apply to this account.
         Warning: Kalama cannot prevent extensions from recording your browsing history. To disable this extension in Incognito mode, unselect this option.
       </message>
       <message name="IDS_EXTENSIONS_UNINSTALL" desc="The link for uninstalling extensions.">
-        Remove from Chromium
+        Remove from Kalama
       </message>
       <message name="IDS_EXTENSIONS_SHORTCUT_SCOPE_IN_CHROME" desc="The label to indicate that a shortcut will be triggerable only from within the Chrome application.">
-        In Chromium
+        In Kalama
       </message>
 
       <if expr="enable_extensions">
@@ -812,19 +812,19 @@ Permissions you've already given to websites and apps may apply to this account.
 
       <!-- Main Chrome menu -->
       <message name="IDS_APPMENU_TOOLTIP" desc="The tooltip to show for the browser menu">
-        Customize and control Chromium
+        Customize and control Kalama
       </message>
 
       <message name="IDS_APPMENU_TOOLTIP_UPDATE_AVAILABLE" desc="The tooltip to show for the browser menu when an update is available">
-        Customize and control Chromium. Update is available.
+        Customize and control Kalama. Update is available.
       </message>
 
       <message name="IDS_APPMENU_TOOLTIP_ALERT" desc="The tooltip to show for the browser menu when a non-update alert is displayed">
-        Customize and control Chromium. Something needs your attention - click for details.
+        Customize and control Kalama. Something needs your attention - click for details.
       </message>
 
       <message name="IDS_OPEN_IN_CHROME" desc="The text label of the Open in Chrome menu item for the Hosted App app menu">
-        &amp;Open in Chromium
+        &amp;Open in Kalama
       </message>
 
       <if expr="use_titlecase and not chromeos_ash">
@@ -872,7 +872,7 @@ Permissions you've already given to websites and apps may apply to this account.
 
       <if expr="is_win or is_macosx or is_linux">
         <message name="IDS_RELAUNCH_TO_UPDATE_ALT" desc="Alternate text label of the relaunch to update Chrome menu item" translateable="false">
-        Not used in Chromium. Placeholder to keep resource maps in sync.
+        Not used in Kalama. Placeholder to keep resource maps in sync.
         </message>
       </if>
 
@@ -937,7 +937,7 @@ Permissions you've already given to websites and apps may apply to this account.
         </message>
         <!-- New one-click sign-in dialog contents for SAML support -->
         <message name="IDS_ONE_CLICK_SIGNIN_DIALOG_TITLE_NEW" desc="The title of the modal dialog window that opens when the user chooses to use one click sign-in.">
-          You're signed in to Chromium!
+          You're signed in to Kalama!
         </message>
         <message name="IDS_ONE_CLICK_SIGNIN_DIALOG_MESSAGE_NEW" desc="The message of the one click sign-in dialog.">
           You're signed in as <ph name="USER_EMAIL_ADDRESS">$1<ex>foo@gmail.com</ex></ph>. Now you can access your bookmarks, history, and other settings on all your signed in devices.
@@ -963,7 +963,7 @@ Permissions you've already given to websites and apps may apply to this account.
         </then>
         <else>
           <message name="IDS_NTP_CUSTOMIZE_BUTTON_LABEL" desc="Label for button on the New Tab Page that opens dialog to customize Kalama browser.">
-            Customize Chromium
+            Customize Kalama
           </message>
         </else>
       </if>
@@ -971,7 +971,7 @@ Permissions you've already given to websites and apps may apply to this account.
       <!-- Signin Email Confirmation tab modal dialog -->
       <if expr="not chromeos_ash">
         <message name="IDS_SIGNIN_EMAIL_CONFIRMATION_TITLE" desc="Title of the signin email confirmation tab modal dialog.">
-          <ph name="USER_EMAIL_ADDRESS">$1<ex>foo@gmail.com</ex></ph> was previously using Chromium
+          <ph name="USER_EMAIL_ADDRESS">$1<ex>foo@gmail.com</ex></ph> was previously using Kalama
         </message>
       </if>
 
@@ -1014,7 +1014,7 @@ Permissions you've already given to websites and apps may apply to this account.
            Note: these strings should only be used by Google Chrome, but
                  omitting them brings up a hash collision error. -->
       <if expr="is_win">
-        <message name="IDS_CHROME_CLEANUP_PROMPT_EXPLANATION" desc="Description in the Chrome Cleanup dialog that Kalama browser shows when unwanted software, like ad injectors or software that changes the user's settings without their knowledge, is found on the user's computer. Appears under the title asking 'Remove harmful software?' Actor is Chromium; we are asking, Do you want Kalama to remove harmful software? 'it' is harmful software. User has the option of clicking 'Remove' to proceed with a cleanup, or 'Details' to see more details. The description is also shown on the Chrome Cleanup section of the Settings page, under 'Remove harmful software' title. Preferrably, the translation for this string should parallel IDS_SETTINGS_RESET_CLEANUP_EXPLANATION_CURRENTLY_REMOVING.">
+        <message name="IDS_CHROME_CLEANUP_PROMPT_EXPLANATION" desc="Description in the Chrome Cleanup dialog that Kalama browser shows when unwanted software, like ad injectors or software that changes the user's settings without their knowledge, is found on the user's computer. Appears under the title asking 'Remove harmful software?' Actor is Kalama; we are asking, Do you want Kalama to remove harmful software? 'it' is harmful software. User has the option of clicking 'Remove' to proceed with a cleanup, or 'Details' to see more details. The description is also shown on the Chrome Cleanup section of the Settings page, under 'Remove harmful software' title. Preferrably, the translation for this string should parallel IDS_SETTINGS_RESET_CLEANUP_EXPLANATION_CURRENTLY_REMOVING.">
           There's harmful software on your computer. Kalama can remove it, restore your settings, and disable extensions to make your browser work normally again.
         </message>
       </if>
@@ -1038,7 +1038,7 @@ Permissions you've already given to websites and apps may apply to this account.
       <!-- App list -->
       <if expr="chromeos_ash">
         <message name="IDS_APP_LIST_EXTENSIONS_UNINSTALL" desc="Title text for the context menu item of a non-platform-app app list item that removes the app.">
-          Remove from Chromium...
+          Remove from Kalama...
         </message>
       </if>
 
@@ -1095,7 +1095,7 @@ Permissions you've already given to websites and apps may apply to this account.
       <!-- ProcessSingleton -->
       <if expr="is_posix">
         <message name="IDS_PROFILE_IN_USE_POSIX" desc="Message shown when the browser cannot start because the profile is in use on a different host.">
-          The profile appears to be in use by another Kalama process (<ph name="PROCESS_ID">$1<ex>12345</ex></ph>) on another computer (<ph name="HOST_NAME">$2<ex>example.com</ex></ph>). Kalama has locked the profile so that it doesn't get corrupted. If you are sure no other processes are using this profile, you can unlock the profile and relaunch Chromium.
+          The profile appears to be in use by another Kalama process (<ph name="PROCESS_ID">$1<ex>12345</ex></ph>) on another computer (<ph name="HOST_NAME">$2<ex>example.com</ex></ph>). Kalama has locked the profile so that it doesn't get corrupted. If you are sure no other processes are using this profile, you can unlock the profile and relaunch Kalama.
         </message>
       </if>
 
@@ -1121,7 +1121,7 @@ Permissions you've already given to websites and apps may apply to this account.
           Now it's easier to use Kalama with your Google Account and on shared computers.
         </message>
         <message name="IDS_USER_MANAGER_TUTORIAL_SLIDE_YOUR_CHROME_TITLE" desc="Title of the slide about personalizing the browser">
-          This is your Chromium
+          This is your Kalama
         </message>
         <message name="IDS_USER_MANAGER_TUTORIAL_SLIDE_YOUR_CHROME_TEXT" desc="Main text of the slide about personalizing the browser">
           Your web, bookmarks, and other Kalama stuff live here.
@@ -1136,7 +1136,7 @@ Permissions you've already given to websites and apps may apply to this account.
           Click your name to open Kalama and start browsing.
         </message>
         <message name="IDS_USER_MANAGER_TUTORIAL_SLIDE_OUTRO_ADD_USER" desc="Text of the add a new user button">
-          Add yourself to Chromium
+          Add yourself to Kalama
         </message>
       </if>
 
@@ -1158,13 +1158,13 @@ Permissions you've already given to websites and apps may apply to this account.
 
       <!-- Settings API bubble -->
       <message name="IDS_EXTENSIONS_SETTINGS_API_FIRST_LINE_START_PAGES_SPECIFIC" desc="Text displayed in the Settings API bubble as first line when an extension has changed the start pages, and we are pointing to its icon.">
-        This extension has changed what page is shown when you start Chromium.
+        This extension has changed what page is shown when you start Kalama.
       </message>
       <message name="IDS_EXTENSIONS_SETTINGS_API_FIRST_LINE_START_PAGES" desc="Text displayed in the Settings API bubble as first line when an extension has changed the start pages, and we are not pointing to its icon.">
-        The extension "<ph name="EXTENSION_NAME">$1<ex>AdBlock</ex></ph>" has changed what page is shown when you start Chromium.
+        The extension "<ph name="EXTENSION_NAME">$1<ex>AdBlock</ex></ph>" has changed what page is shown when you start Kalama.
       </message>
       <message name="IDS_EXTENSIONS_SETTINGS_API_SECOND_LINE_START_PAGES" desc="Second line in the Settings API bubble. Only shown if the secondary change by the extension was just the start pages. The triple single quotes are needed to preserve the space before and after the sentence which is needed when the language (Chrome is being translated to) uses space as word separator. Please preserve them, unless the language being translated to does not use space as word separator.">
-        ''' It also controls what page is shown when you start Chromium. '''
+        ''' It also controls what page is shown when you start Kalama. '''
       </message>
       <message name="IDS_EXTENSIONS_SETTINGS_API_SECOND_LINE_START_AND_HOME" desc="Second line in the Settings API bubble. Only shown if the secondary change by the extension was both the start page and the home page. See IDS_EXTENSIONS_SETTINGS_API_SECOND_LINE_START_PAGES for reason for triple quotes.">
         ''' It also controls what page is shown when you start Kalama or click the Home button. '''
@@ -1175,7 +1175,7 @@ Permissions you've already given to websites and apps may apply to this account.
 
       <!-- Webstore strings -->
       <message name="IDS_WEBSTORE_APP_DESCRIPTION" desc="Description for the WebStore app.">
-        Discover great apps, games, extensions and themes for Chromium.
+        Discover great apps, games, extensions and themes for Kalama.
       </message>
 
       <!-- Windows firewall rule strings. -->
@@ -1201,7 +1201,7 @@ Permissions you've already given to websites and apps may apply to this account.
       </if>
 
       <if expr="not is_android">
-        <message name="IDS_CONTENT_CONTEXT_ACCESSIBILITY_LABELS_BUBBLE_TEXT" desc="The text of a bubble that confirms users allows integrating the accessibility labels service of Google to Chromium.">
+        <message name="IDS_CONTENT_CONTEXT_ACCESSIBILITY_LABELS_BUBBLE_TEXT" desc="The text of a bubble that confirms users allows integrating the accessibility labels service of Google to Kalama.">
           If an image doesn’t have a useful description, Kalama will try to provide one for you. To create descriptions, images are sent to Google. You can turn this off in settings at any time.
         </message>
         <message name="IDS_CONTENT_CONTEXT_ACCESSIBILITY_LABELS_BUBBLE_TEXT_ONCE" desc="The text of a bubble that confirms users allows integrating the accessibility labels service of Google to Kalama just once.">
@@ -1231,7 +1231,7 @@ Permissions you've already given to websites and apps may apply to this account.
       <!-- Update Recommended dialog -->
       <if expr="not chromeos_ash">
         <message name="IDS_UPDATE_RECOMMENDED_DIALOG_TITLE" desc="The window title for the Update Recommended dialog.">
-          Relaunch Chromium
+          Relaunch Kalama
         </message>
         <message name="IDS_UPDATE_RECOMMENDED" desc="The main text of the Update Recommended dialog with a count of open Incognito windows.">
           {COUNT, plural,
@@ -1257,16 +1257,16 @@ Permissions you've already given to websites and apps may apply to this account.
 
       <if expr="is_win or is_macosx or is_linux">
         <message name="IDS_UPDATE_RECOMMENDED_DIALOG_TITLE_ALT" desc="Alternate window title for the Update Recommended dialog." translateable="false">
-          Not used in Chromium. Placeholder to keep resource maps in sync.
+          Not used in Kalama. Placeholder to keep resource maps in sync.
         </message>
         <message name="IDS_UPDATE_RECOMMENDED_ALT" desc="Alternate main text of the Update Recommended dialog with a count of open Incognito windows." translateable="false">
-          Not used in Chromium. Placeholder to keep resource maps in sync.
+          Not used in Kalama. Placeholder to keep resource maps in sync.
         </message>
       </if>
 
       <!-- Update bubble -->
       <message name="IDS_REINSTALL_APP" desc="Text for the button the user clicks to reinstall the app.">
-        Reinstall Chromium
+        Reinstall Kalama
       </message>
       <if expr="use_titlecase">
         <message name="IDS_UPGRADE_BUBBLE_MENU_ITEM" desc="In Title Case: Text for the Chrome menu option replacing Update required.">
@@ -1279,7 +1279,7 @@ Permissions you've already given to websites and apps may apply to this account.
         </message>
       </if>
       <message name="IDS_UPGRADE_BUBBLE_TITLE" desc="Text for the title of the upgrade bubble view.">
-        Can't update Chromium
+        Can't update Kalama
       </message>
       <message name="IDS_UPGRADE_BUBBLE_TEXT" desc="Text for the upgrade bubble view full description.">
         Kalama couldn't update to the latest version, so you're missing out on new features and security fixes.
@@ -1287,7 +1287,7 @@ Permissions you've already given to websites and apps may apply to this account.
 
       <!-- User menu errors -->
       <message name="IDS_SYNC_ERROR_USER_MENU_UPGRADE_BUTTON" desc="Button in the header of desktop user menu that prompts the user to update Chrome to fix the out-of-date Chrome client error.">
-        Update Chromium
+        Update Kalama
       </message>
 
       <!-- Sync errors. Android uses native UI to handle Sync settings -->
@@ -1296,7 +1296,7 @@ Permissions you've already given to websites and apps may apply to this account.
           Update Kalama to start sync
         </message>
         <message name="IDS_SYNC_UPGRADE_CLIENT_BUTTON" desc="Button indicating client needs to be upgraded to the latest version.">
-          Update Chromium
+          Update Kalama
         </message>
       </if>
 
@@ -1306,12 +1306,12 @@ Permissions you've already given to websites and apps may apply to this account.
       </message>
       <if expr="use_titlecase">
         <message name="IDS_RUN_RECOVERY" desc="In Title Case: Text for the button the user clicks to recover Kalama and its updater.">
-          Update Chromium
+          Update Kalama
         </message>
       </if>
       <if expr="not use_titlecase">
         <message name="IDS_RUN_RECOVERY" desc="Text for the button the user clicks to recover Kalama and its updater.">
-          Update Chromium
+          Update Kalama
         </message>
       </if>
       <message name="IDS_RECOVERY_BUBBLE_TEXT" desc="Text for the chrome recovery bubble view full description.">
@@ -1394,7 +1394,7 @@ Permissions you've already given to websites and apps may apply to this account.
       <!-- Welcome page (chrome://welcome) strings -->
       <if expr="not chromeos_ash and not is_android">
         <message name="IDS_WELCOME_HEADER" desc="A message which will appear as the header on the Welcome UI if the user has never run Kalama before.">
-          Welcome to Chromium
+          Welcome to Kalama
         </message>
       </if>
 
@@ -1451,13 +1451,13 @@ Permissions you've already given to websites and apps may apply to this account.
       <!-- Kalama launch blocking dialog. -->
       <if expr="not is_android and not chromeos_ash">
          <message name="IDS_ENTERPRISE_STARTUP_CLOUD_POLICY_ENROLLMENT_TOOLTIP" desc="The information message of Kalama launch blocking dialog for machine level user cloud policy enrollment.">
-          Launching Chromium...
+          Launching Kalama...
         </message>
         <message name="IDS_ENTERPRISE_STARTUP_CLOUD_POLICY_ENROLLMENT_ERROR" desc="The error message of Kalama launch blocking dialog when machine level user cloud policy enrollment failed.">
-          Couldn't launch Chromium. Try again.
+          Couldn't launch Kalama. Try again.
         </message>
         <message name="IDS_ENTERPRISE_STARTUP_RELAUNCH_BUTTON" desc="The text of relaunch button of Kalama launch blocking dialog.">
-          Relaunch Chromium
+          Relaunch Kalama
         </message>
       </if>
       <message name="IDS_DESKTOP_MEDIA_PICKER_TITLE_WEB_CONTENTS_ONLY" desc="Title for the window picker dialog shown when desktop capture of a tab is requested by an app.">
@@ -1503,20 +1503,20 @@ Permissions you've already given to websites and apps may apply to this account.
           other {Your organization automatically closes Kalama when it isn't used for # minutes. Browsing data is deleted. This could include history, autofill, and downloads.}}
         </message>
         <message name="IDS_IDLE_DISMISS_BUTTON" desc="Button label in the Idle Timeout dialog, this button dismisses the dialog and prevents browsers from closing automatically.">
-          Continue using Chromium
+          Continue using Kalama
         </message>
       </if>
       <!-- User happiness tracking survey UI -->
       <if expr="not is_android">
         <message name="IDS_HATS_BUBBLE_TITLE" translateable="false" desc="The title of Happiness Tracking Survey's invitation banner, it invites users to take a survey">
-          Help us improve Chromium
+          Help us improve Kalama
         </message>
       </if>
 
       <!-- Chrome parent extension/app install blocking dialog. -->
       <if expr="enable_extensions and enable_supervised_users">
         <message name="IDS_EXTENSION_PERMISSIONS_BLOCKED_BY_PARENT_PROMPT_MESSAGE" desc="Text for the dialog indicating that a parent has blocked extensions and apps.">
-         Your parent has turned off "Permissions for sites, apps and extensions" for Chromium
+         Your parent has turned off "Permissions for sites, apps and extensions" for Kalama
         </message>
       </if>
 
@@ -1530,10 +1530,10 @@ Permissions you've already given to websites and apps may apply to this account.
             To access your Kalama browser stuff across all your devices, sign in, then turn on sync
           </message>
           <message name="IDS_PROFILE_PICKER_PROFILE_CREATION_FLOW_ACCOUNT_SELECTION_LACROS_SUBTITLE" desc="Profile picker, account selection screen subtitle">
-            Sign in to Chromium
+            Sign in to Kalama
           </message>
           <message name="IDS_PROFILE_PICKER_PROFILE_CREATION_FLOW_ACCOUNT_SELECTION_LACROS_SUBTITLE_WITH_GUEST" desc="Profile picker, account selection screen subtitle">
-            Sign in to Chromium. If you want to sign in an account one-time only, you can <ph name="GUEST_LINK_BEGIN">&lt;a id="guestModeLink" href="#"&gt;</ph>use the device as guest<ph name="GUEST_LINK_END">&lt;/a&gt;</ph>.
+            Sign in to Kalama. If you want to sign in an account one-time only, you can <ph name="GUEST_LINK_BEGIN">&lt;a id="guestModeLink" href="#"&gt;</ph>use the device as guest<ph name="GUEST_LINK_END">&lt;/a&gt;</ph>.
           </message>
         </if>
         <if expr="not chromeos_lacros">
@@ -1541,7 +1541,7 @@ Permissions you've already given to websites and apps may apply to this account.
             Welcome to Kalama profiles
           </message>
           <message name="IDS_PROFILE_PICKER_MAIN_VIEW_TITLE_V2" desc="Title of a screen that lets the user choose which profile to use when browsing the web. *If the EN source doesn't translate well in your language, an alternative string 'Which Kalama profile would you like to use?' may be used instead">
-            Who's using Chromium?
+            Who's using Kalama?
           </message>
           <message name="IDS_PROFILE_PICKER_MAIN_VIEW_SUBTITLE" desc="Profile picker main view subtitle">
             With Kalama profiles you can separate all your Kalama stuff. Create profiles for friends and family, or split between work and fun.
@@ -1569,10 +1569,10 @@ Permissions you've already given to websites and apps may apply to this account.
         <!-- First Run Experience -->
         <if expr="chromeos_lacros">
           <message name="IDS_PRIMARY_PROFILE_FIRST_RUN_TITLE" desc="Title of the landing screen in first run experience for the primary profile. The screen promotes Kalama sync.">
-            Welcome to Chromium, <ph name="ACCOUNT_FIRST_NAME">$1<ex>Jane</ex></ph>
+            Welcome to Kalama, <ph name="ACCOUNT_FIRST_NAME">$1<ex>Jane</ex></ph>
           </message>
           <message name="IDS_PRIMARY_PROFILE_FIRST_RUN_NO_NAME_TITLE" desc="Title of the screen shown when the user runs Kalama for the first time. A simple, generic welcome message.">
-            Welcome to Chromium
+            Welcome to Kalama
           </message>
           <message name="IDS_PRIMARY_PROFILE_FIRST_RUN_SUBTITLE" desc="Subtitle of the landing screen in first run experience for the primary profile. The screen promotes Kalama sync.">
             Get your Kalama browser stuff from <ph name="ACCOUNT_EMAIL">$1<ex>Jane.Doe@gmail.com</ex></ph>
@@ -1584,15 +1584,15 @@ Permissions you've already given to websites and apps may apply to this account.
         <if expr="not chromeos_lacros">
           <message name="IDS_FRE_SIGN_IN_TITLE_0"
             desc="This string appears as a heading on a full-page screen that asks the user to sign in to Kalama with their Google Account. It appears when the user launches Kalama for the first time. When they sign in, they can personalize and customize Kalama and remember their settings in their Google Account. The tone should be inviting and alluring.">
-            Sign in to Chromium
+            Sign in to Kalama
           </message>
           <message name="IDS_FRE_SIGN_IN_TITLE_1"
             desc="This string appears as a heading on a full-page screen that asks the user to sign in to Kalama with their Google Account. It appears when the user launches Kalama for the first time. When they sign in, they can personalize and customize Kalama and remember their settings in their Google Account. The tone should be inviting and alluring.">
             Make Kalama your own
           </message>
           <message name="IDS_FRE_SIGN_IN_TITLE_2"
-            desc="This string appears as a heading on a full-page screen that tells users the benefits of signing in to Chromium. It appears when the user launches Kalama for the first time. When they sign in, they can personalize and customize Kalama and remember their settings in their Google Account. The tone should be inviting and alluring.">
-            Do more with Chromium
+            desc="This string appears as a heading on a full-page screen that tells users the benefits of signing in to Kalama. It appears when the user launches Kalama for the first time. When they sign in, they can personalize and customize Kalama and remember their settings in their Google Account. The tone should be inviting and alluring.">
+            Do more with Kalama
           </message>
         </if>
 
@@ -1628,7 +1628,7 @@ Permissions you've already given to websites and apps may apply to this account.
 
       <!-- ChromeLabs bubble -->
       <message name="IDS_CHROMELABS_RELAUNCH_FOOTER_MESSAGE" desc="Text that shows in the footer of the Chrome Labs bubble when relaunch is needed for changes to take effect.">
-        Your changes will take effect the next time you relaunch Chromium.
+        Your changes will take effect the next time you relaunch Kalama.
       </message>
 
       <!-- Device Chooser Prompt -->
@@ -1638,10 +1638,10 @@ Permissions you've already given to websites and apps may apply to this account.
 
       <!-- Tailored Security -->
       <message name="IDS_TAILORED_SECURITY_UNCONSENTED_PROMOTION_NOTIFICATION_TITLE" desc="Title of notification prompting the user to enable Enhanced Safe Browsing after they have enabled account-level protections.">
-        Get Chromium's strongest security
+        Get Kalama's strongest security
       </message>
       <message name="IDS_TAILORED_SECURITY_UNCONSENTED_PROMOTION_MESSAGE_TITLE" desc="Title shown in the message shown when a user changes their account-level tailored security setting encouraging them to enable Enhanced Safe Browsing">
-        Get Chromium's strongest security
+        Get Kalama's strongest security
       </message>
       <message name="IDS_TAILORED_SECURITY_UNCONSENTED_PROMOTION_MESSAGE_DESCRIPTION" desc="Description shown in the message shown when a user changes their account-level tailored security setting encouraging them to enable Enhanced Safe Browsing">
         Enhanced protection does more to block phishing and malware
@@ -1661,21 +1661,21 @@ Permissions you've already given to websites and apps may apply to this account.
         You can see and remove topics of interest sites use to show you ads. Kalama estimates your interests based on your recent browsing history.
       </message>
       <message name="IDS_PRIVACY_SANDBOX_DIALOG_CONSENT_LEARN_MORE_LABEL" desc="Learn more link * Unfolds content within the page * The text that appears describes 2 ways in which a site can target ads: the “Topics API” and the “FLEDGE API”. You can see what those are at www.privacysanbox.com or they’re described for the user’s benefit in other text. * “ad personalization” can mean different things in different contexts. Here, we’re using it as a simple noun. In other words, it’s not the name of a control but a descriptive term used to describe the personalization of ads in the Chrome browser. This “ad personalization” shouldn’t be confused with the setting in the Google Account called “Ad personalization”.">
-        Learn more about ad personalization in Chromium
+        Learn more about ad personalization in Kalama
       </message>
-      <message name="IDS_PRIVACY_SANDBOX_DIALOG_CONSENT_LEARN_MORE_SECTION_1_HEADER" desc="TOPICS API A sub title that describes the first of 2 ways a site can get info from Kalama in order to target ads to the user. Topics of interest include things like “Live comedy” and “Rock music”. Kalama estimates these interests based on the sites users visit. * “Your”: we need to convey a sense of ownership, even if the user didn’t explicitly choose the interests we’re talking about. Without the “your”, it could sound like Kalama is simply building a generic library of interests. * “estimated”: It’s an “estimation”, and we don’t want to suggest that we know with certainty the user’s interests. Avoid words like “guess”, “establish”, “define”, etc. (in place of “estimate”). * “by Chromium”: This is new behavior for a browser (Chromium) to take an active role in processing user data for the purposes of showing ads. It’s important to convey “Chromium”, the actor in this case.">
-        Your interests as estimated by Chromium
+      <message name="IDS_PRIVACY_SANDBOX_DIALOG_CONSENT_LEARN_MORE_SECTION_1_HEADER" desc="TOPICS API A sub title that describes the first of 2 ways a site can get info from Kalama in order to target ads to the user. Topics of interest include things like “Live comedy” and “Rock music”. Kalama estimates these interests based on the sites users visit. * “Your”: we need to convey a sense of ownership, even if the user didn’t explicitly choose the interests we’re talking about. Without the “your”, it could sound like Kalama is simply building a generic library of interests. * “estimated”: It’s an “estimation”, and we don’t want to suggest that we know with certainty the user’s interests. Avoid words like “guess”, “establish”, “define”, etc. (in place of “estimate”). * “by Kalama”: This is new behavior for a browser (Chromium) to take an active role in processing user data for the purposes of showing ads. It’s important to convey “Chromium”, the actor in this case.">
+        Your interests as estimated by Kalama
       </message>
-      <message name="IDS_PRIVACY_SANDBOX_DIALOG_CONSENT_LEARN_MORE_SECTION_1_BULLET_POINT_1" desc="TOPICS API Bullet 1 of 3 that appear beneath the “Your interests as estimated by Chromium” subtitle. We break the description into the 3 pieces users most care about: 1) what data, 2) why this data, 3) what can I do about it? * “What data is used:” is bold and serves as a label to help people skimming the page. * “Your browsing history”: The user’s browsing history is available beneath the “History” menu at Chromium’s top level. The Topics API estimates topics of interest based on sites in the user’s browsing history that are participating in the trials.">
+      <message name="IDS_PRIVACY_SANDBOX_DIALOG_CONSENT_LEARN_MORE_SECTION_1_BULLET_POINT_1" desc="TOPICS API Bullet 1 of 3 that appear beneath the “Your interests as estimated by Kalama” subtitle. We break the description into the 3 pieces users most care about: 1) what data, 2) why this data, 3) what can I do about it? * “What data is used:” is bold and serves as a label to help people skimming the page. * “Your browsing history”: The user’s browsing history is available beneath the “History” menu at Kalama’s top level. The Topics API estimates topics of interest based on sites in the user’s browsing history that are participating in the trials.">
         <ph name="BEGIN_BOLD">&lt;b&gt;</ph>What data is used:<ph name="END_BOLD">&lt;/b&gt;</ph> Your browsing history, a record of sites you’ve visited using Kalama on this device.
       </message>
-      <message name="IDS_PRIVACY_SANDBOX_DIALOG_CONSENT_LEARN_MORE_SECTION_1_BULLET_POINT_2" desc="TOPICS API Bullet 2 of 3 that appear beneath the “Your interests as estimated by Chromium” subtitle. We break the description into the 3 pieces users most care about: 1) what data, 2) why this data, 3) what can I do about it? * “How we use this data:” is bold and serves as a label to help people skimming the page. * “estimate your interests”: Topics of interest include things like “Live comedy” and “Rock music”. Kalama estimates these interests based on the sites users visit. It’s an “estimation”, and we don’t want to suggest that we know with certainty the user’s interests. Avoid words like “guess”, “establish”, “define”, etc. (in place of “estimate”).">
+      <message name="IDS_PRIVACY_SANDBOX_DIALOG_CONSENT_LEARN_MORE_SECTION_1_BULLET_POINT_2" desc="TOPICS API Bullet 2 of 3 that appear beneath the “Your interests as estimated by Kalama” subtitle. We break the description into the 3 pieces users most care about: 1) what data, 2) why this data, 3) what can I do about it? * “How we use this data:” is bold and serves as a label to help people skimming the page. * “estimate your interests”: Topics of interest include things like “Live comedy” and “Rock music”. Kalama estimates these interests based on the sites users visit. It’s an “estimation”, and we don’t want to suggest that we know with certainty the user’s interests. Avoid words like “guess”, “establish”, “define”, etc. (in place of “estimate”).">
         <ph name="BEGIN_BOLD">&lt;b&gt;</ph>How we use this data:<ph name="END_BOLD">&lt;/b&gt;</ph> Kalama can estimate your interests. Later, a site you visit can ask Kalama to see your interests in order to personalize the ads you see.
       </message>
-      <message name="IDS_PRIVACY_SANDBOX_DIALOG_CONSENT_LEARN_MORE_SECTION_1_BULLET_POINT_3" desc="TOPICS API Bullet 3 of 3 that appear beneath the “Your interests as estimated by Chromium” subtitle. We break the description into the 3 pieces users most care about: 1) what data, 2) why this data, 3) what can I do about it? * “How you can manage your data:” is bold and serves as a label to help people skimming the page. * “To protect your privacy”: Today, most data is kept for long periods of time. This new Topics API doesn’t retain estimated topics for more than 3 weeks. The only reason for this feature is to protect the user’s privacy. * “auto”: isn’t strictly necessary, but it conveys that this feature is an ongoing part of the service. This isn’t describing, for example, a one-time deletion. * “older than 3 weeks”: We’re trying to convey a rolling delete. Imagine a user opens a browser for the very first time. As the user browses, Kalama will estimate up to 5 topics of interest in the first week. In the second week, Kalama will estimate up to 5 additional topics of interest. The same for the third week, for a total of 15 potential interests. In week 4, Kalama will automatically delete the 5 interests from week 1 so that there aren’t ever more than 15 topics associated with a user at any given time. * “interests can refresh”: If a user loves horror films and reads about them for months on end, the interest “Horror movies” might get deleted and refreshed in the same week, so that “Horror movies” doesn’t ever disappear from the user’s list of interests. * “Or you can…”: A user might love horror movies but can’t stand the idea of seeing ads about horror movies (because even the visuals will ruin the surprise of opening night). In this case, the user can remove “Horror movies” from the list of interests Kalama will consider. This removal remains in place indefinitely. Note that the user might still see ads about Horror movies from different ad networks or by other means than Chromium’s “Browser-based ad personalization” setting.">
+      <message name="IDS_PRIVACY_SANDBOX_DIALOG_CONSENT_LEARN_MORE_SECTION_1_BULLET_POINT_3" desc="TOPICS API Bullet 3 of 3 that appear beneath the “Your interests as estimated by Kalama” subtitle. We break the description into the 3 pieces users most care about: 1) what data, 2) why this data, 3) what can I do about it? * “How you can manage your data:” is bold and serves as a label to help people skimming the page. * “To protect your privacy”: Today, most data is kept for long periods of time. This new Topics API doesn’t retain estimated topics for more than 3 weeks. The only reason for this feature is to protect the user’s privacy. * “auto”: isn’t strictly necessary, but it conveys that this feature is an ongoing part of the service. This isn’t describing, for example, a one-time deletion. * “older than 3 weeks”: We’re trying to convey a rolling delete. Imagine a user opens a browser for the very first time. As the user browses, Kalama will estimate up to 5 topics of interest in the first week. In the second week, Kalama will estimate up to 5 additional topics of interest. The same for the third week, for a total of 15 potential interests. In week 4, Kalama will automatically delete the 5 interests from week 1 so that there aren’t ever more than 15 topics associated with a user at any given time. * “interests can refresh”: If a user loves horror films and reads about them for months on end, the interest “Horror movies” might get deleted and refreshed in the same week, so that “Horror movies” doesn’t ever disappear from the user’s list of interests. * “Or you can…”: A user might love horror movies but can’t stand the idea of seeing ads about horror movies (because even the visuals will ruin the surprise of opening night). In this case, the user can remove “Horror movies” from the list of interests Kalama will consider. This removal remains in place indefinitely. Note that the user might still see ads about Horror movies from different ad networks or by other means than Kalama’s “Browser-based ad personalization” setting.">
         <ph name="BEGIN_BOLD">&lt;b&gt;</ph>How you can manage your data:<ph name="END_BOLD">&lt;/b&gt;</ph> To protect your privacy, we auto-delete your interests that are older than 4 weeks. As you keep browsing, an interest might appear on the list again. Or you can remove interests you don’t want Kalama to consider.
       </message>
-      <message name="IDS_PRIVACY_SANDBOX_DIALOG_CONSENT_LEARN_MORE_SECTION_2_BULLET_POINT_1" desc="FLEDGE APIBullet 1 of 3 that appear beneath the “Sites you visit that define your interests” subtitle. We break the description into the 3 pieces users most care about: 1) what data, 2) why this data, 3) what can I do about it? * “What data is used:” is bold and serves as a label to help people skimming the page. * “Your browsing history”: The user’s browsing history is available beneath the “History” menu at Chromium’s top level. This content taken in isolation is somewhat misleading. With FLEDGE, a site can store information in Kalama about the user’s visit to their site. For example, the site might store “running_shoes_red_size_35” to indicate that the user showed interest in a particular shoe. We’re OK with the simplification in this bullet because 1) we explain it in the next bullet and 2) we want the user to understand that at the top level, both Topics &amp; Fledge are based on the same thing and that is the user’s browsing history.">
+      <message name="IDS_PRIVACY_SANDBOX_DIALOG_CONSENT_LEARN_MORE_SECTION_2_BULLET_POINT_1" desc="FLEDGE APIBullet 1 of 3 that appear beneath the “Sites you visit that define your interests” subtitle. We break the description into the 3 pieces users most care about: 1) what data, 2) why this data, 3) what can I do about it? * “What data is used:” is bold and serves as a label to help people skimming the page. * “Your browsing history”: The user’s browsing history is available beneath the “History” menu at Kalama’s top level. This content taken in isolation is somewhat misleading. With FLEDGE, a site can store information in Kalama about the user’s visit to their site. For example, the site might store “running_shoes_red_size_35” to indicate that the user showed interest in a particular shoe. We’re OK with the simplification in this bullet because 1) we explain it in the next bullet and 2) we want the user to understand that at the top level, both Topics &amp; Fledge are based on the same thing and that is the user’s browsing history.">
         <ph name="BEGIN_BOLD">&lt;b&gt;</ph>What data is used:<ph name="END_BOLD">&lt;/b&gt;</ph> Your browsing history, a record of sites you’ve visited using Kalama on this device.
       </message>
       <message name="IDS_PRIVACY_SANDBOX_DIALOG_CONSENT_LEARN_MORE_SECTION_2_BULLET_POINT_2" desc="FLEDGE API Bullet 2 of 3 that appear beneath the “Sites you visit that define your interests” subtitle. We break the description into the 3 pieces users most care about: 1) what data, 2) why this data, 3) what can I do about it? * “How we use this data:” is bold and serves as a label to help people skimming the page.">

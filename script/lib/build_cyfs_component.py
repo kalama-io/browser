@@ -116,7 +116,7 @@ def get_brnach_by_channel(channel):
     return channel_branch_map[channel]
 
 
-def build_cyfs_runtime(root, channel, version):
+def build_cyfs(root, channel, version, tools):
     branch_name = get_brnach_by_channel(channel)
     os.environ['CHANNEL'] = channel
     os.environ['VERSION'] = version
@@ -124,7 +124,7 @@ def build_cyfs_runtime(root, channel, version):
         local_path = fetch_source_code(root, CYFS_URL, branch_name)
         src_path = os.path.join(local_path, 'src')
         cmd_args = ['cargo', 'build']
-        for tool in CYFS_RUNTIMES:
+        for tool in tools:
             cmd_args.extend(['-p', tool])
         cmd_args.append('--release')
         execute_cmd(cmd_args, cwd=src_path)
@@ -133,6 +133,10 @@ def build_cyfs_runtime(root, channel, version):
         msg = 'Build CYFS RUNTIME failed, error: %s' % e
         print(msg)
         sys.exit(msg)
+
+
+def build_cyfs_runtime(root, channel, version):
+    return build_cyfs(root, channel, version, CYFS_RUNTIMES)
 
 
 def copy_runtime_target(root, local_path, target_cpu):
@@ -156,21 +160,7 @@ def get_tools_dependencies(root, channel, target_cpu, version):
 
 
 def build_cyfs_tools(root, channel, version):
-    branch_name = get_brnach_by_channel(channel)
-    os.environ['CHANNEL'] = channel
-    os.environ['VERSION'] = version
-    try:
-        local_path = fetch_source_code(root, CYFS_URL, branch_name)
-        src_path = os.path.join(local_path, 'src')
-        cmd_args = ['cargo', 'build']
-        for tool in CYFS_TOOLS:
-            cmd_args.extend(['-p', tool])
-        cmd_args.append('--release')
-        execute_cmd(cmd_args, cwd=src_path)
-        return local_path
-    except Exception as e:
-        print('Build CYFS TOOLS failed, with %s' % e)
-        raise
+    return build_cyfs(root, channel, version, CYFS_TOOLS)
 
 
 def copy_tools_target(root, local_path, target_cpu):

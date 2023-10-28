@@ -1,6 +1,6 @@
 {
     "Add": {
-        "update_time": "2023-10-12 22:16:20.496194",
+        "update_time": "2023-10-13 21:42:48.519937",
         "files": [
             "chrome/KALAMA_VERSION",
             "chrome/app/Extensions/cyfs_extension.gni",
@@ -28,12 +28,13 @@
         ]
     },
     "Update": {
-        "update_time": "2023-10-12 22:16:20.496217",
+        "update_time": "2023-10-13 21:42:48.519950",
         "files": [
             "chrome/app/chromeos_strings.grdp",
             "chrome/app/chromium_strings.grd",
             "chrome/app/generated_resources.grd",
             "chrome/app/google_chrome_strings.grd",
+            "chrome/app/resources/chromium_strings_en-GB.xtb",
             "chrome/app/resources/chromium_strings_zh-CN.xtb",
             "chrome/app/resources/generated_resources_zh-CN.xtb",
             "chrome/app/settings_chromium_strings.grdp",
@@ -58,7 +59,6 @@
             "chrome/app/theme/default_200_percent/chromium/product_logo_name_22.png",
             "chrome/app/theme/default_200_percent/chromium/product_logo_name_22_white.png",
             "chrome/browser/browser_resources.grd",
-            "chrome/browser/ui/android/strings/android_chrome_strings.grd",
             "components/components_chromium_strings.grd",
             "components/omnibox_pedal_ui_strings.grdp",
             "components/password_manager_strings.grdp",
@@ -67,9 +67,7 @@
             "components/resources/default_200_percent/chromium/product_logo.png",
             "components/resources/default_200_percent/chromium/product_logo_white.png",
             "components/strings/components_chromium_strings_zh-CN.xtb",
-            "components/strings/components_strings_zh-CN.xtb",
-            "ios/chrome/app/strings/ios_chromium_strings.grd",
-            "ios/chrome/app/strings/ios_strings.grd"
+            "components/strings/components_strings_zh-CN.xtb"
         ]
     }
 }
