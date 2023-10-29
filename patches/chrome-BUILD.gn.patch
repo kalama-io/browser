@@ -1,5 +1,5 @@
 diff --git a/chrome/BUILD.gn b/chrome/BUILD.gn
-index 61f07f736047732cc631c713fafa507df48ebb90..f0e4677548684d36a9c6c94711df9986aa74e728 100644
+index bc54ace77cade8c2e2439af6d0c18984cfdaf5c6..0d1981e23a2a590994194df76ae7719a8a87e1f1 100644
 --- a/chrome/BUILD.gn
 +++ b/chrome/BUILD.gn
 @@ -51,6 +51,7 @@ if (is_android) {
@@ -33,7 +33,7 @@ index 61f07f736047732cc631c713fafa507df48ebb90..f0e4677548684d36a9c6c94711df9986
        } else {
          output_name = "chrome"
        }
-@@ -659,6 +660,17 @@ if (is_win) {
+@@ -654,6 +655,17 @@ if (is_win) {
      outputs = [ "{{bundle_resources_dir}}/{{source_file_part}}" ]
    }
  
@@ -51,7 +51,7 @@ index 61f07f736047732cc631c713fafa507df48ebb90..f0e4677548684d36a9c6c94711df9986
    bundle_data("chrome_resources") {
      sources = [
        "$root_out_dir/$chrome_mac_bundle_id.manifest",
-@@ -667,6 +679,7 @@ if (is_win) {
+@@ -662,6 +674,7 @@ if (is_win) {
      ]
      outputs = [ "{{bundle_resources_dir}}/{{source_file_part}}" ]
      public_deps = [

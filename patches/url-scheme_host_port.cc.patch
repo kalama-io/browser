@@ -1,8 +1,8 @@
 diff --git a/url/scheme_host_port.cc b/url/scheme_host_port.cc
-index 490ae9a78c4537d396b78e67741ddec6cf6d4713..00ac46272f270772693f0fbbfd2cda0ed2a4d469 100644
+index 2d123dc3384c6560db5040e95116398768e3208d..efacaef5820dcf392ac9c522bebea5f9787c0ee6 100644
 --- a/url/scheme_host_port.cc
 +++ b/url/scheme_host_port.cc
-@@ -146,9 +146,11 @@ SchemeHostPort::SchemeHostPort(std::string scheme,
+@@ -147,9 +147,11 @@ SchemeHostPort::SchemeHostPort(std::string scheme,
                                 std::string host,
                                 uint16_t port,
                                 ConstructPolicy policy) {

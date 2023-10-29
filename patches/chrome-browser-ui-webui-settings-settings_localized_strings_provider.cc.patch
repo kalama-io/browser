@@ -1,8 +1,8 @@
 diff --git a/chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc b/chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
-index 2c54740738d1fbaf977eb150e91428596ff9ed94..5aa779727972b6427bd2d1aed2f9bf59f1f70a39 100644
+index 899ae48f57d2c1bc83aba77d70802f8c4a577c87..76c7ea4beb69bd78e68571fa3b043ef1196aa50a 100644
 --- a/chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
 +++ b/chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
-@@ -350,9 +350,25 @@ void AddAboutStrings(content::WebUIDataSource* html_source, Profile* profile) {
+@@ -367,9 +367,25 @@ void AddAboutStrings(content::WebUIDataSource* html_source, Profile* profile) {
        l10n_util::GetStringUTF16(IDS_SETTINGS_UPGRADE_UP_TO_DATE));
  #endif
  

@@ -1,8 +1,8 @@
 diff --git a/chrome/common/extensions/api/_api_features.json b/chrome/common/extensions/api/_api_features.json
-index c48ef45e7c59f091b51f8d4338b2ac212535431d..c8f468c6e5472e0d47c2ad41e3dc721bebba41fb 100644
+index 41fe5e2897a2e886a24b452517e74688b8b8cab6..806a0e90854e2dcb9fbedeed164ea0825db5a2ff 100644
 --- a/chrome/common/extensions/api/_api_features.json
 +++ b/chrome/common/extensions/api/_api_features.json
-@@ -145,11 +145,17 @@
+@@ -155,11 +155,17 @@
      "contexts": ["webui"],
      "matches": [
        "chrome://bookmarks/*",
@@ -22,7 +22,7 @@ index c48ef45e7c59f091b51f8d4338b2ac212535431d..c8f468c6e5472e0d47c2ad41e3dc721b
    "bookmarks.export": {
      "channel": "stable",
      "contexts": ["webui"],
-@@ -771,10 +777,16 @@
+@@ -785,10 +791,16 @@
      "dependencies": ["permission:scripting"],
      "contexts": ["content_script"]
    },

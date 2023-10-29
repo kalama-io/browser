@@ -1,8 +1,8 @@
 diff --git a/chrome/browser/ui/toolbar/toolbar_actions_model.cc b/chrome/browser/ui/toolbar/toolbar_actions_model.cc
-index 3e5b892b288c05476d09f3edcbfd837e1ee671af..d96d41dbca91b07c7731e752656a4d1282a9c0db 100644
+index 21835234a9b67031ef01ea8ef9a16fcf2f700159..23792d2acd76bfdfb09bb3063e20b830ffe0d2fb 100644
 --- a/chrome/browser/ui/toolbar/toolbar_actions_model.cc
 +++ b/chrome/browser/ui/toolbar/toolbar_actions_model.cc
-@@ -102,6 +102,13 @@ void ToolbarActionsModel::OnExtensionLoaded(
+@@ -103,6 +103,13 @@ void ToolbarActionsModel::OnExtensionLoaded(
    // hides the browser action and then disables and enables the extension.
    if (!HasAction(extension->id()) && ShouldAddExtension(extension))
      AddAction(extension->id());

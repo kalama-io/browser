@@ -1,8 +1,8 @@
 diff --git a/components/page_info/page_info_ui.cc b/components/page_info/page_info_ui.cc
-index 59af8d65b18cd0673a65be5ae9c420d237510143..26d4a262c3b5d5087f775f15f6c4073f14808843 100644
+index e6fab48974fbe8614bc6d3d0afde91843677de59..682252a61b514171da0f68bf363a4c6d712ac20b 100644
 --- a/components/page_info/page_info_ui.cc
 +++ b/components/page_info/page_info_ui.cc
-@@ -408,6 +408,12 @@ PageInfoUI::AdPersonalizationInfo::~AdPersonalizationInfo() = default;
+@@ -419,6 +419,12 @@ PageInfoUI::AdPersonalizationInfo::~AdPersonalizationInfo() = default;
  
  std::unique_ptr<PageInfoUI::SecurityDescription>
  PageInfoUI::GetSecurityDescription(const IdentityInfo& identity_info) const {

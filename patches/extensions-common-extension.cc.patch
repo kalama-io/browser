@@ -1,8 +1,8 @@
 diff --git a/extensions/common/extension.cc b/extensions/common/extension.cc
-index f9ca97a94703200c6a2e5f531828e48d7c2434b1..c263d3d6ead25e610374523adb8a3501f62623eb 100644
+index 75a110cbab5b26c2c53799044498e9b17a66fbd4..d50e98d00550720016ed8e03c0196d41b37268d4 100644
 --- a/extensions/common/extension.cc
 +++ b/extensions/common/extension.cc
-@@ -50,6 +50,13 @@ namespace keys = manifest_keys;
+@@ -51,6 +51,13 @@ namespace keys = manifest_keys;
  namespace values = manifest_values;
  namespace errors = manifest_errors;
  

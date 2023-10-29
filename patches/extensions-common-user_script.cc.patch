@@ -1,5 +1,5 @@
 diff --git a/extensions/common/user_script.cc b/extensions/common/user_script.cc
-index bc5bbf4179aa34c8956a93d01c20e7fec357055f..99a6060e474be8e05131e74720b7a1dc39a65629 100644
+index 9f53ae0c6c457730ef690c19b6f5960ec795ebba..6558b133a931057ae279e3e76670ed49c9d4f40d 100644
 --- a/extensions/common/user_script.cc
 +++ b/extensions/common/user_script.cc
 @@ -67,7 +67,8 @@ enum {

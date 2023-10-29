@@ -1,8 +1,8 @@
 diff --git a/chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc b/chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
-index 30cf8620c9c4e86fc32cdc6f541476058376ce35..68e395b7a9c2317b1bf1a938abb62f8348fd91bb 100644
+index b4572ea108296c847ef55d7c7adc0fa8bea762bf..33e8c5f734ddcc02635abb4dadfaa9eb4455d9f1 100644
 --- a/chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
 +++ b/chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
-@@ -44,6 +44,7 @@
+@@ -45,6 +45,7 @@
  #include "chrome/browser/content_settings/cookie_settings_factory.h"
  #include "chrome/browser/content_settings/host_content_settings_map_factory.h"
  #include "chrome/browser/custom_handlers/protocol_handler_registry_factory.h"
@@ -10,7 +10,7 @@ index 30cf8620c9c4e86fc32cdc6f541476058376ce35..68e395b7a9c2317b1bf1a938abb62f83
  #include "chrome/browser/device_api/managed_configuration_api_factory.h"
  #include "chrome/browser/dips/dips_cleanup_service_factory.h"
  #include "chrome/browser/dips/dips_service_factory.h"
-@@ -522,6 +523,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -529,6 +530,7 @@ void ChromeBrowserMainExtraPartsProfiles::
    AndroidSessionDurationsServiceFactory::GetInstance();
  #endif
    AnnouncementNotificationServiceFactory::GetInstance();

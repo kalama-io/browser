@@ -1,4 +1,4 @@
-side-searchimport os, sys, platform
+import os, sys, platform
 import argparse
 
 sys.path.append(os.path.dirname(__file__))

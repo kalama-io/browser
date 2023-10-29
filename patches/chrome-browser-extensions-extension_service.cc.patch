@@ -1,5 +1,5 @@
 diff --git a/chrome/browser/extensions/extension_service.cc b/chrome/browser/extensions/extension_service.cc
-index 8f0d563763ee017d683bcb9a78eba7acd2f08bc6..ffb918e09c4e3d696dd2e3600084c082a16a957e 100644
+index bbbf5031201c3e37a9cdefad3c4887fc2a205cb9..c4c5e8d993786c07490efe51252b30fe8d4fe225 100644
 --- a/chrome/browser/extensions/extension_service.cc
 +++ b/chrome/browser/extensions/extension_service.cc
 @@ -82,6 +82,7 @@
@@ -10,7 +10,7 @@ index 8f0d563763ee017d683bcb9a78eba7acd2f08bc6..ffb918e09c4e3d696dd2e3600084c082
  #include "extensions/browser/blocklist_extension_prefs.h"
  #include "extensions/browser/blocklist_state.h"
  #include "extensions/browser/disable_reason.h"
-@@ -805,6 +806,23 @@ bool ExtensionService::UninstallExtension(
+@@ -809,6 +810,23 @@ bool ExtensionService::UninstallExtension(
    // Callers should not send us nonexistent extensions.
    CHECK(extension.get());
  

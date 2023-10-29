@@ -1,8 +1,8 @@
 diff --git a/chrome/browser/chrome_content_browser_client.cc b/chrome/browser/chrome_content_browser_client.cc
-index da2cf79ceae3940078f7acf4f8a843488e638f81..d2f4ac1f0ecb1804e8abcdd3053a5ede3d772941 100644
+index 6f989cff781d71e2ea534d5592bf3d6fcaa0e95f..c557d2ed7fe2a14544603bbff026334e9961d4a4 100644
 --- a/chrome/browser/chrome_content_browser_client.cc
 +++ b/chrome/browser/chrome_content_browser_client.cc
-@@ -1348,7 +1348,7 @@ base::FilePath GetModulePath(base::WStringPiece module_name) {
+@@ -1357,7 +1357,7 @@ base::FilePath GetModulePath(base::WStringPiece module_name) {
    // executable's directory and return the path if it can be read. This is the
    // expected location of modules for proper installs.
    const base::FilePath module_path =

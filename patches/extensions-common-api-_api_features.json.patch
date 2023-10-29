@@ -1,8 +1,8 @@
 diff --git a/extensions/common/api/_api_features.json b/extensions/common/api/_api_features.json
-index 0c8b15e7f7b7e46208e0d221beb64576482d3390..129494255b47c766ef7dadf8730d0b0571bb68f0 100644
+index ddf66ad5d842b1af5811c1ab521700396d01813f..e24e3966e15adeb7a375575069c06305ef184180 100644
 --- a/extensions/common/api/_api_features.json
 +++ b/extensions/common/api/_api_features.json
-@@ -485,7 +485,7 @@
+@@ -486,7 +486,7 @@
      "dependencies": ["permission:printerProvider"],
      "contexts": ["blessed_extension"]
    },
@@ -11,7 +11,7 @@ index 0c8b15e7f7b7e46208e0d221beb64576482d3390..129494255b47c766ef7dadf8730d0b05
      "channel": "stable",
      "extension_types": [
        "extension",
-@@ -497,8 +497,34 @@
+@@ -498,8 +498,34 @@
      "contexts": [
        "blessed_extension",
        "lock_screen_extension"

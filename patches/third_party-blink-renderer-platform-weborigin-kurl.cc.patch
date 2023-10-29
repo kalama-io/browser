@@ -1,8 +1,8 @@
 diff --git a/third_party/blink/renderer/platform/weborigin/kurl.cc b/third_party/blink/renderer/platform/weborigin/kurl.cc
-index 54e6563872acf65c50351b9b0106cf287b663e81..6c52f3cebcd943e58cffca458d35e6781769c86e 100644
+index 5e9bcaf4738682132575a1b1b876cc1f7337ba3d..88d13ed856a745b014a4609988669d45b3b9f818 100644
 --- a/third_party/blink/renderer/platform/weborigin/kurl.cc
 +++ b/third_party/blink/renderer/platform/weborigin/kurl.cc
-@@ -984,6 +984,8 @@ void KURL::InitProtocolMetadata() {
+@@ -983,6 +983,8 @@ void KURL::InitProtocolMetadata() {
      protocol_ = WTF::g_https_atom;
    } else if (protocol == WTF::g_http_atom) {
      protocol_ = WTF::g_http_atom;

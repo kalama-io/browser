@@ -1,5 +1,5 @@
 diff --git a/chrome/common/webui_url_constants.h b/chrome/common/webui_url_constants.h
-index caca46377bbeb9d0965dfea968f2837f7e218bc2..3daafeaaa2c16e2a2eb5918f8c23e4e3d5650ed3 100644
+index ce0e4a432654244344c7f12a1a8e36f0bce2a616..7f0403446566400531245d6fcf352e295f8abe02 100644
 --- a/chrome/common/webui_url_constants.h
 +++ b/chrome/common/webui_url_constants.h
 @@ -38,6 +38,8 @@ extern const char kChromeUIAppIconHost[];

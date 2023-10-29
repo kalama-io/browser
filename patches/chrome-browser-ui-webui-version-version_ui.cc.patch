@@ -1,8 +1,8 @@
 diff --git a/chrome/browser/ui/webui/version/version_ui.cc b/chrome/browser/ui/webui/version/version_ui.cc
-index 82a6e68d11930fbb88b37e0b54bf61636e56ec96..012a90190186f4364594f8eaa24c67c52dbc8980 100644
+index a6a96082dcd73f93ef692812ddc6a2c11799a808..543d6bda9b1b7a9c78e67dea303d7883bd6a2dc1 100644
 --- a/chrome/browser/ui/webui/version/version_ui.cc
 +++ b/chrome/browser/ui/webui/version/version_ui.cc
-@@ -313,9 +313,12 @@ void VersionUI::AddVersionDetailStrings(content::WebUIDataSource* html_source) {
+@@ -304,9 +304,12 @@ void VersionUI::AddVersionDetailStrings(content::WebUIDataSource* html_source) {
  #if !BUILDFLAG(IS_ANDROID)
  // static
  std::u16string VersionUI::GetAnnotatedVersionStringForUi() {

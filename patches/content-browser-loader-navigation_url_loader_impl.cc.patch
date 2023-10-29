@@ -1,8 +1,8 @@
 diff --git a/content/browser/loader/navigation_url_loader_impl.cc b/content/browser/loader/navigation_url_loader_impl.cc
-index 9add88b4b9900ff2cafea2a9a0b5a42caf309ba4..eb05b722a9b5534d52958098e43c4963ebcc0453 100644
+index 3b58e4f2de29593224d3d80e1f12eaf19c853263..835eac53f142109f6da8ab1be09f8c1bdf1ee828 100644
 --- a/content/browser/loader/navigation_url_loader_impl.cc
 +++ b/content/browser/loader/navigation_url_loader_impl.cc
-@@ -626,6 +626,7 @@ void NavigationURLLoaderImpl::MaybeStartLoader(
+@@ -628,6 +628,7 @@ void NavigationURLLoaderImpl::MaybeStartLoader(
    DCHECK_CURRENTLY_ON(BrowserThread::UI);
    DCHECK(started_);
  
@@ -10,7 +10,7 @@ index 9add88b4b9900ff2cafea2a9a0b5a42caf309ba4..eb05b722a9b5534d52958098e43c4963
    if (single_request_factory) {
      // `interceptor` wants to handle the request with
      // `single_request_handler`.
-@@ -712,6 +713,57 @@ void NavigationURLLoaderImpl::MaybeStartLoader(
+@@ -714,6 +715,57 @@ void NavigationURLLoaderImpl::MaybeStartLoader(
    FallbackToNonInterceptedRequest(false);
  }
  

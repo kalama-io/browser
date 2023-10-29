@@ -1,5 +1,5 @@
 diff --git a/chrome/common/BUILD.gn b/chrome/common/BUILD.gn
-index c3ec18003787c0ea08eb6ecf741e485ef7ffbfb3..115371b14a63bf73dcbea50ab28d5d772aa71ad6 100644
+index e75d7bc0b01870f71f7a698c9620c24e66f8897c..7068eb051ef8c8e8118a75383d37e1cb096937b3 100644
 --- a/chrome/common/BUILD.gn
 +++ b/chrome/common/BUILD.gn
 @@ -503,6 +503,7 @@ process_version("version_header") {

@@ -1,8 +1,8 @@
 diff --git a/chrome/browser/ui/BUILD.gn b/chrome/browser/ui/BUILD.gn
-index 8ffa857f767e88ade3a2ef8f92a1aa05a9f0d032..cf8b74c60489b98ecf04266fb2b17c0b8492dc80 100644
+index 9da0c57372d3de3d47cc745602eb6f11a394ce5e..7605d7c10a84516e801ff63e985061ccd8349b32 100644
 --- a/chrome/browser/ui/BUILD.gn
 +++ b/chrome/browser/ui/BUILD.gn
-@@ -355,6 +355,8 @@ static_library("ui") {
+@@ -357,6 +357,8 @@ static_library("ui") {
      "zoom/chrome_zoom_level_otr_delegate.h",
      "zoom/chrome_zoom_level_prefs.cc",
      "zoom/chrome_zoom_level_prefs.h",

@@ -1,8 +1,8 @@
 diff --git a/content/app/content_main_runner_impl.cc b/content/app/content_main_runner_impl.cc
-index 6cb42330a794c8cee18b65ef42c3b5388b61f8a0..b984c436c3f715b29b10203acbc1dd81137892ad 100644
+index 11dcd5eaabaaba0e297ecb992d1290b3adaff1b1..04931f47ba581dfd4c71a201e83fd785dd229922 100644
 --- a/content/app/content_main_runner_impl.cc
 +++ b/content/app/content_main_runner_impl.cc
-@@ -1126,6 +1126,13 @@ int ContentMainRunnerImpl::RunBrowser(MainFunctionParams main_params,
+@@ -1148,6 +1148,13 @@ int ContentMainRunnerImpl::RunBrowser(MainFunctionParams main_params,
    if (is_browser_main_loop_started_)
      return -1;
  

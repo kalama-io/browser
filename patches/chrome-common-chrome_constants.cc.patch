@@ -1,8 +1,8 @@
 diff --git a/chrome/common/chrome_constants.cc b/chrome/common/chrome_constants.cc
-index 7cd04c178f1b3d771e3e1bf468ffb6089e193897..c724224f0631a975f5ae3a152b935810bb6dbea2 100644
+index 3a39e2bb7b608f511506b7de602ee4c1d73b7952..b37f5351dca1cf2c55ca1d355fe9edd580b7fd62 100644
 --- a/chrome/common/chrome_constants.cc
 +++ b/chrome/common/chrome_constants.cc
-@@ -17,7 +17,7 @@
+@@ -16,7 +16,7 @@
  #elif BUILDFLAG(GOOGLE_CHROME_FOR_TESTING_BRANDING)
  #define PRODUCT_STRING "Google Chrome for Testing"
  #elif BUILDFLAG(CHROMIUM_BRANDING)
@@ -11,7 +11,7 @@ index 7cd04c178f1b3d771e3e1bf468ffb6089e193897..c724224f0631a975f5ae3a152b935810
  #else
  #error Unknown branding
  #endif
-@@ -26,6 +26,7 @@
+@@ -25,6 +25,7 @@
  namespace chrome {
  
  const char kChromeVersion[] = CHROME_VERSION_STRING;
@@ -19,7 +19,7 @@ index 7cd04c178f1b3d771e3e1bf468ffb6089e193897..c724224f0631a975f5ae3a152b935810
  
  // The following should not be used for UI strings; they are meant
  // for system strings only. UI changes should be made in the GRD.
-@@ -46,9 +47,9 @@ const char kChromeVersion[] = CHROME_VERSION_STRING;
+@@ -45,9 +46,9 @@ const char kChromeVersion[] = CHROME_VERSION_STRING;
  
  #if BUILDFLAG(IS_WIN)
  const base::FilePath::CharType kBrowserProcessExecutableName[] =
@@ -31,7 +31,7 @@ index 7cd04c178f1b3d771e3e1bf468ffb6089e193897..c724224f0631a975f5ae3a152b935810
  #elif BUILDFLAG(IS_MAC)
  const base::FilePath::CharType kBrowserProcessExecutableName[] =
      FPL(PRODUCT_STRING);
-@@ -68,9 +69,9 @@ const base::FilePath::CharType kHelperProcessExecutableName[] = FPL("exe");
+@@ -67,9 +68,9 @@ const base::FilePath::CharType kHelperProcessExecutableName[] = FPL("exe");
  
  #if BUILDFLAG(IS_WIN)
  const base::FilePath::CharType kBrowserProcessExecutablePath[] =
@@ -43,7 +43,7 @@ index 7cd04c178f1b3d771e3e1bf468ffb6089e193897..c724224f0631a975f5ae3a152b935810
  #elif BUILDFLAG(IS_MAC)
  const base::FilePath::CharType kBrowserProcessExecutablePath[] =
      FPL(PRODUCT_STRING ".app/Contents/MacOS/" PRODUCT_STRING);
-@@ -133,6 +134,7 @@ const base::FilePath::CharType kExtensionsCookieFilename[] =
+@@ -132,6 +133,7 @@ const base::FilePath::CharType kExtensionsCookieFilename[] =
  const base::FilePath::CharType kFeatureEngagementTrackerStorageDirname[] =
      FPL("Feature Engagement Tracker");
  const base::FilePath::CharType kFirstRunSentinel[] = FPL("First Run");

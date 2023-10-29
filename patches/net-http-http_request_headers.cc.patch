@@ -1,8 +1,8 @@
 diff --git a/net/http/http_request_headers.cc b/net/http/http_request_headers.cc
-index 5ec4df307b8d96332cf99bc257faa71f28580e35..b67ea2486adb32c00a9f0cdf1cd5151429d6df8a 100644
+index 65081e0f8b5f7fc89afbc4da17e8e11b6d8f3811..1c4dafc94ec9d6a9f6fc08bf30f16ff2423909af 100644
 --- a/net/http/http_request_headers.cc
 +++ b/net/http/http_request_headers.cc
-@@ -69,6 +69,7 @@ const char HttpRequestHeaders::kRange[] = "Range";
+@@ -70,6 +70,7 @@ const char HttpRequestHeaders::kRange[] = "Range";
  const char HttpRequestHeaders::kReferer[] = "Referer";
  const char HttpRequestHeaders::kTransferEncoding[] = "Transfer-Encoding";
  const char HttpRequestHeaders::kUserAgent[] = "User-Agent";

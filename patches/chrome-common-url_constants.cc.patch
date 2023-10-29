@@ -1,8 +1,8 @@
 diff --git a/chrome/common/url_constants.cc b/chrome/common/url_constants.cc
-index a716d5ca36bf48c121d1a4fbc626a3a1565c1ba4..e97bbe18609c603d53f65486fe2acab1d82302bc 100644
+index 38d45b380863520fe76dbd6ceb5350cc48808ae6..7dc6526e888a725955119f243a1bb26ad47b61e4 100644
 --- a/chrome/common/url_constants.cc
 +++ b/chrome/common/url_constants.cc
-@@ -564,4 +564,7 @@ const char kChromeRootStoreSettingsHelpCenterURL[] =
+@@ -570,4 +570,7 @@ const char kChromeRootStoreSettingsHelpCenterURL[] =
      "https://support.google.com/chrome?p=root_store";
  #endif
  

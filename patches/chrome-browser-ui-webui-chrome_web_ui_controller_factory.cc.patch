@@ -1,5 +1,5 @@
 diff --git a/chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc b/chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
-index 75ab7f0bbbeedb05a8b82f9e80e5200a5f89575e..e06e5c0dc7f332a2c88cdefc0fb5d6575b588fc6 100644
+index 182cb8d7e8486f401dfad3d672839f45de0698ee..20839d61a88e640a3e0640e7804d4d0fb5e3dcfb 100644
 --- a/chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
 +++ b/chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
 @@ -38,6 +38,7 @@
@@ -18,7 +18,7 @@ index 75ab7f0bbbeedb05a8b82f9e80e5200a5f89575e..e06e5c0dc7f332a2c88cdefc0fb5d657
  #include "chrome/common/buildflags.h"
  #include "chrome/common/chrome_features.h"
  #include "chrome/common/pref_names.h"
-@@ -428,6 +430,9 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* web_ui,
+@@ -425,6 +427,9 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* web_ui,
    if (url.SchemeIs(content::kChromeUIUntrustedScheme))
      return nullptr;
  

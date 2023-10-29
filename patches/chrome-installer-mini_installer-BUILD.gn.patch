@@ -1,8 +1,8 @@
 diff --git a/chrome/installer/mini_installer/BUILD.gn b/chrome/installer/mini_installer/BUILD.gn
-index e9b34c78999b00440378010a8e35e6e8a502ca77..6cff5bfc9d50352a98c8b9a2b6aaee2ec17ce1c0 100644
+index 71803adcfbe02b8c76b58ddb6f657008c2d2ba88..37403f3372f1b06673f579afca33ffd41b4680bb 100644
 --- a/chrome/installer/mini_installer/BUILD.gn
 +++ b/chrome/installer/mini_installer/BUILD.gn
-@@ -124,7 +124,7 @@ action("mini_installer_archive") {
+@@ -122,7 +122,7 @@ action("mini_installer_archive") {
  
    inputs = [
      "$root_out_dir/chrome.dll",

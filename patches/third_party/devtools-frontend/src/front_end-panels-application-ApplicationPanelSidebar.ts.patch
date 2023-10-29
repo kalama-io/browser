@@ -1,8 +1,8 @@
 diff --git a/front_end/panels/application/ApplicationPanelSidebar.ts b/front_end/panels/application/ApplicationPanelSidebar.ts
-index b161036288c86f1e582dda55305ab13db3c5d484..0480fb14f2a09f6136e8aa94889db4328fc56bab 100644
+index ab4b086f80a2efba3b5ac7edf2d1d6e70394339a..73963de5883fad6e87dc74d63a538029a6e5df17 100644
 --- a/front_end/panels/application/ApplicationPanelSidebar.ts
 +++ b/front_end/panels/application/ApplicationPanelSidebar.ts
-@@ -741,8 +741,9 @@ export class ApplicationPanelSidebar extends UI.Widget.VBox implements SDK.Targe
+@@ -735,8 +735,9 @@ export class ApplicationPanelSidebar extends UI.Widget.VBox implements SDK.Targe
      // debug why the frame was unreachable.
      const urlToParse = frame.unreachableUrl() || frame.url;
      const parsedURL = Common.ParsedURL.ParsedURL.fromString(urlToParse);

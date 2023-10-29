@@ -1,8 +1,8 @@
 diff --git a/chrome/common/url_constants.h b/chrome/common/url_constants.h
-index 1532b0e0da7ddd58993cbe8d77df1e15726d12c3..13a972fc4f6d0df07ff999d8ee85caca7615e68f 100644
+index fa3e0cbb50aa07edc3f499d13a63ea73246d9eb1..1d87cd5b973e00a706d47bf07909c49bea49bd70 100644
 --- a/chrome/common/url_constants.h
 +++ b/chrome/common/url_constants.h
-@@ -541,6 +541,9 @@ extern const char kChromeAppsDeprecationLearnMoreURL[];
+@@ -547,6 +547,9 @@ extern const char kChromeAppsDeprecationLearnMoreURL[];
  extern const char kChromeRootStoreSettingsHelpCenterURL[];
  #endif
  

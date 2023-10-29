@@ -1,5 +1,5 @@
 diff --git a/chrome/common/webui_url_constants.cc b/chrome/common/webui_url_constants.cc
-index f25f690144d2d38cbccf69200a101eed5b67af5b..852acfc13c84e6a4fd4a477f8b50789da5e31e9c 100644
+index 3cf38f5f6633ea3ecb480e80504ef911957fd9dc..f602a2acd04d79975ec7bcbc00c9ef39f63c116d 100644
 --- a/chrome/common/webui_url_constants.cc
 +++ b/chrome/common/webui_url_constants.cc
 @@ -36,7 +36,9 @@ const char kChromeUIAllSitesPath[] = "/content/all";

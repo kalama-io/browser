@@ -1,5 +1,5 @@
 diff --git a/chrome/version.gni b/chrome/version.gni
-index 938b664fbff6487dd9ec6f8b74c209da4acff926..a7e6f1312c5f6eb50e5a4cf0834dbe988530415f 100644
+index 3cb46611efd5698e8a87b1f3dce94b0b4358fba0..3d0a49d8fea9c2ac696883f541a558c81527a47f 100644
 --- a/chrome/version.gni
 +++ b/chrome/version.gni
 @@ -23,6 +23,7 @@ _version_dictionary_template = "full = \"@MAJOR@.@MINOR@.@BUILD@.@PATCH@\" " +
@@ -10,7 +10,7 @@ index 938b664fbff6487dd9ec6f8b74c209da4acff926..a7e6f1312c5f6eb50e5a4cf0834dbe98
  
  _script_arguments = []
  
-@@ -124,6 +125,21 @@ _result = exec_script("//build/util/version.py",
+@@ -125,6 +126,21 @@ _result = exec_script("//build/util/version.py",
  # Full version. For example "45.0.12321.0"
  chrome_version_full = _result.full
  

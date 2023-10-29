@@ -1,8 +1,8 @@
 diff --git a/chrome/browser/BUILD.gn b/chrome/browser/BUILD.gn
-index ff490f2ffb3f5af65d8af96ff708f9292ffb5e33..34da4d7dd5c2d6dc91883d32313b5403850bcca2 100644
+index 31bf3d854d9a672e535f747fb8734d66ac0c37e9..71be2b061847ff32e9d3e14157ba957608451535 100644
 --- a/chrome/browser/BUILD.gn
 +++ b/chrome/browser/BUILD.gn
-@@ -44,6 +44,7 @@ import("//third_party/widevine/cdm/widevine.gni")
+@@ -45,6 +45,7 @@ import("//third_party/widevine/cdm/widevine.gni")
  import("//tools/grit/grit_rule.gni")
  import("//ui/base/ui_features.gni")
  
@@ -10,7 +10,7 @@ index ff490f2ffb3f5af65d8af96ff708f9292ffb5e33..34da4d7dd5c2d6dc91883d32313b5403
  # //build/config/android/rules.gni imports //tools/grit/grit_rule.gni, which
  # produces a conflict for the "grit" template so we have to only include one.
  if (is_android) {
-@@ -1877,6 +1878,8 @@ static_library("browser") {
+@@ -1887,6 +1888,8 @@ static_library("browser") {
      "webid/federated_identity_permission_context.h",
      "webid/federated_identity_permission_context_factory.cc",
      "webid/federated_identity_permission_context_factory.h",
@@ -19,7 +19,7 @@ index ff490f2ffb3f5af65d8af96ff708f9292ffb5e33..34da4d7dd5c2d6dc91883d32313b5403
    ]
  
    if (!is_android) {
-@@ -2595,6 +2598,8 @@ static_library("browser") {
+@@ -2632,6 +2635,8 @@ static_library("browser") {
      ]
    }
  

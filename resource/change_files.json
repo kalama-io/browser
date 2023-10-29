@@ -1,6 +1,6 @@
 {
     "Add": {
-        "update_time": "2023-10-13 21:42:48.519937",
+        "update_time": "2023-10-29 02:47:00.771751",
         "files": [
             "chrome/KALAMA_VERSION",
             "chrome/app/Extensions/cyfs_extension.gni",
@@ -28,7 +28,7 @@
         ]
     },
     "Update": {
-        "update_time": "2023-10-13 21:42:48.519950",
+        "update_time": "2023-10-29 02:47:00.771768",
         "files": [
             "chrome/app/chromeos_strings.grdp",
             "chrome/app/chromium_strings.grd",
@@ -38,7 +38,6 @@
             "chrome/app/resources/chromium_strings_zh-CN.xtb",
             "chrome/app/resources/generated_resources_zh-CN.xtb",
             "chrome/app/settings_chromium_strings.grdp",
-            "chrome/app/settings_google_chrome_strings.grdp",
             "chrome/app/settings_strings.grdp",
             "chrome/app/theme/chromium/mac/app.icns",
             "chrome/app/theme/chromium/product_logo_128.png",
