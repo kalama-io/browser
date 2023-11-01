@@ -1,0 +1,13 @@
+diff --git a/components/omnibox/browser/autocomplete_provider.cc b/components/omnibox/browser/autocomplete_provider.cc
+index 293d5e5dd0678b594f3ca870b18d227f8d36e6f4..9222775a787db9a6c114ea3fa092cf4086a3733a 100644
+--- a/components/omnibox/browser/autocomplete_provider.cc
++++ b/components/omnibox/browser/autocomplete_provider.cc
+@@ -73,6 +73,8 @@ const char* AutocompleteProvider::TypeToString(Type type) {
+       return "HistoryCluster";
+     case TYPE_CALCULATOR:
+       return "Calculator";
++    case TYPE_ENS_LOOKUP:
++      return "EnsLookup";
+     default:
+       NOTREACHED() << "Unhandled AutocompleteProvider::Type " << type;
+       return "Unknown";

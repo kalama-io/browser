@@ -1,5 +1,5 @@
 diff --git a/net/url_request/url_request_job_factory.cc b/net/url_request/url_request_job_factory.cc
-index 68b4dae4b2e71d66a6ae71f6cd19cf3286281d99..6951346290e29ee0a8026f26a523f3b2e11e7df6 100644
+index 68b4dae4b2e71d66a6ae71f6cd19cf3286281d99..042098d7664be8d2bc53eb3bbd446b1c53bc0da1 100644
 --- a/net/url_request/url_request_job_factory.cc
 +++ b/net/url_request/url_request_job_factory.cc
 @@ -107,6 +107,39 @@ std::unique_ptr<URLRequestJob> URLRequestJobFactory::CreateJob(
@@ -9,11 +9,11 @@ index 68b4dae4b2e71d66a6ae71f6cd19cf3286281d99..6951346290e29ee0a8026f26a523f3b2
 +  constexpr char kLocalhost[] = "127.0.0.1";
 +  static constexpr int default_ipfs_port = 38095;
 +  static constexpr int default_cyfs_port = 38090;
-+  GURL orignal_request_url = request->url();
-+  std::string scheme_head = orignal_request_url.scheme() + url::kStandardSchemeSeparator;
-+  if (orignal_request_url.SchemeIsCYFS()) {
-+    auto host_str = orignal_request_url.host();
-+    auto old_path_str = orignal_request_url.path();
++  GURL original_request_url = request->url();
++  std::string scheme_head = original_request_url.scheme() + url::kStandardSchemeSeparator;
++  if (original_request_url.SchemeIsCYFS()) {
++    auto host_str = original_request_url.host();
++    auto old_path_str = original_request_url.path();
 +    auto new_url_path = "/" + host_str + old_path_str;
 +
 +    GURL::Replacements replacements;
@@ -21,20 +21,20 @@ index 68b4dae4b2e71d66a6ae71f6cd19cf3286281d99..6951346290e29ee0a8026f26a523f3b2
 +    replacements.SetHostStr(kLocalhost);
 +    replacements.SetPortStr(std::to_string(default_cyfs_port).c_str());
 +    replacements.SetPathStr(new_url_path);
-+    auto redirect_url = orignal_request_url.ReplaceComponents(replacements);
++    auto redirect_url = original_request_url.ReplaceComponents(replacements);
 +    LOG(INFO) << "Redirect URL = " << redirect_url.spec();
 +    request->PushURL(redirect_url);
-+  } else if (orignal_request_url.SchemeIsIPFS() || orignal_request_url.SchemeIsIPNS()) {
-+    auto host_str = orignal_request_url.host();
-+    auto old_path_str = orignal_request_url.path();
-+    auto new_url_path = (orignal_request_url.SchemeIsIPFS() ? "/ipfs/" : "/ipns/") +  host_str + old_path_str;
++  } else if (original_request_url.SchemeIsIPFS() || original_request_url.SchemeIsIPNS()) {
++    auto host_str = original_request_url.host();
++    auto old_path_str = original_request_url.path();
++    auto new_url_path = (original_request_url.SchemeIsIPFS() ? "/ipfs/" : "/ipns/") +  host_str + old_path_str;
 +
 +    GURL::Replacements replacements;
 +    replacements.SetSchemeStr(url::kHttpScheme);
 +    replacements.SetHostStr(kLocalhost);
 +    replacements.SetPortStr(std::to_string(default_ipfs_port).c_str());
 +    replacements.SetPathStr(new_url_path);
-+    auto redirect_url = orignal_request_url.ReplaceComponents(replacements);
++    auto redirect_url = original_request_url.ReplaceComponents(replacements);
 +    LOG(INFO) << "Redirect URL = " << redirect_url.spec();
 +    request->PushURL(redirect_url);
 +  }

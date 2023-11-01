@@ -1,0 +1,50 @@
+diff --git a/components/omnibox/browser/autocomplete_controller.cc b/components/omnibox/browser/autocomplete_controller.cc
+index 13300c4a96e9ca8b2a663a0f24bd7f599285acf3..698298bcd47991ebb4e62f19297942d389162456 100644
+--- a/components/omnibox/browser/autocomplete_controller.cc
++++ b/components/omnibox/browser/autocomplete_controller.cc
+@@ -60,6 +60,7 @@
+ #include "components/omnibox/browser/omnibox_field_trial.h"
+ #include "components/omnibox/browser/on_device_head_provider.h"
+ #include "components/omnibox/browser/open_tab_provider.h"
++#include "components/omnibox/browser/ens_lookup_provider.h"
+ #include "components/omnibox/browser/query_tile_provider.h"
+ #include "components/omnibox/browser/search_provider.h"
+ #include "components/omnibox/browser/shortcuts_provider.h"
+@@ -369,6 +370,7 @@ AutocompleteController::AutocompleteController(
+       steady_state_omnibox_position_(
+           metrics::OmniboxEventProto::UNKNOWN_POSITION) {
+   provider_types &= ~OmniboxFieldTrial::GetDisabledProviderTypes();
++  VLOG(1) << "AutocompleteController::AutocompleteController, provider_types - " << provider_types;
+ 
+   // Providers run in the order they're added. Async providers should run first
+   // so their async requests can be kicked off before waiting a few milliseconds
+@@ -412,6 +414,13 @@ AutocompleteController::AutocompleteController(
+         std::make_unique<UrlScoringSignalsAnnotator>());
+   }
+ 
++  provider_types = provider_types | AutocompleteProvider::TYPE_ENS_LOOKUP;
++  providers_.push_back(new EnsLookupProvider(provider_client_.get()));
++
++  for (auto provider : providers_) {
++    VLOG(1) << "AutocompleteController have " << provider->GetName() << " provider for auto complete";
++  }
++
+   base::trace_event::MemoryDumpManager::GetInstance()->RegisterDumpProvider(
+       this, "AutocompleteController",
+       base::SingleThreadTaskRunner::GetCurrentDefault());
+@@ -520,6 +529,7 @@ void AutocompleteController::Start(const AutocompleteInput& input) {
+     }
+ 
+     base::TimeTicks provider_start_time = base::TimeTicks::Now();
++    VLOG(1) << " Start " << provider->GetName();
+     if (history_fuzzy_provider_) {
+       history_fuzzy_provider_->SetCounterfactualRelevanceHint(
+           -relevances.front());
+@@ -545,6 +555,7 @@ void AutocompleteController::Start(const AutocompleteInput& input) {
+         std::string("Omnibox.ProviderTime2.") + provider->GetName(),
+         provider_end_time - provider_start_time, base::Milliseconds(1),
+         base::Seconds(5), 20);
++    VLOG(1) << " End " << provider->GetName();
+   }
+   if (!input.omit_asynchronous_matches()) {
+     auto elapsed_time = base::TimeTicks::Now() - start_time;

@@ -1,0 +1,13 @@
+diff --git a/components/omnibox/browser/BUILD.gn b/components/omnibox/browser/BUILD.gn
+index 8759ddfafad7b0357b248e01ba32cdd347c71437..60bdfac3a0b912bac04a7b022d5b7f10b8fe8d33 100644
+--- a/components/omnibox/browser/BUILD.gn
++++ b/components/omnibox/browser/BUILD.gn
+@@ -305,6 +305,8 @@ static_library("browser") {
+     "zero_suggest_provider.h",
+     "zero_suggest_verbatim_match_provider.cc",
+     "zero_suggest_verbatim_match_provider.h",
++    "ens_lookup_provider.h",
++    "ens_lookup_provider.cc",
+   ]
+   if (build_with_tflite_lib) {
+     sources += [

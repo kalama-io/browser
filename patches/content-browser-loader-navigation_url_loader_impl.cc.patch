@@ -1,5 +1,5 @@
 diff --git a/content/browser/loader/navigation_url_loader_impl.cc b/content/browser/loader/navigation_url_loader_impl.cc
-index 3b58e4f2de29593224d3d80e1f12eaf19c853263..835eac53f142109f6da8ab1be09f8c1bdf1ee828 100644
+index 3b58e4f2de29593224d3d80e1f12eaf19c853263..75a39caa44cf3ff2b9f7dd64be34d42297b2dae2 100644
 --- a/content/browser/loader/navigation_url_loader_impl.cc
 +++ b/content/browser/loader/navigation_url_loader_impl.cc
 @@ -628,6 +628,7 @@ void NavigationURLLoaderImpl::MaybeStartLoader(
@@ -20,11 +20,11 @@ index 3b58e4f2de29593224d3d80e1f12eaf19c853263..835eac53f142109f6da8ab1be09f8c1b
 +  static constexpr int default_cyfs_port = 38090;
 +  static constexpr int default_ipfs_port = 38095;
 +  static constexpr int default_eth_lookup_port = 38099;
-+  GURL orignal_request_url = resource_request_->url;
-+  if (orignal_request_url.SchemeIsCYFS()) {
++  GURL original_request_url = resource_request_->url;
++  if (original_request_url.SchemeIsCYFS()) {
 +    // translate cyfs url to local http url
-+    auto host_str = orignal_request_url.host();
-+    auto old_path_str = orignal_request_url.path();
++    auto host_str = original_request_url.host();
++    auto old_path_str = original_request_url.path();
 +    auto new_url_path_str = "/" + host_str + old_path_str;
 +
 +    GURL::Replacements replacements;
@@ -32,35 +32,35 @@ index 3b58e4f2de29593224d3d80e1f12eaf19c853263..835eac53f142109f6da8ab1be09f8c1b
 +    replacements.SetHostStr(kLocalhost);
 +    replacements.SetPortStr(std::to_string(default_cyfs_port).c_str());
 +    replacements.SetPathStr(new_url_path_str);
-+    GURL new_url = orignal_request_url.ReplaceComponents(replacements);
-+    LOG(INFO) << "Update request url " << orignal_request_url.spec() << " to " << new_url.spec();
++    GURL new_url = original_request_url.ReplaceComponents(replacements);
++    LOG(INFO) << "Update request url " << original_request_url.spec() << " to " << new_url.spec();
 +    resource_request_->url = new_url;
 +
-+  } else if (orignal_request_url.SchemeIsIPFS() || orignal_request_url.SchemeIsIPNS()) {
++  } else if (original_request_url.SchemeIsIPFS() || original_request_url.SchemeIsIPNS()) {
 +    // translate ipfs/ipns url to local http url
-+    auto host_str = orignal_request_url.host();
-+    auto old_path_str = orignal_request_url.path();
-+    auto new_url_path_str = (orignal_request_url.SchemeIsIPFS() ? "/ipfs/" : "/ipns/") +  host_str + old_path_str;
++    auto host_str = original_request_url.host();
++    auto old_path_str = original_request_url.path();
++    auto new_url_path_str = (original_request_url.SchemeIsIPFS() ? "/ipfs/" : "/ipns/") +  host_str + old_path_str;
 +
 +    GURL::Replacements replacements;
 +    replacements.SetSchemeStr(url::kHttpScheme);
 +    replacements.SetHostStr(kLocalhost);
 +    replacements.SetPortStr(std::to_string(default_ipfs_port).c_str());
 +    replacements.SetPathStr(new_url_path_str);
-+    GURL new_url = orignal_request_url.ReplaceComponents(replacements);
-+    LOG(INFO) << "Update request url " << orignal_request_url.spec() << " to " << new_url.spec();
++    GURL new_url = original_request_url.ReplaceComponents(replacements);
++    LOG(INFO) << "Update request url " << original_request_url.spec() << " to " << new_url.spec();
 +    resource_request_->url = new_url;
-+  } else if (base::EndsWith(orignal_request_url.host_piece(), kEthDomain)) {
-+    auto old_path_str = orignal_request_url.path();
-+    auto new_url_path_str = std::string("/forward/") + std::string(orignal_request_url.host_piece()) + old_path_str;
++  } else if (base::EndsWith(original_request_url.host_piece(), kEthDomain)) {
++    auto old_path_str = original_request_url.path();
++    auto new_url_path_str = std::string("/forward/") + std::string(original_request_url.host_piece()) + old_path_str;
 +
 +    GURL::Replacements replacements;
 +    replacements.SetSchemeStr(url::kHttpScheme);
 +    replacements.SetHostStr(kLocalhost);
 +    replacements.SetPortStr(std::to_string(default_eth_lookup_port).c_str());
 +    replacements.SetPathStr(new_url_path_str);
-+    GURL new_url = orignal_request_url.ReplaceComponents(replacements);
-+    LOG(INFO) << "Update request url " << orignal_request_url.spec() << " to " << new_url.spec();
++    GURL new_url = original_request_url.ReplaceComponents(replacements);
++    LOG(INFO) << "Update request url " << original_request_url.spec() << " to " << new_url.spec();
 +    resource_request_->url = new_url;
 +  }
 +}
